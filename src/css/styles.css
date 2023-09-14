@@ -6,6 +6,13 @@
 */
 @import url('./reset.css');
 @import url('./base.css');
+@import url('./partials/header.css');
+@import url('./partials/hero.css');
+@import url('./partials/filter.css');
+@import url('./partials/popular-recipes.css');
+@import url('./partials/gallery.css');
+@import url('./partials/modal.css');
+@import url('./partials/favorites.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
