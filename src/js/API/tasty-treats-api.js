@@ -32,4 +32,14 @@ export default class TastyTreatsAPI {
   async fetchRecipe(id) {
     return await axios.get(`${this.baseURL}/recipes/${id}`);
   }
+
+  async updateRating(id, rating) {
+    return await axios.patch(`${this.baseURL}/recipes/${id}/rating`, {
+      rating,
+    });
+  }
+
+  async addOrder(order) {
+    return await axios.post(`${this.baseURL}/orders/add`, order);
+  }
 }
