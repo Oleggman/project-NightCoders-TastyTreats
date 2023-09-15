@@ -99,6 +99,10 @@
   height: 16px;
 }
 
+.star-icon-orange {
+  fill: #eea10c;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1157px) {
   .star-icon {
     width: 13px;
