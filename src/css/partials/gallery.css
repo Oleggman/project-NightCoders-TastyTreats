@@ -9,14 +9,9 @@
   height: 335px;
   border-radius: 8px;
   overflow: hidden;
-
   position: relative;
-  background: linear-gradient(
-      1deg,
-      rgba(5, 5, 5, 0.6) 4.82%,
-      rgba(5, 5, 5, 0) 108.72%
-    ),
-    lightgray -25px -10px / 116.716% 114.018% no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 @media only screen and (min-width: 768px) {
@@ -32,11 +27,6 @@
   }
 }
 
-.card-image {
-  z-index: 1;
-  opacity: 0.6;
-}
-
 .like-button {
   position: absolute;
   top: 16px;
@@ -50,7 +40,7 @@
 .like-icon {
   stroke: #f8f8f8;
   fill: none;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .card-info {
