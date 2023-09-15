@@ -4,12 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
     <title>Favorites</title>
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <section>
-      <a href="./index.html">Go to home</a>
-      <h1>Welcome to page 2</h1>
-    </section>
+    <!-- Header -->
+    <load src="partials/header.html" />
+
+    <!-- Favorites hero -->
+    <main>
+      <section class="favorites-hero">
+        <div class="favorites-container">
+          <div class="fav-hero-img"></div>
+        </div>
+      </section>
+
+      <section class="favorites-section section">
+        <!-- Categories -->
+        <div class="favorites-categories favorites-container">
+          <div class="favorite-categories-btn">
+            <button class="button-fav all-btn" name="all">
+              All categories
+            </button>
+          </div>
+          <ul class="favorites-card-list favorites-list"></ul>
+        </div>
+        <!-- Default -->
+        <div class="favorites-default favorites-container">
+          <svg class="favorites-icon" width="68" height="58">
+            <use href="./img/icons.svg#hat"></use>
+          </svg>
+          <p class="favorites-text">
+            It appears that you haven't added any recipes to your favorites yet.
+            To get started, you can add recipes that you like to your favorites
+            for easier access in the future.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./favorites.js"></script>
   </body>
 </html>
