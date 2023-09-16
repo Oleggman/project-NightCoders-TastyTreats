@@ -15,6 +15,12 @@ loadIngredOptions();
 
 let filterArr = [];
 
+const filters = {
+  time: '',
+  area: '',
+  ingredients: '',
+};
+
 async function getDataArr() {
   let dataArr = [];
   if (filterArr[0]) {
@@ -41,11 +47,30 @@ async function onInputRecipe(e) {
 // Time filter
 async function onTimeSelect(e) {
   const selectedTime = Number(e.currentTarget.value);
-  const res = await tastyTreatsApi.fetchAllRecipes();
-  dataArr = res.data.results;
+  let dataArr = await getDataArr();
+  filters.time = selectedTime;
 
   const filteredByTime = dataArr.filter(recipe => {
-    if (recipe.time) {
+    if (!recipe.time) {
+      return;
+    }
+
+    if (filters.area && filters.ingredients) {
+      return (
+        Number(recipe.time) <= selectedTime &&
+        recipe.area === filters.area &&
+        recipe.ingredients.some(ingr => ingr.id === filters.ingredients)
+      );
+    } else if (filters.area) {
+      return (
+        Number(recipe.time) <= selectedTime && recipe.area === filters.area
+      );
+    } else if (filters.ingredients) {
+      return (
+        Number(recipe.time) <= selectedTime &&
+        recipe.ingredients.some(ingr => ingr.id === filters.ingredients)
+      );
+    } else {
       return Number(recipe.time) <= selectedTime;
     }
   });
@@ -61,8 +86,27 @@ async function loadAreaOptions() {
 async function onAreaSelect(e) {
   const value = e.currentTarget.value;
   let dataArr = await getDataArr();
+  filters.area = value;
 
-  const recipesByArea = dataArr.filter(item => item.area === value);
+  const recipesByArea = dataArr.filter(recipe => {
+    if (filters.time && filters.ingredients) {
+      return (
+        recipe.area === value &&
+        recipe.time === filters.time &&
+        recipe.ingredients.some(ingr => ingr.id === filters.ingredients)
+      );
+    } else if (filters.time) {
+      return recipe.area === value && recipe.time === filters.time;
+    } else if (filters.ingredients) {
+      return (
+        recipe.area === value &&
+        recipe.ingredients.some(ingr => ingr.id === filters.ingredients)
+      );
+    } else {
+      return recipe.area === value;
+    }
+  });
+
   refs.gallery.innerHTML = renderGallery(recipesByArea);
 }
 // Ingredients filter
@@ -77,10 +121,29 @@ async function onIngredSelect(e) {
   const ingredId = ingreds.data.find(item => item.name === e.target.value)._id;
 
   let dataArr = await getDataArr();
+  filters.ingredients = ingredId;
 
-  const recipesByIngreds = dataArr.filter(item =>
-    item.ingredients.some(ingr => ingr.id === ingredId)
-  );
+  const recipesByIngreds = dataArr.filter(recipe => {
+    if (filters.time && filters.area) {
+      return (
+        recipe.area === filters.area &&
+        recipe.time === filters.time &&
+        item.ingredients.some(ingr => ingr.id === ingredId)
+      );
+    } else if (filters.time) {
+      return (
+        recipe.time === filters.time &&
+        item.ingredients.some(ingr => ingr.id === ingredId)
+      );
+    } else if (filters.area) {
+      return (
+        recipe.area === filters.area &&
+        item.ingredients.some(ingr => ingr.id === ingredId)
+      );
+    } else {
+      return item.ingredients.some(ingr => ingr.id === ingredId);
+    }
+  });
 
   refs.gallery.innerHTML = renderGallery(recipesByIngreds);
 }
