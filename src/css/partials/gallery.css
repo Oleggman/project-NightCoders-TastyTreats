@@ -27,20 +27,20 @@
   }
 }
 
-.like-button {
+.like-icon {
   position: absolute;
   top: 16px;
   right: 16px;
-  background-color: transparent;
-  border: none;
-  z-index: 3;
-  padding: 0;
-}
 
-.like-icon {
   stroke: #f8f8f8;
   fill: none;
   opacity: 0.5;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.like-favorite {
+  fill: #f8f8f8;
 }
 
 .card-info {
