@@ -12,10 +12,25 @@ refs.ingredSelect.addEventListener('change', onIngredSelect);
 refs.timeSelect.innerHTML = renderTimeOptions();
 loadAreaOptions();
 loadIngredOptions();
+
+let filterArr = [];
+
+async function getDataArr() {
+  let dataArr = [];
+  if (filterArr[0]) {
+    dataArr = filterArr;
+  } else {
+    const res = await tastyTreatsApi.fetchAllRecipes();
+    dataArr = res.data.results;
+    filterArr = dataArr;
+  }
+
+  return dataArr;
+}
+
 // Input filter
 async function onInputRecipe(e) {
-  const res = await tastyTreatsApi.fetchAllRecipes();
-  const dataArr = res.data.results;
+  let dataArr = await getDataArr();
 
   const filteredByInput = dataArr.filter(item =>
     item.title.toLowerCase().includes(e.target.value.trim(' '))
@@ -45,8 +60,7 @@ async function loadAreaOptions() {
 
 async function onAreaSelect(e) {
   const value = e.currentTarget.value;
-  const res = await tastyTreatsApi.fetchAllRecipes();
-  dataArr = res.data.results;
+  let dataArr = await getDataArr();
 
   const recipesByArea = dataArr.filter(item => item.area === value);
   refs.gallery.innerHTML = renderGallery(recipesByArea);
@@ -62,8 +76,7 @@ async function onIngredSelect(e) {
   const ingreds = await tastyTreatsApi.fetchIngrediens();
   const ingredId = ingreds.data.find(item => item.name === e.target.value)._id;
 
-  const res = await tastyTreatsApi.fetchAllRecipes();
-  dataArr = res.data.results;
+  let dataArr = await getDataArr();
 
   const recipesByIngreds = dataArr.filter(item =>
     item.ingredients.some(ingr => ingr.id === ingredId)
