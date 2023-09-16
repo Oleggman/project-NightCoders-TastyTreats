@@ -1,5 +1,9 @@
 import { refs } from '../refs';
-import { renderTimeOptions, renderOptions } from '../renders/render-gallery';
+import {
+  renderTimeOptions,
+  renderOptions,
+  renderGallery,
+} from '../renders/render-gallery';
 import TastyTreatsAPI from '../API/tasty-treats-api';
 
 const tastyTreatsApi = new TastyTreatsAPI();
@@ -8,6 +12,7 @@ refs.recipeInput.addEventListener('input', debounce(onInputRecipe, 300));
 refs.timeSelect.addEventListener('change', onTimeSelect);
 refs.areaSelect.addEventListener('change', onAreaSelect);
 refs.ingredSelect.addEventListener('change', onIngredSelect);
+refs.form.addEventListener('reset', onResetForm);
 
 refs.timeSelect.innerHTML = renderTimeOptions();
 loadAreaOptions();
@@ -32,6 +37,12 @@ async function getDataArr() {
   }
 
   return dataArr;
+}
+
+function onResetForm(e) {
+  e.currentTarget.preventDefault();
+  e.currentTarget.reset();
+  refs.gallery.innerHTML = renderGallery(filterArr);
 }
 
 // Input filter

@@ -4,6 +4,7 @@ const refs = {
   areaSelect: document.querySelector('.js-area-select'),
   ingredSelect: document.querySelector('.js-ingred-select'),
   gallery: document.querySelector('.js-gallery'),
+  form: document.querySelector('.js-form'),
 };
 
 export { refs };
