@@ -1,37 +1,37 @@
 function renderGallery(data) {
   return data
     .map(
-      item => `<li
+      ({ title, description, preview, rating }) => `<li
       class="card-container"
       style="background-image: linear-gradient(1deg,rgba(5, 5, 5, 0.6),rgba(5, 5, 5, 0)),
-      url(https://www.themealdb.com/images/media/meals/sxxpst1468569714.jpg);">
+      url(${preview});">
       <button class="like-button">
         <svg class="like-icon" width="22" height="22">
           <use href="./img/icons.svg#heart"></use>
         </svg>
       </button>
       <div class="card-info">
-        <h3 class="card-header">banana pancakes</h3>
+        <h3 class="card-header">${title}</h3>
         <p class="card-description">
-          Banana pancakes are a fluffy and sweet breakfast dish made with...
+          ${description}
         </p>
         <div class="card-footer">
           <div class="card-rate">
-            <span class="card-rate-value">4.5</span>
+            <span class="card-rate-value">${rating}</span>
             <div class="card-rate-stars">
-              <svg class="star-icon">
+              <svg class="star-icon-grey">
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class="star-icon">
+              <svg class="star-icon-grey">
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class="star-icon">
+              <svg class="star-icon-grey">
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class="star-icon">
+              <svg class="star-icon-grey">
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class="star-icon">
+              <svg class="star-icon-grey">
                 <use href="./img/icons.svg#star"></use>
               </svg>
             </div>
