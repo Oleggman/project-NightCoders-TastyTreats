@@ -56,4 +56,18 @@ function renderEvents() {
   return data.map(item => `<!-- Розмітка івенту в герої -->`).join('');
 }
 
-export { renderGallery, renderPopular, renderOptions, renderEvents };
+function renderTimeOptions() {
+  let markup = '';
+  for (let time = 5; time <= 120; time += 5) {
+    markup += `<option value="${time}">${time} mins</option>`;
+  }
+  return markup;
+}
+
+export {
+  renderGallery,
+  renderPopular,
+  renderOptions,
+  renderEvents,
+  renderTimeOptions,
+};
