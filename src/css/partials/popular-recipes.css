@@ -19,8 +19,8 @@
     font-size: 12px;
     line-height: 16px;
     font-style: normal;
-    text-overflow: ellipsis;
-    whitespace: nowrap;
+    /* text-overflow: ellipsis;
+    whitespace: nowrap; */
 }
 .popular-name{
     color: #050505;
@@ -34,8 +34,11 @@
 .car-container{    
     display: flex;
     align-items: center;
-    gap: 16px;
-    border-radius: 8px;    
+    gap: 16px;    
+}
+.card-container:hover,
+.card-container:focus {
+  background-color: #9BB537;
 }
 .text-container {
     display: flex;
@@ -61,7 +64,7 @@
   background-color: #9BB537;
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
     .mob-hidden{
         display: none;
     }
@@ -71,6 +74,10 @@
 }
 
 @media screen and (min-width: 768px) {  
+
+    .text-container{
+        max-width: 120px;
+    }
     
     .picture{
         width: 48px;
@@ -79,9 +86,9 @@
     .popular-container{        
         gap: 16px;
         width: 176px;
-        height: 367px;
+        height: 316px;
     }
-    .car-container{
+    .card-container{
         gap: 8px;
     }
     .popular-name{        
@@ -98,8 +105,8 @@
         font-size: 10px;
         line-height: 14px;  
         font-style: normal;
-        text-overflow: ellipsis;
-        whitespace: nowrap;
+        /* text-overflow: ellipsis;
+        whitespace: nowrap; */
         overflow: hidden;
     }
     .popular-headline {        
@@ -107,6 +114,10 @@
     }
 }
 @media screen and (min-width: 1280px) {
+    .text-container{
+        max-width: 155px;
+    }
+
     .picture{
         width: 64px;
         height: 64px;  
@@ -115,8 +126,8 @@
     display: flex;
     flex-direction: column;    
     gap: 32px;
-    width: 235px;
-    /* height: 364px; */
+    width: 235px;    
+    height: 364px;
     overflow: hidden;
     }
     .car-container{
