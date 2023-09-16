@@ -17,21 +17,31 @@ function renderGallery(data) {
         </p>
         <div class="card-footer">
           <div class="card-rate">
-            <span class="card-rate-value">${rating}</span>
+            <span class="card-rate-value">${rating.toFixed(1)}</span>
             <div class="card-rate-stars">
-              <svg class="star-icon-grey">
+              <svg class=${
+                rating.toFixed(1) >= 1 ? 'star-icon-orange' : 'star-icon-grey'
+              }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class="star-icon-grey">
+              <svg class=${
+                rating.toFixed(1) >= 2 ? 'star-icon-orange' : 'star-icon-grey'
+              }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class="star-icon-grey">
+              <svg class=${
+                rating.toFixed(1) >= 3 ? 'star-icon-orange' : 'star-icon-grey'
+              }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class="star-icon-grey">
+              <svg class=${
+                rating.toFixed(1) >= 4 ? 'star-icon-orange' : 'star-icon-grey'
+              }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class="star-icon-grey">
+              <svg class=${
+                rating.toFixed(1) >= 5 ? 'star-icon-orange' : 'star-icon-grey'
+              }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
             </div>
