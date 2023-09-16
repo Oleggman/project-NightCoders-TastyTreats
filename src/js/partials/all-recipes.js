@@ -1,25 +1,25 @@
-// import TastyTreatsAPI from '../API/tasty-treats-api.js';
-// import { renderGallery } from '../renders/render-gallery.js';
+import TastyTreatsAPI from '../API/tasty-treats-api.js';
+import { renderGallery } from '../renders/render-gallery.js';
 
-// const allRecipesRender = new TastyTreatsAPI();
+const allRecipesRender = new TastyTreatsAPI();
 
-// const gallery = document.querySelector('.gallery-container');
+const gallery = document.querySelector('.gallery-container');
 
-// async function a() {
-//   const res = await allRecipesRender.fetchAllRecipes();
-//   gallery.innerHTML = renderGallery(res.data.results);
-// }
+async function a() {
+  const res = await allRecipesRender.fetchAllRecipes();
+  gallery.innerHTML = renderGallery(res.data.results);
+}
 
-// a();
+a();
 
-// gallery.addEventListener('click', handlerLike);
+gallery.addEventListener('click', handlerLike);
 
-// function handlerLike(evt) {
-//   if (evt.target.classList.contains('like-button')) {
-//     if (evt.target.firstElementChild.classList.contains('like-favorite')) {
-//       evt.target.firstElementChild.classList.remove('like-favorite');
-//     } else {
-//       evt.target.firstElementChild.classList.add('like-favorite');
-//     }
-//   }
-// }
+function handlerLike(evt) {
+  if (evt.target.classList.contains('like-button')) {
+    if (evt.target.firstElementChild.classList.contains('like-favorite')) {
+      evt.target.firstElementChild.classList.remove('like-favorite');
+    } else {
+      evt.target.firstElementChild.classList.add('like-favorite');
+    }
+  }
+}
