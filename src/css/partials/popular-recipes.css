@@ -31,10 +31,11 @@
     line-height: 18px;
     text-transform: uppercase;
 }
-.card-container{    
+.car-container{    
     display: flex;
     align-items: center;
-    gap: 16px;    
+    gap: 16px;
+    border-radius: 8px;    
 }
 .text-container {
     display: flex;
@@ -55,9 +56,17 @@
     flex-shrink: 0;
 }
 
+.car-container:hover,
+.car-container:focus {
+  background-color: #9BB537;
+}
+
 @media screen and (max-width: 768px) { 
     .mob-hidden{
         display: none;
+    }
+    .card-container:active{
+         background-color: #9BB537;
     }
 }
 
@@ -72,7 +81,7 @@
         width: 176px;
         height: 367px;
     }
-    .card-container{
+    .car-container{
         gap: 8px;
     }
     .popular-name{        
@@ -110,7 +119,7 @@
     /* height: 364px; */
     overflow: hidden;
     }
-    .card-container{
+    .car-container{
         gap: 16px;
     } 
     .popular-headline {    
