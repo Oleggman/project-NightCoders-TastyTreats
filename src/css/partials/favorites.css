@@ -158,7 +158,6 @@ screen and (min-resolution: 2dppx) and (min-width: 1280px) {
     flex-shrink: 0;
 }
 
-.button-fav.onActive,
 .all-btn.onActive {
     color: #f8f8f8;
     background-color: #9bb537;
@@ -186,4 +185,24 @@ screen and (min-resolution: 2dppx) and (min-width: 1280px) {
 
 .favorite-categories-btn::-webkit-scrollbar {
     width: 0;
+}
+
+.is-hidden-favorites {
+    display: none;
+}
+
+.favorites-card-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 786px) {
+    .favorites-card-list {
+            gap: 16px;
+        }
 }
