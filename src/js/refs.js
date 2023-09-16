@@ -1,2 +1,5 @@
-const refs = {};
-``;
+const refs = {
+  recipeInput: document.querySelector('js-recipe-input'),
+};
+
+export { refs };
