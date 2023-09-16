@@ -15,10 +15,11 @@ a();
 gallery.addEventListener('click', handlerLike);
 
 function handlerLike(evt) {
-  if (evt.target.classList.contains('like-icon')) {
-    console.log(evt.target.classList);
-    evt.target.classList.contains('like-favorite')
-      ? evt.target.classList.remove('like-favorite')
-      : evt.target.classList.add('like-favorite');
+  if (evt.target.classList.contains('like-button')) {
+    if (evt.target.firstElementChild.classList.contains('like-favorite')) {
+      evt.target.firstElementChild.classList.remove('like-favorite');
+    } else {
+      evt.target.firstElementChild.classList.add('like-favorite');
+    }
   }
 }
