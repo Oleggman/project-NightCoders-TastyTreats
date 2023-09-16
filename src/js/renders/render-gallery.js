@@ -65,3 +65,5 @@ function renderEvents() {
 }
 
 export { renderGallery, renderPopular, renderOptions, renderEvents };
+
+
