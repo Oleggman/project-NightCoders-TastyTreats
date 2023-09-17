@@ -1,42 +1,33 @@
 <link rel="stylesheet" href="../css/styles.css">
 
-<form class="filters-form">
-    <label class="filters-label">
-        Search
-        <input type="text" name="search-bar" placeholder="Enter Text" class="search-bar">
-        <svg class="clear-filter"><use href="/src/img/icons.svg#close"></use></svg>
-        <svg class="svg-filter"><use href="/src/img/icons.svg#search"></use></svg>
-    </label>
+<div class="container">
+    <form class="filters-form continer">
+        <label class="filters-label search-label">
+            Search
+            <input type="text" name="search-bar" placeholder="Enter Text" class="search-bar">
+            <svg class="svg-filter"><use href="/src/img/icons.svg#search"></use></svg>
+        </label>
 
-    <label class="filters-label">
-        Time
-        <div class="olotime"><select class="filters-option timeopt" name="time">
-            <option value="" disabled selected hidden>0 min</option>
-            <option value="10">10 min</option>
-            <option value="20">20 min</option>
-            <option value="30">30 min</option>
-            <option value="40">40 min</option>
-        </select></div>
-    </label>
-    <label class="filters-label">
-        Area
-        <div class="oloarea"><select class="filters-option areaopt" name="area">
-            <option value="" disabled selected hidden>Region</option>
-            <option value="10">Ukrainian</option>
-            <option value="20">Norwegian</option>
-            <option value="30">English</option>
-            <option value="40">Italian</option>
-        </select></div>
-    </label>
+        <label class="filters-label time-label">
+            Time
+            <div class="select-div"><select class="filters-option" name="time">
+                <option value="" disabled selected hidden>0 min</option>
+            </select></div>
+        </label>
+        <label class="filters-label area-label">
+            Area
+            <div class="select-div"><select class="filters-option" name="area">
+                <option value="" disabled selected hidden>Region</option>
+            </select></div>
+        </label>
 
-    <label class="filters-label">
-        Ingredients
-        <div class="oloing"><select class="filters-option ingopt" name="ingredients">
-            <option value="" disabled selected hidden>Product</option>
-            <option value="10">Parsley</option>
-            <option value="20">Radish</option>
-            <option value="30">Cucumber</option>
-            <option value="40">Cabbage</option>
-        </select></div>
-    </label>
-</form>
+        <label class="filters-label ingredients-label">
+            Ingredients
+            <div class="select-div"><select class="filters-option" name="ingredients">
+                <option value="" disabled selected hidden>Product</option>
+            </select></div>
+        </label>
+
+        <button type="reset" class="clear-filter">Reset the filter</button>
+    </form>
+</div>
