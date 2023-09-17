@@ -10,5 +10,3 @@ const closeBtn = document.querySelector('.js-close-burger-menu');
         burgerMenu.classList.toggle("is-open");
  });
     
-
-
