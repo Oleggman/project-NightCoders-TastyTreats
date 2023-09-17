@@ -2,7 +2,7 @@ function renderGallery(data) {
   return data
     .map(
       ({ title, description, preview, rating, _id, category, area }) => `<li
-      class="card-container" id=${_id} data-category="${category}" data-area=${area}
+      class="card-container" id="${_id}" data-category="${category}" data-area="${area}" data-title="${title}" data-description="${description}" data-preview="${preview}" data-rating="${rating}"
       style="background-image: linear-gradient(1deg,rgba(5, 5, 5, 0.6),rgba(5, 5, 5, 0)),
       url(${preview});">
       <button class="like-button">
@@ -46,7 +46,7 @@ function renderGallery(data) {
               </svg>
             </div>
           </div>
-          <button class="card-footer-btn">See recipe</button>
+          <button class="card-footer-btn" data-id="${_id}">See recipe</button>
         </div>
       </div>
     </li>`
