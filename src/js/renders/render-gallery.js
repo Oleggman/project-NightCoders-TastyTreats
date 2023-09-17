@@ -1,13 +1,15 @@
+import svg from '../../img/icons.svg'
+
 function renderGallery(data) {
   return data
     .map(
       ({ title, description, preview, rating, _id, category, area }) => `<li
-      class="card-container" id=${_id} data-category="${category}" data-area=${area}
+      class="card-container" id="${_id}" data-category="${category}" data-area="${area}" data-title="${title}" data-description="${description}" data-preview="${preview}" data-rating="${rating}"
       style="background-image: linear-gradient(1deg,rgba(5, 5, 5, 0.6),rgba(5, 5, 5, 0)),
       url(${preview});">
       <button class="like-button">
         <svg class="like-icon" width="22" height="22">
-          <use href="./img/icons.svg#heart"></use>
+          <use href="${svg}#heart"></use>
         </svg>
         </button>
       <div class="card-info">
@@ -19,29 +21,34 @@ function renderGallery(data) {
           <div class="card-rate">
             <span class="card-rate-value">${rating.toFixed(1)}</span>
             <div class="card-rate-stars">
-              <svg class=${rating.toFixed(1) >= 1 ? 'star-icon-orange' : 'star-icon-grey'
-        }>
-                <use href="./img/icons.svg#star"></use>
+              <svg class=${
+                rating.toFixed(1) >= 1 ? 'star-icon-orange' : 'star-icon-grey'
+              }>
+                <use href="${svg}#star"></use>
               </svg>
-              <svg class=${rating.toFixed(1) >= 2 ? 'star-icon-orange' : 'star-icon-grey'
-        }>
-                <use href="./img/icons.svg#star"></use>
+              <svg class=${
+                rating.toFixed(1) >= 2 ? 'star-icon-orange' : 'star-icon-grey'
+              }>
+                <use href="${svg}#star"></use>
               </svg>
-              <svg class=${rating.toFixed(1) >= 3 ? 'star-icon-orange' : 'star-icon-grey'
-        }>
-                <use href="./img/icons.svg#star"></use>
+              <svg class=${
+                rating.toFixed(1) >= 3 ? 'star-icon-orange' : 'star-icon-grey'
+              }>
+                <use href="${svg}#star"></use>
               </svg>
-              <svg class=${rating.toFixed(1) >= 4 ? 'star-icon-orange' : 'star-icon-grey'
-        }>
-                <use href="./img/icons.svg#star"></use>
+              <svg class=${
+                rating.toFixed(1) >= 4 ? 'star-icon-orange' : 'star-icon-grey'
+              }>
+                <use href="${svg}#star"></use>
               </svg>
-              <svg class=${rating.toFixed(1) >= 5 ? 'star-icon-orange' : 'star-icon-grey'
-        }>
-                <use href="./img/icons.svg#star"></use>
+              <svg class=${
+                rating.toFixed(1) >= 5 ? 'star-icon-orange' : 'star-icon-grey'
+              }>
+                <use href="${svg}#star"></use>
               </svg>
             </div>
           </div>
-          <button class="card-footer-btn">See recipe</button>
+          <button class="card-footer-btn" data-id="${_id}">See recipe</button>
         </div>
       </div>
     </li>`
@@ -50,7 +57,9 @@ function renderGallery(data) {
 }
 
 function renderPopular(data) {
-  return data.map(item => `<li class="car-container">
+  return data
+    .map(
+      item => `<li class="car-container">
         <div class="picture">
             <img src="${item.preview}" alt="${item.title}">
         </div>        
@@ -58,7 +67,9 @@ function renderPopular(data) {
             <div class="popular-name">${item.title}</div>
             <p class="popular-desc desc">${item.description}</p>
         </div>        
-    </li>`).join('');
+    </li>`
+    )
+    .join('');
 }
 
 function renderCategories(data) {
@@ -75,7 +86,7 @@ function renderEvents(data) {
   return data
     .map(
       ({
-        cook:{ imgWebpUrl, name: cook },
+        cook: { imgWebpUrl, name: cook },
         topic: { name, area, previewWebpUrl, imgWebpUrl: imgDish },
       }) => `        
       
@@ -112,4 +123,10 @@ function renderEvents(data) {
     .join('');
 }
 
-export { renderGallery, renderPopular, renderCategories, renderOptions, renderEvents };
+export {
+  renderGallery,
+  renderPopular,
+  renderCategories,
+  renderOptions,
+  renderEvents,
+};
