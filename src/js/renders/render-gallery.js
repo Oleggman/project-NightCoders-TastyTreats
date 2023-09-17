@@ -19,29 +19,24 @@ function renderGallery(data) {
           <div class="card-rate">
             <span class="card-rate-value">${rating.toFixed(1)}</span>
             <div class="card-rate-stars">
-              <svg class=${
-                rating.toFixed(1) >= 1 ? 'star-icon-orange' : 'star-icon-grey'
-              }>
+              <svg class=${rating.toFixed(1) >= 1 ? 'star-icon-orange' : 'star-icon-grey'
+        }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class=${
-                rating.toFixed(1) >= 2 ? 'star-icon-orange' : 'star-icon-grey'
-              }>
+              <svg class=${rating.toFixed(1) >= 2 ? 'star-icon-orange' : 'star-icon-grey'
+        }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class=${
-                rating.toFixed(1) >= 3 ? 'star-icon-orange' : 'star-icon-grey'
-              }>
+              <svg class=${rating.toFixed(1) >= 3 ? 'star-icon-orange' : 'star-icon-grey'
+        }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class=${
-                rating.toFixed(1) >= 4 ? 'star-icon-orange' : 'star-icon-grey'
-              }>
+              <svg class=${rating.toFixed(1) >= 4 ? 'star-icon-orange' : 'star-icon-grey'
+        }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class=${
-                rating.toFixed(1) >= 5 ? 'star-icon-orange' : 'star-icon-grey'
-              }>
+              <svg class=${rating.toFixed(1) >= 5 ? 'star-icon-orange' : 'star-icon-grey'
+        }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
             </div>
@@ -55,15 +50,62 @@ function renderGallery(data) {
 }
 
 function renderPopular(data) {
-  return data.map(item => `<!-- Розмітка лішки популярних -->`).join('');
+  return data.map(item => `<li class="car-container">
+        <div class="picture">
+            <img src="${data.preview}" alt="${data.title}">
+        </div>        
+        <div class="text-container">
+            <div class="popular-name">${data.title}</div>
+            <p class="popular-desc desc">${data.description}</p>
+        </div>        
+    </li>`).join('');
 }
 
 function renderOptions(data) {
   return data.map(item => `<!-- Розмітка кнопки категорії -->`).join('');
 }
 
-function renderEvents() {
-  return data.map(item => `<!-- Розмітка івенту в герої -->`).join('');
+function renderEvents(data) {
+  return data
+    .map(
+      ({
+        cook:{ imgWebpUrl, name: cook },
+        topic: { name, area, previewWebpUrl, imgWebpUrl: imgDish },
+      }) => `        
+      
+  <!-- Slides -->
+  <div class="swiper-slide">
+    <div class="slide-wrapper">
+      <div class="block-cook">
+        <img
+          src="${imgWebpUrl}"
+          alt="${cook}"
+        />
+      </div>
+      <div class="block-dish">
+        <img
+          src="${previewWebpUrl}"
+          alt="${name}"
+        />
+        <div class="block-dish-ellipse"></div>
+        <h3 class="block-dish-descr">${name}</h3>
+        <p class="block-dish-area">${area}</p>
+      </div>
+      <div class="block-dish-image">
+        <img
+          src="${imgDish}"
+          alt="${name}"
+        />
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  `
+    )
+    .join('');
 }
 
 export { renderGallery, renderPopular, renderOptions, renderEvents };
+
+
