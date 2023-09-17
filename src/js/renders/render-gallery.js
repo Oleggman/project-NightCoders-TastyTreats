@@ -1,8 +1,8 @@
 function renderGallery(data) {
   return data
     .map(
-      ({ title, description, preview, rating }) => `<li
-      class="card-container"
+      ({ title, description, preview, rating, _id, category, area }) => `<li
+      class="card-container" id=${_id} data-category="${category}" data-area=${area}
       style="background-image: linear-gradient(1deg,rgba(5, 5, 5, 0.6),rgba(5, 5, 5, 0)),
       url(${preview});">
       <button class="like-button">
