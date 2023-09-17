@@ -1,6 +1,6 @@
-import { refs } from "../refs";
-import TastyTreatsAPI from "../API/tasty-treats-api";
-import { renderCategories, renderGallery } from "../renders/render-gallery";
+import { refs } from "../../refs";
+import TastyTreatsAPI from "../../API/tasty-treats-api";
+import { renderCategories, renderGallery } from "../../renders/render-gallery";
 
 refs.allBtn.addEventListener('click', onAllRecipesClick);
 refs.categoriesBox.addEventListener('click', onSearchCategory);
