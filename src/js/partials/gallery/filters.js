@@ -1,9 +1,5 @@
 import { refs } from '../../refs';
-import {
-  renderTimeOptions,
-  renderOptions,
-  renderGallery,
-} from '../../renders/render-gallery';
+import { renderGallery } from '../../renders/render-gallery';
 import TastyTreatsAPI from '../../API/tasty-treats-api';
 
 const tastyTreatsApi = new TastyTreatsAPI();
@@ -13,10 +9,6 @@ refs.timeSelect.addEventListener('change', onTimeSelect);
 refs.areaSelect.addEventListener('change', onAreaSelect);
 refs.ingredSelect.addEventListener('change', onIngredSelect);
 refs.form.addEventListener('reset', onResetForm);
-
-refs.timeSelect.innerHTML = renderTimeOptions();
-loadAreaOptions();
-loadIngredOptions();
 
 let filterArr = [];
 
@@ -89,11 +81,6 @@ async function onTimeSelect(e) {
   refs.gallery.innerHTML = renderGallery(filteredByTime);
 }
 // Area filter
-async function loadAreaOptions() {
-  const res = await tastyTreatsApi.fetchAreas();
-  refs.areaSelect.innerHTML = renderOptions(res.data);
-}
-
 async function onAreaSelect(e) {
   const value = e.currentTarget.value;
   let dataArr = await getDataArr();
@@ -121,12 +108,6 @@ async function onAreaSelect(e) {
   refs.gallery.innerHTML = renderGallery(recipesByArea);
 }
 // Ingredients filter
-loadIngredOptions();
-async function loadIngredOptions() {
-  const res = await tastyTreatsApi.fetchIngrediens();
-  refs.ingredSelect.innerHTML = renderOptions(res.data);
-}
-
 async function onIngredSelect(e) {
   const ingreds = await tastyTreatsApi.fetchIngrediens();
   const ingredId = ingreds.data.find(item => item.name === e.target.value)._id;
