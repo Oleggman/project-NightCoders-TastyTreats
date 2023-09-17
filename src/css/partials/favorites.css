@@ -16,6 +16,22 @@
     }
 }
 
+.favorites-section {
+    padding-bottom: 80px;
+}
+
+@media only screen and (min-width: 768px) {
+    .favorites-section {
+            padding-bottom: 182px;
+        }
+}
+
+@media only screen and (min-width: 1280px) {
+    .favorites-section {
+            padding-bottom: 100px;
+        }
+}
+
 .favorites-container {
     min-width: 320px;
     max-width: 375px;
@@ -126,7 +142,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1280px) {
 }
 
 .favorites-text {
-    color: #050505;
+    color: var(--primaty-black-color);
     text-align: center;
     font-size: 14px;
     font-style: normal;
@@ -158,16 +174,18 @@ screen and (min-resolution: 2dppx) and (min-width: 1280px) {
     flex-shrink: 0;
 }
 
-.all-btn.onActive {
-    color: #f8f8f8;
-    background-color: #9bb537;
-    border-color: #9bb537;
+.button-fav .onActive,
+.all-btn .onActive {
+    color: var(--text-white-color);
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    flex-shrink: 0;
 }
 
 .button-fav:hover {
-    background-color: #9bb537;
-    color: #f8f8f8;
-    border-color: #9bb537;
+    background-color: var(--accent-color);
+    color: var(--text-white-color);
+    border-color: var(--accent-color);
 }
 
 .favorite-categories-btn {
@@ -194,7 +212,6 @@ screen and (min-resolution: 2dppx) and (min-width: 1280px) {
 .favorites-card-list {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
     align-items: center;
     gap: 24px;
     margin-left: auto;
@@ -205,4 +222,17 @@ screen and (min-resolution: 2dppx) and (min-width: 1280px) {
     .favorites-card-list {
             gap: 16px;
         }
+}
+
+@media only screen and (min-width: 768px) {
+    .favorites-list .card-container {
+        width: 224px;
+        height: 244px;
+    }
+}
+@media only screen and (min-width: 1280px) {
+    .favorites-list .card-container {
+        width: 258px;
+        height: 287px;
+    }
 }
