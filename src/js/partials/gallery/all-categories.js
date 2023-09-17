@@ -10,7 +10,7 @@ loadCategories();
 let recipes = [];
 
 async function onAllRecipesClick(e) {
-  let data = getDataArr();
+  let data = await getDataArr();
   refs.gallery.innerHTML = renderGallery(data);
 }
 
@@ -24,7 +24,7 @@ async function onSearchCategory(e) {
     return;
   }
 
-  const value = e.currentTarget.textContent;
+  const value = e.target.textContent;
   let data = getDataArr();
 
   const recipesByCategory = data.filter(
@@ -38,7 +38,7 @@ async function getDataArr() {
   if (recipes[0]) {
     data = [];
   } else {
-    const res = await allRecipesRender.fetchAllRecipes();
+    const res = await tastyTreatsApi.fetchAllRecipes();
     data = res.data.results;
   }
 

@@ -73,7 +73,7 @@ function renderPopular(data) {
 }
 
 function renderCategories(data) {
-  return data.map(item => `<!-- Розмітка кнопки категорії -->`).join('');
+  return data.map(item => `<button class="btn-filter" type="submit">${item.name}</button>`).join('');
 }
 
 function renderOptions(data) {
