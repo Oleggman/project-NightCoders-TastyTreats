@@ -19,29 +19,24 @@ function renderGallery(data) {
           <div class="card-rate">
             <span class="card-rate-value">${rating.toFixed(1)}</span>
             <div class="card-rate-stars">
-              <svg class=${
-                rating.toFixed(1) >= 1 ? 'star-icon-orange' : 'star-icon-grey'
-              }>
+              <svg class=${rating.toFixed(1) >= 1 ? 'star-icon-orange' : 'star-icon-grey'
+        }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class=${
-                rating.toFixed(1) >= 2 ? 'star-icon-orange' : 'star-icon-grey'
-              }>
+              <svg class=${rating.toFixed(1) >= 2 ? 'star-icon-orange' : 'star-icon-grey'
+        }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class=${
-                rating.toFixed(1) >= 3 ? 'star-icon-orange' : 'star-icon-grey'
-              }>
+              <svg class=${rating.toFixed(1) >= 3 ? 'star-icon-orange' : 'star-icon-grey'
+        }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class=${
-                rating.toFixed(1) >= 4 ? 'star-icon-orange' : 'star-icon-grey'
-              }>
+              <svg class=${rating.toFixed(1) >= 4 ? 'star-icon-orange' : 'star-icon-grey'
+        }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
-              <svg class=${
-                rating.toFixed(1) >= 5 ? 'star-icon-orange' : 'star-icon-grey'
-              }>
+              <svg class=${rating.toFixed(1) >= 5 ? 'star-icon-orange' : 'star-icon-grey'
+        }>
                 <use href="./img/icons.svg#star"></use>
               </svg>
             </div>
@@ -55,7 +50,15 @@ function renderGallery(data) {
 }
 
 function renderPopular(data) {
-  return data.map(item => `<!-- Розмітка лішки популярних -->`).join('');
+  return data.map(item => `<li class="car-container">
+        <div class="picture">
+            <img src="${data.preview}" alt="${data.title}">
+        </div>        
+        <div class="text-container">
+            <div class="popular-name">${data.title}</div>
+            <p class="popular-desc desc">${data.description}</p>
+        </div>        
+    </li>`).join('');
 }
 
 function renderOptions(data) {

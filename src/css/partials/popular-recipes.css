@@ -36,8 +36,8 @@
     align-items: center;
     gap: 16px;    
 }
-.card-container:hover,
-.card-container:focus {
+.car-container:hover,
+.car-container:focus {
   background-color: #9BB537;
 }
 .text-container {
@@ -59,11 +59,6 @@
     flex-shrink: 0;
 }
 
-.car-container:hover,
-.car-container:focus {
-  background-color: #9BB537;
-}
-
 @media screen and (max-width: 768px) {
     .mob-hidden{
         display: none;
@@ -72,13 +67,8 @@
          background-color: #9BB537;
     }
 }
+@media screen and (min-width: 768px) { 
 
-@media screen and (min-width: 768px) {  
-
-    .text-container{
-        max-width: 120px;
-    }
-    
     .picture{
         width: 48px;
         height: 48px;  
@@ -88,7 +78,7 @@
         width: 176px;
         height: 316px;
     }
-    .card-container{
+    .car-container{
         gap: 8px;
     }
     .popular-name{        
@@ -113,10 +103,7 @@
     margin-bottom: 30px;
     }
 }
-@media screen and (min-width: 1280px) {
-    .text-container{
-        max-width: 155px;
-    }
+@media screen and (min-width: 1280px) {   
 
     .picture{
         width: 64px;
