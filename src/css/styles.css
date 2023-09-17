@@ -14,6 +14,7 @@
 @import url('./partials/modal.css');
 @import url('./partials/favorites.css');
 @import url('./partials/all-categories.css');
+@import url('./partials/modal-recipes.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -22,6 +23,11 @@
   font-weight: 400;
 
   color: #242424;
+  --primary-white-color: #ffffff;
+  --primaty-black-color: #050505;
+  --text-white-color: #f8f8f8;
+  --accent-color: #9bb537;
+  --primary-dark-color: #1e1e1e;
   background-color: rgba(255, 255, 255, 0.87);
 
   font-synthesis: none;

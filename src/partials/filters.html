@@ -1,30 +1,41 @@
-<form class="filters-form">
-    <label class="filters-label search-label">
-        Search
-        <input type="text" name="search-bar" placeholder="Enter Text" class="search-bar">
-        <svg class="svg-filter"><use href="/src/img/icons.svg#search"></use></svg>
-    </label>
+<form class="filters-form js-form">
+  <label class="filters-label search-label">
+    Search
+    <input
+      type="text"
+      name="search-bar js-recipe-input"
+      placeholder="Enter Text"
+      class="search-bar"
+    />
+    <svg class="svg-filter"><use href="/src/img/icons.svg#search"></use></svg>
+  </label>
 
-    <label class="filters-label time-label">
-        Time
-        <div class="select-div"><select class="filters-option" name="time">
-            <option value="" disabled selected hidden>0 min</option>
-        </select></div>
-    </label>
+  <label class="filters-label time-label">
+    Time
+    <div class="select-div">
+      <select class="filters-option js-time-select" name="time">
+        <option value="" disabled selected hidden>0 min</option>
+      </select>
+    </div>
+  </label>
 
-    <label class="filters-label area-label">
-        Area
-        <div class="select-div"><select class="filters-option" name="area">
-            <option value="" disabled selected hidden>Region</option>
-        </select></div>
-    </label>
+  <label class="filters-label area-label">
+    Area
+    <div class="select-div">
+      <select class="filters-option js-area-select" name="area">
+        <option value="" disabled selected hidden>Region</option>
+      </select>
+    </div>
+  </label>
 
-    <label class="filters-label ingredients-label">
-        Ingredients
-        <div class="select-div"><select class="filters-option" name="ingredients">
-            <option value="" disabled selected hidden>Product</option>
-        </select></div>
-    </label>
+  <label class="filters-label ingredients-label">
+    Ingredients
+    <div class="select-div">
+      <select class="filters-option js-ingred-select" name="ingredients">
+        <option value="" disabled selected hidden>Product</option>
+      </select>
+    </div>
+  </label>
 
-    <button type="reset" class="clear-filter">Reset the filter</button>
+  <button type="reset" class="clear-filter">Reset the filter</button>
 </form>

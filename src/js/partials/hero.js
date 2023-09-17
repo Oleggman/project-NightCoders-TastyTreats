@@ -7,11 +7,9 @@ import { renderEvents } from '../renders/render-gallery.js';
 const respApi = new TastyTreatsAPI();
 
 const events = document.querySelector('.swiper-wrapper')
-console.log(events);
 
 async function renderSlider() {
     const resp = await respApi.fetchEvents();
-    console.log(resp.data);
     
     events.innerHTML = renderEvents(resp.data);
     const swiper = new Swiper('.slider-events', {
