@@ -1,3 +1,5 @@
+import svg from '../../img/icons.svg'
+
 function renderGallery(data) {
   return data
     .map(
@@ -7,7 +9,7 @@ function renderGallery(data) {
       url(${preview});">
       <button class="like-button">
         <svg class="like-icon" width="22" height="22">
-          <use href="/src/img/icons.svg#heart"></use>
+          <use href="${svg}#heart"></use>
         </svg>
         </button>
       <div class="card-info">
@@ -22,27 +24,27 @@ function renderGallery(data) {
               <svg class=${
                 rating.toFixed(1) >= 1 ? 'star-icon-orange' : 'star-icon-grey'
               }>
-                <use href="/src/img/icons.svg#star"></use>
+                <use href="${svg}#star"></use>
               </svg>
               <svg class=${
                 rating.toFixed(1) >= 2 ? 'star-icon-orange' : 'star-icon-grey'
               }>
-                <use href="/src/img/icons.svg#star"></use>
+                <use href="${svg}#star"></use>
               </svg>
               <svg class=${
                 rating.toFixed(1) >= 3 ? 'star-icon-orange' : 'star-icon-grey'
               }>
-                <use href="/src/img/icons.svg#star"></use>
+                <use href="${svg}#star"></use>
               </svg>
               <svg class=${
                 rating.toFixed(1) >= 4 ? 'star-icon-orange' : 'star-icon-grey'
               }>
-                <use href="/src/img/icons.svg#star"></use>
+                <use href="${svg}#star"></use>
               </svg>
               <svg class=${
                 rating.toFixed(1) >= 5 ? 'star-icon-orange' : 'star-icon-grey'
               }>
-                <use href="/src/img/icons.svg#star"></use>
+                <use href="${svg}#star"></use>
               </svg>
             </div>
           </div>
