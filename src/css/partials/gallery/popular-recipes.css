@@ -33,8 +33,10 @@
 }
 .car-container {
   display: flex;
+  border-radius: 15px;
   align-items: center;
   gap: 16px;
+  overflow: hidden;
 }
 .car-container:hover,
 .car-container:focus {
