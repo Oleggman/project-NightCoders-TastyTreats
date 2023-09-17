@@ -13,6 +13,7 @@
 @import url('./partials/gallery.css');
 @import url('./partials/modal.css');
 @import url('./partials/favorites.css');
+@import url('./partials/all-categories.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
