@@ -61,8 +61,14 @@ function renderPopular(data) {
     </li>`).join('');
 }
 
-function renderOptions(data) {
+function renderCategories(data) {
   return data.map(item => `<!-- Розмітка кнопки категорії -->`).join('');
+}
+
+function renderOptions(data) {
+  return data
+    .map(item => `<option value="${item.name}">${item.name}</option> `)
+    .join('');
 }
 
 function renderEvents(data) {
@@ -106,4 +112,4 @@ function renderEvents(data) {
     .join('');
 }
 
-export { renderGallery, renderPopular, renderOptions, renderEvents };
+export { renderGallery, renderPopular, renderCategories, renderOptions, renderEvents };
