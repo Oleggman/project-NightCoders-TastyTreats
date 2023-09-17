@@ -1,10 +1,10 @@
-import { refs } from '../refs';
+import { refs } from '../../refs';
 import {
   renderTimeOptions,
   renderOptions,
   renderGallery,
-} from '../renders/render-gallery';
-import TastyTreatsAPI from '../API/tasty-treats-api';
+} from '../../renders/render-gallery';
+import TastyTreatsAPI from '../../API/tasty-treats-api';
 
 const tastyTreatsApi = new TastyTreatsAPI();
 

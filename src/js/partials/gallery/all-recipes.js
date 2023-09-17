@@ -1,5 +1,5 @@
-import TastyTreatsAPI from '../API/tasty-treats-api.js';
-import { renderGallery } from '../renders/render-gallery.js';
+import TastyTreatsAPI from '../../API/tasty-treats-api.js';
+import { renderGallery } from '../../renders/render-gallery.js';
 
 const allRecipesRender = new TastyTreatsAPI();
 
