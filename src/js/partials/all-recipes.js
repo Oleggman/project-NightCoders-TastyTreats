@@ -6,9 +6,11 @@ const gallery = document.querySelector('.cards-container');
 a();
 
 async function a() {
+  // рендер карток
   const res = await allRecipesRender.fetchAllRecipes();
   gallery.innerHTML = renderGallery(res.data.results);
 
+  // відмальовка сердечок з локалстореджа
   const idList = favorites.map(el => el.id);
   for (let i = 0; i < gallery.children.length; i++) {
     if (idList.includes(gallery.children[i].id)) {
