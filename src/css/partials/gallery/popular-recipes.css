@@ -1,132 +1,129 @@
 .popular-headline {
-    color: #050505;
-    font-family: Inter;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 24px;
-    text-transform: uppercase;
-    font-style: normal;
-    margin-bottom: 20px;
+  color: #050505;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-style: normal;
+  margin-bottom: 20px;
 }
 .popular-desc {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    color: rgba(5, 5, 5, 0.80);
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    font-style: normal;
-    /* text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: rgba(5, 5, 5, 0.8);
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  font-style: normal;
+  /* text-overflow: ellipsis;
     whitespace: nowrap; */
 }
-.popular-name{
-    color: #050505;
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 18px;
-    text-transform: uppercase;
+.popular-name {
+  color: #050505;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  text-transform: uppercase;
 }
-.car-container{    
-    display: flex;
-    border-radius: 15px;
-    align-items: center;
-    gap: 16px;    
-    overflow: hidden;
+.car-container {
+  display: flex;
+  border-radius: 15px;
+  align-items: center;
+  gap: 16px;
+  overflow: hidden;
 }
 .car-container:hover,
 .car-container:focus {
-  background-color: #9BB537;
+  background-color: #9bb537;
 }
 .text-container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .popular-container {
-    display: flex;
-    flex-direction: column;    
-    gap: 24px;
-    width: 335px;
-    height: 202px;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 335px;
+  height: 202px;
+  overflow: hidden;
 }
 .picture {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .mob-hidden {
+    display: none;
+  }
+  .card-container:active {
+    background-color: #9bb537;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .picture {
+    width: 48px;
+    height: 48px;
+  }
+  .popular-container {
+    gap: 16px;
+    width: 176px;
+    height: 316px;
+  }
+  .car-container {
+    gap: 8px;
+  }
+  .popular-name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  .popular-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    font-style: normal;
+    /* text-overflow: ellipsis;
+        whitespace: nowrap; */
+    overflow: hidden;
+  }
+  .popular-headline {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .picture {
     width: 64px;
     height: 64px;
-    flex-shrink: 0;
-}
-
-@media screen and (max-width: 768px) {
-    .mob-hidden{
-        display: none;
-    }
-    .card-container:active{
-         background-color: #9BB537;
-    }
-}
-@media screen and (min-width: 768px) { 
-
-    .picture{
-        width: 48px;
-        height: 48px;  
-    }
-    .popular-container{        
-        gap: 16px;
-        width: 176px;
-        height: 316px;
-    }
-    .car-container{
-        gap: 8px;
-    }
-    .popular-name{        
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-    }
-    .popular-desc {     
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;    
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 14px;  
-        font-style: normal;
-        /* text-overflow: ellipsis;
-        whitespace: nowrap; */
-        overflow: hidden;
-    }
-    .popular-headline {        
-    margin-bottom: 30px;
-    }
-}
-@media screen and (min-width: 1280px) {   
-
-    .picture{
-        width: 64px;
-        height: 64px;  
-    }
-    .popular-container {
+  }
+  .popular-container {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     gap: 32px;
-    width: 235px;    
-    height: 365px;
+    width: 235px;
+    height: 364px;
     overflow: hidden;
-    }
-    .car-container{
-        gap: 16px;
-    } 
-    .popular-headline {    
+  }
+  .car-container {
+    gap: 16px;
+  }
+  .popular-headline {
     font-size: 24px;
     line-height: 28px;
     margin-bottom: 32px;
+  }
 }
-}
-
-
