@@ -52,11 +52,11 @@ function renderGallery(data) {
 function renderPopular(data) {
   return data.map(item => `<li class="car-container">
         <div class="picture">
-            <img src="${data.preview}" alt="${data.title}">
+            <img src="${item.preview}" alt="${item.title}">
         </div>        
         <div class="text-container">
-            <div class="popular-name">${data.title}</div>
-            <p class="popular-desc desc">${data.description}</p>
+            <div class="popular-name">${item.title}</div>
+            <p class="popular-desc desc">${item.description}</p>
         </div>        
     </li>`).join('');
 }

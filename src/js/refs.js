@@ -5,6 +5,8 @@ const refs = {
   ingredSelect: document.querySelector('.js-ingred-select'),
   gallery: document.querySelector('.js-gallery'),
   form: document.querySelector('.js-form'),
+
+  popularGallery: document.querySelector('.js-popular-gallery')
 };
 
 export { refs };
