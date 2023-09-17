@@ -6,7 +6,9 @@ const refs = {
   gallery: document.querySelector('.js-gallery'),
   form: document.querySelector('.js-form'),
 
-  popularGallery: document.querySelector('.js-popular-gallery')
+  popularGallery: document.querySelector('.js-popular-gallery'),
+  categoriesBox: document.querySelector('.js-categories-box'),
+  allBtn: document.querySelector('.all-categories-btn'),
 };
 
 export { refs };
