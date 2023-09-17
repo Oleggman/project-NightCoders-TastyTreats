@@ -8,17 +8,18 @@ a();
 async function a() {
   const res = await allRecipesRender.fetchAllRecipes();
   gallery.innerHTML = renderGallery(res.data.results);
+
+  const idList = favorites.map(el => el.id);
+  for (let i = 0; i < gallery.children.length; i++) {
+    if (idList.includes(gallery.children[i].id)) {
+      gallery.children[i].firstElementChild.firstElementChild.classList.add(
+        'like-favorite'
+      );
+    }
+  }
 }
 
 let favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
-const idList = favorites.map(el => el.id);
-console.log(idList);
-
-// for (let i = 0; i < 10; i++) {
-//   if (idList.includes(cards[i].id)) {
-//     cards[i].classList.add('like-favorite');
-//   }
-// }
 
 gallery.addEventListener('click', handlerLike);
 
