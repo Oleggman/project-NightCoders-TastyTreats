@@ -1,6 +1,6 @@
-import { refs } from "../refs";
-import { renderOptions } from "../renders/render-gallery";
-import TastyTreatsAPI from "../API/tasty-treats-api";
+import { refs } from "../../refs";
+import { renderOptions } from "../../renders/render-gallery";
+import TastyTreatsAPI from "../../API/tasty-treats-api";
 
 const tastyTreatsApi = new TastyTreatsAPI();
 

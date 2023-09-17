@@ -1,0 +1,148 @@
+.filters-form {
+  display: flex;
+  flex-direction: inherit;
+  flex-wrap: wrap;
+  gap: 16px;
+  position: relative;
+}
+
+.filters-label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  color: rgba(5, 5, 5, 0.5);
+  line-height: 18px;
+  font-size: 14px;
+}
+
+.search-label {
+  width: 100%;
+}
+
+.search-bar {
+  width: 100%;
+  height: 48px;
+  border-radius: 15px;
+  padding-left: 50px;
+  background-color: transparent;
+  outline: none;
+  border: solid 1px rgba(5, 5, 5, 0.2);
+  font-family: inherit;
+  font-size: 16px;
+  color: rgba(5, 5, 5, 1);
+}
+
+.search-bar:hover {
+  border-color: rgba(155, 181, 55, 1);
+}
+
+.search-bar:hover ~ .svg-filter {
+  fill: rgba(155, 181, 55, 1);
+}
+
+.search-bar::placeholder {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.svg-filter {
+  position: absolute;
+  top: 55%;
+  left: 15px;
+  fill: rgba(5, 5, 5, 0.5);
+  width: 18px;
+  height: 18px;
+}
+
+.time-label,
+.area-label {
+  width: calc((100% - 16px) / 2);
+}
+
+.ingredients-label {
+  width: 56%;
+}
+
+.select-div {
+  border-radius: 15px;
+  background-color: transparent;
+  padding-left: 12px;
+  max-width: 100%;
+  height: 48px;
+  border: solid 1px rgba(5, 5, 5, 0.2);
+}
+
+.select-div:hover {
+  border-color: rgba(155, 181, 55, 1);
+}
+
+.filters-option {
+  height: 48px;
+  width: calc(100% - 10px);
+  outline: none;
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  color: rgba(5, 5, 5, 0.5);
+}
+
+.clear-filter {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  width: fit-content;
+  height: fit-content;
+  font-family: inherit;
+  color: rgba(5, 5, 5, 0.5);
+  font-size: 12px;
+  top: 100%;
+  right: 0;
+}
+
+.clear-filter:hover {
+  color: rgba(155, 181, 55, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .search-label {
+    width: calc(((100% - 16px) / 3) * 2);
+  }
+
+  .time-label {
+    width: calc(((100% - 16px) / 3));
+  }
+
+  .area-label {
+    width: 33%;
+  }
+
+  .ingredients-label {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .filters-form {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  .search-label {
+    width: 36%;
+  }
+
+  .time-label {
+    width: 16%;
+  }
+
+  .area-label {
+    width: 18%;
+  }
+
+  .ingredients-label {
+    width: 24%;
+  }
+}

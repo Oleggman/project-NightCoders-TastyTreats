@@ -1,10 +1,7 @@
-import { refs } from '../refs';
-import {
-  renderTimeOptions,
-  renderOptions,
-  renderGallery,
-} from '../renders/render-gallery';
-import TastyTreatsAPI from '../API/tasty-treats-api';
+import { refs } from '../../refs';
+import { renderGallery } from '../../renders/render-gallery';
+import TastyTreatsAPI from '../../API/tasty-treats-api';
+import debounce from 'lodash.debounce';
 
 const tastyTreatsApi = new TastyTreatsAPI();
 
@@ -13,10 +10,6 @@ refs.timeSelect.addEventListener('change', onTimeSelect);
 refs.areaSelect.addEventListener('change', onAreaSelect);
 refs.ingredSelect.addEventListener('change', onIngredSelect);
 refs.form.addEventListener('reset', onResetForm);
-
-refs.timeSelect.innerHTML = renderTimeOptions();
-loadAreaOptions();
-loadIngredOptions();
 
 let filterArr = [];
 
@@ -39,16 +32,19 @@ async function getDataArr() {
   return dataArr;
 }
 
-function onResetForm(e) {
-  e.currentTarget.preventDefault();
+async function onResetForm(e) {
+  e.preventDefault();
   e.currentTarget.reset();
-  refs.gallery.innerHTML = renderGallery(filterArr);
+  const recipes = await getDataArr();
+  refs.gallery.innerHTML = renderGallery(recipes);
+  filterArr = [];
 }
 
 // Input filter
 async function onInputRecipe(e) {
+  e.currentTarget.preventDefault();
   let dataArr = await getDataArr();
-
+  
   const filteredByInput = dataArr.filter(item =>
     item.title.toLowerCase().includes(e.target.value.trim(' '))
   );
@@ -89,11 +85,6 @@ async function onTimeSelect(e) {
   refs.gallery.innerHTML = renderGallery(filteredByTime);
 }
 // Area filter
-async function loadAreaOptions() {
-  const res = await tastyTreatsApi.fetchAreas();
-  refs.areaSelect.innerHTML = renderOptions(res.data);
-}
-
 async function onAreaSelect(e) {
   const value = e.currentTarget.value;
   let dataArr = await getDataArr();
@@ -121,12 +112,6 @@ async function onAreaSelect(e) {
   refs.gallery.innerHTML = renderGallery(recipesByArea);
 }
 // Ingredients filter
-loadIngredOptions();
-async function loadIngredOptions() {
-  const res = await tastyTreatsApi.fetchIngrediens();
-  refs.ingredSelect.innerHTML = renderOptions(res.data);
-}
-
 async function onIngredSelect(e) {
   const ingreds = await tastyTreatsApi.fetchIngrediens();
   const ingredId = ingreds.data.find(item => item.name === e.target.value)._id;
@@ -139,20 +124,20 @@ async function onIngredSelect(e) {
       return (
         recipe.area === filters.area &&
         recipe.time === filters.time &&
-        item.ingredients.some(ingr => ingr.id === ingredId)
+        recipe.ingredients.some(ingr => ingr.id === ingredId)
       );
     } else if (filters.time) {
       return (
         recipe.time === filters.time &&
-        item.ingredients.some(ingr => ingr.id === ingredId)
+        recipe.ingredients.some(ingr => ingr.id === ingredId)
       );
     } else if (filters.area) {
       return (
         recipe.area === filters.area &&
-        item.ingredients.some(ingr => ingr.id === ingredId)
+        recipe.ingredients.some(ingr => ingr.id === ingredId)
       );
     } else {
-      return item.ingredients.some(ingr => ingr.id === ingredId);
+      return recipe.ingredients.some(ingr => ingr.id === ingredId);
     }
   });
 
