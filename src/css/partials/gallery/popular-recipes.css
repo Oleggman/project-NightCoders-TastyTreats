@@ -33,8 +33,10 @@
 }
 .car-container{    
     display: flex;
+    border-radius: 15px;
     align-items: center;
     gap: 16px;    
+    overflow: hidden;
 }
 .car-container:hover,
 .car-container:focus {
@@ -114,7 +116,7 @@
     flex-direction: column;    
     gap: 32px;
     width: 235px;    
-    height: 364px;
+    height: 365px;
     overflow: hidden;
     }
     .car-container{
