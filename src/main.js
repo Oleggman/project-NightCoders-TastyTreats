@@ -1,3 +1,2 @@
-import { starRate } from './js/partials/card-rate';
-
-starRate();
+import './js/partials/hero.js';
+import './js/partials/all-recipes.js';

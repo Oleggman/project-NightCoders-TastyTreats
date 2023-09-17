@@ -93,7 +93,9 @@ display: none;
 
 /*  !!! ВІДЕО !!! */
 
-.recipes-video {
+.video-container {
+    display: flex;
+    position: relative;
     width: 295px;
     height: 295px;
     margin: auto;
@@ -104,15 +106,37 @@ display: none;
 }
 
 @media only screen and (min-width: 768px) {
-    .recipes-video  {
+    .video-container  {
         width: 467px;
         height: 250px;
         margin-bottom: 16px;
     }
 }
-.recipes-video :active {
-    color:currentColor;
+
+.play-video {
+    position: absolute;
+    z-index: 100;
+    
+
+
+    /* display: flex;
+    align-items: center; */
+
 }
+
+.play-icon {
+width: 32px;
+height: 32px;
+stroke: #F8F8F8;
+}
+
+@media screen and (min-width: 768px){
+    .play-icon{
+    width: 38px;
+    height: 38px;
+}
+}
+
 
 
 /* !!! ЗІРОЧКИ-РЕЙТИНГ !!! */
