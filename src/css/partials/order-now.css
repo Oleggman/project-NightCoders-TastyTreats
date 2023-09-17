@@ -64,6 +64,12 @@
   position: absolute;
 }
 
+.close-list-lick-order-now {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
 .close-list-child-order-now {
   list-style: none;
   margin: 0;
