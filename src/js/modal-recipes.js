@@ -24,8 +24,8 @@ function closeModal(){
 
 // ВІДЕО
 function loadVideo() {
-    const getvideosUrl = "${youtube}";
-    fetch(getvideosUrl)
+    const backendUrl = "https://tasty-treats-backend.p.goit.global/api/recipes?youtube";
+    fetch(backendUrl)
     .then(response => response.json())
     .then(data => {
         const videoUrl = data.videoUrl;
@@ -59,19 +59,23 @@ loadVideo();
 
 // ЗАГОЛОВОК
 
+function loadRecipeName() {
+    const titleUrl = "https://tasty-treats-backend.p.goit.global/api/recipes?title";
+    
+}
 
-
+// title
 
 // СПИСОК ІНРЕДІЄНТІВ
 
 function createMarkup(arr) {
-    return arr.map(({ }) => `
+    return arr.map(({ ingredients.id, ingredients.measure}) => `
     <ul class="ingredients">
     <li class="product-name">
-        <p>"${}"</p>
+        <p>"${ingredients.id}"</p>
     </li>
         <li class="number">
-            <p>"${}"</p>
+            <p>"${ingredients.measure}"</p>
         </li>
 </ul> `).join('')
 }
