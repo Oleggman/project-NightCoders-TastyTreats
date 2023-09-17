@@ -1,3 +1,7 @@
+.gallery {
+  display: flex;
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;

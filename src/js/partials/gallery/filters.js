@@ -39,6 +39,7 @@ function onResetForm(e) {
 
 // Input filter
 async function onInputRecipe(e) {
+  e.preventDefault();
   let dataArr = await getDataArr();
 
   const filteredByInput = dataArr.filter(item =>
