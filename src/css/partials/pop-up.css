@@ -1,3 +1,19 @@
+.is-hidden {
+
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+}
+
 .main-linck {
     text-align: center;
     display: block;
@@ -40,10 +56,21 @@
 
     border-radius: 15px;
     border: 1px solid rgba(5, 5, 5, 0.20);
-
     padding: 14px 18px;
     padding-right: 0px;
 }
+
+/* 
+.pop-up-input:focus {
+    border: 1px solid #9BB537;
+} */
+.pop-up-input:hover {
+    outline: none;
+    border-color: #9BB537;
+}
+
+
+
 
 .pop-up-button {
     border-radius: 15px;
@@ -79,7 +106,7 @@
     display: flex;
     margin: 0 0 24px 0;
     padding: 0;
-    gap: 2px;
+    gap: 6px;
 
 
 }
@@ -129,6 +156,13 @@
     .pop-up-button {
         padding: 15px 0px;
     }
+
+    /* 
+    .pop-input:focus {
+        outline: none !important;
+        border: 1px solid red;
+        box-shadow: 0 0 10px #719ECE;
+    } */
 
 }
 
@@ -219,7 +253,7 @@
 
     height: 24px;
     width: 24px;
-    fill: #337AB7;
+    fill: #EEA10C;
     transition: fill 0.3s;
 }
 
