@@ -1,16 +1,16 @@
-import TastyTreatsAPI from '../API/tasty-treats-api.js';
-import { renderGallery } from '../renders/render-gallery.js';
+import TastyTreatsAPI from '../../API/tasty-treats-api.js';
+import { renderGallery } from '../../renders/render-gallery.js';
 
 const allRecipesRender = new TastyTreatsAPI();
 
 const gallery = document.querySelector('.gallery-container');
 
-async function a() {
+async function loadGallery() {
   const res = await allRecipesRender.fetchAllRecipes();
   gallery.innerHTML = renderGallery(res.data.results);
 }
 
-a();
+loadGallery();
 
 gallery.addEventListener('click', handlerLike);
 
