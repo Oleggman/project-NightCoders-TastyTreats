@@ -1,1 +1,57 @@
-<header class="header"></header>
+<header class="header">
+  <div class="container header-wrap">
+    <nav class="navigation">
+      <ul class="list-header">
+        <li class="item-list-header">
+          <a class="link-list-header active-page" href="/index.html">Home</a>
+        </li>
+        <li class="item-list-header">
+          <a class="link-list-header" href="../favorites.html">Favorites</a>
+        </li>
+      </ul>
+    </nav>
+    <h1 class="logo" href="/index.html">
+      <span class="logo-green">tasty</span>
+      <span class="logo-black">treats.</span>
+    </h1>
+    <a class="basket" href="tel:+380730000000">
+      <svg class="basket-icon">
+        <use href="/img/icons.svg#basket"></use>
+      </svg>
+    </a>
+
+    <div class="theme-switch">
+      <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" />
+      <label for="theme-toggle" class="theme-toggle-label"></label>
+    </div>
+    <button class="burger-btn js-open-burger-menu" type="button">
+      <svg class="burger-icon">
+        <use href="/img/icons.svg#burger-menu"></use>
+      </svg>
+    </button>
+    <div class="burger-menu js-burger-menu">
+      <button class="burger-close-btn js-close-burger-menu" type="button">
+        <svg class="burger-close-icon">
+          <use href="/img/icons.svg#close"></use>
+        </svg>
+      </button>
+      <ul class="list-modal-menu">
+        <li class="item-modal-menu">
+          <a class="link-modal-menu" href="/header.html">Home</a>
+        </li>
+        <li class="item-modal-menu">
+          <a class="link-modal-menu" href="../favorites.html">Favorites</a>
+        </li>
+      </ul>
+      <div class="modal-switch">
+        <input
+          type="checkbox"
+          id="theme-toggle-mob"
+          class="theme-toggle-checkbox-mob"
+        />
+        <label for="theme-toggle-mob" class="theme-toggle-label-mob"></label>
+      </div>
+    </div>
+  </div>
+</header>
+<script src="/js/open-modal/open-modal.js"></script>

@@ -1,0 +1,51 @@
+.btn-categories {
+    display: block;
+    padding: 14px 28px;
+    border-radius: 15px;
+    border: 1px solid rgba(5, 5, 5, 0.20);
+    color: rgba(5, 5, 5, 0.50);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: transparent;
+    margin-bottom: 56px;
+}
+
+.btn-categories:hover,
+.btn-categories:focus {
+    background-color: #9BB537;
+    color: #F8F8F8;
+    border: 0;
+}
+
+.btn-filter {
+    display: block;
+    border: 0;
+    cursor: pointer;
+    border-color: transparent;
+    background-color: transparent;
+    color: rgba(5, 5, 5, 0.30);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.btn-filter:active,
+.btn-filter:focus,
+.btn-filter:hover {
+    color: #9BB537;
+}
+
+.filter-categories {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 24px;
+    width: 235px;
+    height: 416px;
+    overflow-y: scroll;
+}
