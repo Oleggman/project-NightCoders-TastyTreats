@@ -17,13 +17,16 @@
       <load src="partials/hero.html" />
       <!-- Gallery -->
       <section>
-        <div class="gallery-container">
+        <div class="gallery">
           <div class="left-sidebar">
             <load src="partials/all-categories.html" />
             <load src="partials/popular-recipes.html" />
           </div>
           <!-- All recipes -->
-          <ul class="gallery-container"></ul>
+          <div class="main-container">
+            <load src="partials/filters.html" />
+            <ul class="gallery-container js-gallery"></ul>
+          </div>
         </div>
       </section>
     </main>
