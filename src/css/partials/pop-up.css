@@ -24,6 +24,11 @@
   border: none;
 }
 
+.rate-close-btn:hover .icon-close-btn {
+  stroke: #9bb537;
+  scale: 1.2;
+}
+
 .pop-up-modal {
   background-color: #fff;
   border-radius: 15px;

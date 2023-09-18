@@ -7,23 +7,25 @@ const popupBackdrop = document.querySelector('.popup-backdrop');
 const ratingBtn = document.querySelector('.give-a-rating');
 const ratingCloseBtn = document.querySelector('.rate-close-btn');
 
-// відкриття модалки з рейтингом
+// відкриття модалки з рейтингом та додавання слухачів
 ratingBtn.addEventListener('click', handlerOpenRating);
 
 function handlerOpenRating() {
   popupModal.classList.add('active');
   popupBackdrop.classList.add('active');
+
+  ratingCloseBtn.addEventListener('click', handlerCloseRating);
+  popupBackdrop.addEventListener('click', handlerCloseRatingBackdrop);
 }
 
-// закриття модалки з рейтингом
-ratingCloseBtn.addEventListener('click', handlerCloseRating);
+// закриття модалки з рейтингом та видалення слухачів
 
 function handlerCloseRating() {
   popupModal.classList.remove('active');
   popupBackdrop.classList.remove('active');
+  ratingCloseBtn.removeEventListener('click', handlerCloseRating);
+  popupBackdrop.removeEventListener('click', handlerCloseRatingBackdrop);
 }
-
-popupBackdrop.addEventListener('click', handlerCloseRatingBackdrop);
 
 function handlerCloseRatingBackdrop() {
   popupModal.classList.remove('active');
