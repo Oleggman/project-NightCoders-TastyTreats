@@ -1,18 +1,17 @@
 .favorites-hero {
-    padding-top: 52px;
+    padding-top: 97px;
     padding-bottom: 40px;
 }
 
 @media only screen and (min-width: 768px) {
 .favorites-hero {
-        padding-top: 50px;
         padding-bottom: 64px;
     }
 }
 
 @media only screen and (min-width: 1280px) {
     .favorites-hero {
-        padding-top: 40px;
+        padding-top: 100px;
     }
 }
 
