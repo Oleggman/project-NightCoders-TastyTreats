@@ -73,7 +73,7 @@ function renderPopular(data) {
 }
 
 function renderCategories(data) {
-  return data.map(item => `<button class="btn-filter" type="submit">${item.name}</button>`).join('');
+  return data.map(item => `<button class="btn-filter js-category" type="submit">${item.name}</button>`).join('');
 }
 
 function renderOptions(data) {

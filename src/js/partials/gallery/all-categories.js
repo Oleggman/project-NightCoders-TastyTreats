@@ -20,12 +20,12 @@ async function loadCategories() {
 }
 
 async function onSearchCategory(e) {
-  if (!e.target.classList.contains('.js-category')) {
+  if (!e.target.classList.contains('js-category')) {
     return;
   }
 
   const value = e.target.textContent;
-  let data = getDataArr();
+  let data = await getDataArr();
 
   const recipesByCategory = data.filter(
     item => item.category === value
