@@ -34,10 +34,14 @@ async function getDataArr() {
 
 async function onResetForm(e) {
   e.preventDefault();
-  e.currentTarget.reset();
   const recipes = await getDataArr();
   refs.gallery.innerHTML = renderGallery(recipes);
   filterArr = [];
+
+  refs.recipeInput.value = '';
+  refs.timeSelect.selectedIndex = 0;
+  refs.areaSelect.selectedIndex = 0;
+  refs.ingredSelect.selectedIndex = 0;
 }
 
 // Input filter
