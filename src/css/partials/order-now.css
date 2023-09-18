@@ -194,7 +194,7 @@
 .modal {
   opacity: 0;
   visibility: hidden;
-  z-index: 200;
+  z-index: 400;
 }
 
 .modal.active,

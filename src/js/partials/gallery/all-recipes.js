@@ -4,6 +4,9 @@ import { renderGallery } from '../../renders/render-gallery.js';
 const allRecipesRender = new TastyTreatsAPI();
 
 const gallery = document.querySelector('.cards-container');
+const recipeModal = document.querySelector('.modal-recipes-container');
+const overlay = document.querySelector('.overlay');
+const closeBtn = document.querySelector('.modal-close-btn');
 loadGallery();
 
 async function loadGallery() {
@@ -20,7 +23,6 @@ async function loadGallery() {
       );
     }
   }
-  console.log('render');
 }
 
 let favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
@@ -51,4 +53,18 @@ function handlerLike(evt) {
     }
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }
+  // відкриття модалки з рецептом + рендрер
+  if (evt.target.classList.contains('card-footer-btn')) {
+    const cardId = evt.target.dataset.id;
+    // renderRecipe(cardId);  <----- запуск рендера модалки
+    recipeModal.classList.add('active');
+    overlay.classList.add('active');
+  }
+}
+
+// закриття модалки по кліку на іконку
+closeBtn.addEventListener('click', handlerCLoseBtn);
+function handlerCLoseBtn(evt) {
+  recipeModal.classList.remove('active');
+  overlay.classList.remove('active');
 }
