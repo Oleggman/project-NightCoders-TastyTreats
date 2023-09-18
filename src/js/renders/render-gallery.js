@@ -1,4 +1,4 @@
-import svg from '../../img/icons.svg'
+import svg from '../../img/icons.svg';
 
 function renderGallery(data) {
   return data
@@ -48,7 +48,7 @@ function renderGallery(data) {
               </svg>
             </div>
           </div>
-          <button class="card-footer-btn" data-id="${_id}">See recipe</button>
+          <button class="card-footer-btn js-open-modal" data-id="${_id}" data-modal="2">See recipe</button>
         </div>
       </div>
     </li>`
@@ -73,7 +73,12 @@ function renderPopular(data) {
 }
 
 function renderCategories(data) {
-  return data.map(item => `<!-- Розмітка кнопки категорії -->`).join('');
+  return data
+    .map(
+      item =>
+        `<button class="btn-filter js-category" type="submit">${item.name}</button>`
+    )
+    .join('');
 }
 
 function renderOptions(data) {

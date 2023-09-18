@@ -1,6 +1,7 @@
 import { refs } from '../../refs';
 import { renderGallery } from '../../renders/render-gallery';
 import TastyTreatsAPI from '../../API/tasty-treats-api';
+import debounce from 'lodash.debounce';
 
 const tastyTreatsApi = new TastyTreatsAPI();
 
@@ -31,17 +32,23 @@ async function getDataArr() {
   return dataArr;
 }
 
-function onResetForm(e) {
-  e.currentTarget.preventDefault();
-  e.currentTarget.reset();
-  refs.gallery.innerHTML = renderGallery(filterArr);
+async function onResetForm(e) {
+  e.preventDefault();
+  const recipes = await getDataArr();
+  refs.gallery.innerHTML = renderGallery(recipes);
+  filterArr = [];
+
+  refs.recipeInput.value = '';
+  refs.timeSelect.selectedIndex = 0;
+  refs.areaSelect.selectedIndex = 0;
+  refs.ingredSelect.selectedIndex = 0;
 }
 
 // Input filter
 async function onInputRecipe(e) {
-  e.target.preventDefault();
+  e.preventDefault();
   let dataArr = await getDataArr();
-
+  
   const filteredByInput = dataArr.filter(item =>
     item.title.toLowerCase().includes(e.target.value.trim(' '))
   );
@@ -121,20 +128,20 @@ async function onIngredSelect(e) {
       return (
         recipe.area === filters.area &&
         recipe.time === filters.time &&
-        item.ingredients.some(ingr => ingr.id === ingredId)
+        recipe.ingredients.some(ingr => ingr.id === ingredId)
       );
     } else if (filters.time) {
       return (
         recipe.time === filters.time &&
-        item.ingredients.some(ingr => ingr.id === ingredId)
+        recipe.ingredients.some(ingr => ingr.id === ingredId)
       );
     } else if (filters.area) {
       return (
         recipe.area === filters.area &&
-        item.ingredients.some(ingr => ingr.id === ingredId)
+        recipe.ingredients.some(ingr => ingr.id === ingredId)
       );
     } else {
-      return item.ingredients.some(ingr => ingr.id === ingredId);
+      return recipe.ingredients.some(ingr => ingr.id === ingredId);
     }
   });
 
