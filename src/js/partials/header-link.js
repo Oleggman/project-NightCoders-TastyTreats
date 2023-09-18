@@ -25,7 +25,6 @@
 const links = {
     index: document.querySelector('.js-index'),
     favorites: document.querySelector('.js-favorites'),
-
 }
 
 links.index.addEventListener('click', onChangeOnIndex);
