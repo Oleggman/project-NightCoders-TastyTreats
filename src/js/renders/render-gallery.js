@@ -59,14 +59,14 @@ function renderGallery(data) {
 function renderPopular(data) {
   return data
     .map(
-      item => `<li class="car-container">
+      item => `<li class="car-container" data-id=${item._id}>
         <div class="picture">
             <img src="${item.preview}" alt="${item.title}">
         </div>        
         <div class="text-container">
             <div class="popular-name">${item.title}</div>
             <p class="popular-desc desc">${item.description}</p>
-        </div>        
+        </div>
     </li>`
     )
     .join('');
