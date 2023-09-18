@@ -439,3 +439,16 @@
     cursor: pointer;
   }
 }
+
+/*  */
+
+.modal-recipe-ingred {
+  display: flex;
+  justify-content: space-between;
+  /* padding-right: 10px; */
+  border-bottom: 1px solid rgba(5, 5, 5, 0.1);
+}
+
+.modal-recipe-ingred:not(:last-child) {
+  margin-bottom: 6px;
+}
