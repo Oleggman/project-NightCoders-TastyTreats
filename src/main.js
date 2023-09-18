@@ -8,3 +8,4 @@ import './js/partials/gallery/all-categories.js';
 import './js/partials/modals/modal-recipes.js';
 import './js/open-modal/open-modal.js';
 import './js/open-modal/open-close-modals.js';
+import './js/partials/pop-up-rating.js';
