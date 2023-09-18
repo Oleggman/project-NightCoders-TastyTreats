@@ -1,0 +1,77 @@
+.btn-categories {
+  display: block;
+  padding: 14px 28px;
+  border-radius: 15px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+  color: rgba(5, 5, 5, 0.5);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background-color: transparent;
+  margin-bottom: 56px;
+}
+
+.btn-categories:hover,
+.btn-categories:focus {
+  background-color: #9bb537;
+  color: #f8f8f8;
+  border: 0;
+}
+
+.btn-filter {
+  display: block;
+  border: 0;
+  cursor: pointer;
+  border-color: transparent;
+  background-color: transparent;
+  color: rgba(5, 5, 5, 0.3);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.btn-filter:active,
+.btn-filter:focus,
+.btn-filter:hover {
+  color: #9bb537;
+}
+
+.filter-categories {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 24px;
+  width: 235px;
+  height: 416px;
+  overflow-y: scroll;
+}
+
+.filter-categories {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 24px;
+  overflow-y: scroll;
+}
+@media screen and (max-width: 767px) {
+  .filter-categories {
+    width: 326px;
+    height: 198px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .filter-categories {
+    width: 176px;
+    height: 416px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .filter-categories {
+    width: 198px;
+    height: 416px;
+  }
+}

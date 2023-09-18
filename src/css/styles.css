@@ -14,6 +14,8 @@
 @import url('./partials/modals/modal-recipes.css');
 @import url('./partials/favorites.css');
 @import url('./partials/all-categories/all-categories.css');
+@import url('./partials/modals/modal-recipes.css');
+@import url('./partials/order-now.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

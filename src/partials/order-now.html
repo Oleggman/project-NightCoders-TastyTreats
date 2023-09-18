@@ -1,38 +1,42 @@
-<div class="order-now-modal is-hidden ">
-
-    <div class="order-now-modal-off">
-        <ul class="order-now-close-list">
-            <li class="close-list-child-order-now"><a class="close-list-lick-order-now" href=""><svg
-                        class="order-now-close-list-icon" width="24" height="24">
-                        <use href="/src/img/icons.svg#close"></use>
-                    </svg></a></li>
-        </ul>
-
-    </div>
-
-    <p class="order-now-title">Order now</p>
-
-    <ul class="form">
-        <li class="list-child">
-            <p class="order-now-text">Name</p>
-            <input class="order-now-input" type="name">
-        </li>
-
-        <li class="list-child">
-            <p class="order-now-text">Phone number</p>
-            <input class="order-now-input" type="phone">
-        </li>
-
-        <li class="list-child">
-            <p class="order-now-text">Email</p>
-            <input class="order-now-input" type="email">
-        </li>
-
-        <li class="list-child">
-            <p class="order-now-text">Comment</p>
-            <input class="order-now-input" type="text" style="margin-bottom: 40px; height: 100px;">
-        </li>
-        <a class="order-now-button" href="">Send</a>
+<div class="order-now-modal modal" data-modal="1">
+  <div class="order-now-modal-off">
+    <ul class="order-now-close-list">
+      <li class="close-list-child-order-now">
+        <button class="close-list-lick-order-now js-modal-close">
+          <svg class="order-now-close-list-icon" width="24" height="24">
+            <use href="./img/icons.svg#close"></use>
+          </svg>
+        </button>
+      </li>
     </ul>
+  </div>
+  <p class="order-now-title">Order now</p>
 
+  <ul class="form">
+    <li class="list-child">
+      <p class="order-now-text">Name</p>
+      <input class="order-now-input" type="name" />
+    </li>
+
+    <li class="list-child">
+      <p class="order-now-text">Phone number</p>
+      <input class="order-now-input" type="phone" />
+    </li>
+
+    <li class="list-child">
+      <p class="order-now-text">Email</p>
+      <input class="order-now-input" type="email" />
+    </li>
+
+    <li class="list-child">
+      <p class="order-now-text">Comment</p>
+      <input
+        class="order-now-input"
+        type="text"
+        style="margin-bottom: 40px; height: 100px"
+      />
+    </li>
+    <a class="order-now-button" href="">Send</a>
+  </ul>
 </div>
+<div class="review-backdrop overlay js-overlay-modal"></div>
