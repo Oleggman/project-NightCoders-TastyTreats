@@ -61,32 +61,19 @@ loadVideo();
 
 // ЗАГОЛОВОК
 
-function loadRecipeName() {
-    const titleUrl = "https://tasty-treats-backend.p.goit.global/api/recipes?title";
-    fetch(titleUrl)
-    .then(response => response.json())
-    .then(data => {
-        const recipeName = data.recipeName;
-        recipeNameElement.textContent = recipeName; 
-    })
-    .catch(error => {
-        console.error("Sory! Error loading recipe name:", error);
-    })
-}   
-loadRecipeName()
 
-function createAndInsertElement(data) {
-    const newElement = document.createElement("div");
-    newElement.textContent = data.recipeName;
-    document.body.appendChild(newElement);
-// add class
-    newElement.classList.add('name-of-recipe');
-    return newElement;
-}
-const newRecipeName = {
-    recipeName: `${title}`
-};
-const createdElement = createAndInsertElement(newRecipeName)
+function renderRecipeName(recipeNameElement) {
+    const markup = recipeNameElement
+      .map(
+        (tittle) => `<h2 
+        class="name-of-recipe only-mobile">${tittle}</h2> `
+      )
+      .join("");
+      ingredients.innerHTML = markup;
+  }
+  renderRecipeName()
+
+
 
 // СПИСОК ІНРЕДІЄНТІВ
 function renderIngredientsList(ingredients) {
@@ -108,67 +95,32 @@ function renderIngredientsList(ingredients) {
 
 
 
-// function createMarkup(arr) {
-//     return arr.map(({ ingredients.id, ingredients.measure}) => `
-//     <ul class="ingredients">
-//     <li class="product-name">
-//         <p>"${ingredients.id}"</p>
-//     </li>
-//         <li class="number">
-//             <p>"${ingredients.measure}"</p>
-//         </li>
-// </ul> `).join('')
-// }
-// containerIngredients.insertAdjacentHTML('beforeend', createMarkup(ingredients));
+
 
 
 // ОБРАНІ КАТЕГОРІЇ (хештеги)
 function createMarkup(arr) {
-    return arr.map(({ category }) => `
+    return arr.map(({ tag }) => `
     <li>
-      <p class="categiries">"#${category}"</p>
+      <p class="categiries">"#${tag}"</p>
      </li> `).join('')
 }
 containerSelected.insertAdjacentHTML('beforeend', createMarkup(selected));
 
 
 // ТЕКСТ РЕЦЕПТУ
-// 
-function loadRecipeInstruction() {
-    const instructionUrl = "https://tasty-treats-backend.p.goit.global/api/recipes?instructions";
- fetch(instructionUrl)
- .then(response => response.text())
- .then(data => {
-    const recipeInstructions = data.instructions;
-    recipeText.textContent = recipeInstructions;
- })
- .catch(error => {
-    console.error("Error loading and inserting recipe instructions:", error);
- });
-}
-loadRecipeInstruction();
 
+function renderRecipeInstruction(instructions) {
+    const markup = instructions
+      .map(
+        (instructions) => `<p class="recipe-text">
+        ${instructions}/p>`
+      )
+      .join("");
+    userList.innerHTML = markup;
+  }
 
-// async fetchRecipe(id) {
-//     return await axios.get(`${this.baseURL}/recipes/${id}`);
-//   } 
-
-
-
-// function renderUserListItems(users) {
-//     const markup = users
-//       .map(
-//         (user) => `<li class="item">
-//           <p><b>Name</b>: ${user.name}</p>
-//           <p><b>Email</b>: ${user.email}</p>
-//           <p><b>Company</b>: ${user.company.name}</p>
-//         </li>`
-//       )
-//       .join("");
-//     userList.innerHTML = markup;
-//   }
-
-
+  renderRecipeInstruction()
 
 // КНОПКИ
 addToFavoritesBtn.addEventListener('click', () => {
