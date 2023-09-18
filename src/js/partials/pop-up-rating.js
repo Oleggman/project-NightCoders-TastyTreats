@@ -2,6 +2,33 @@
 const ratingGroup = document.querySelector('.rating-group');
 const starSpans = document.querySelectorAll('.star-span');
 const radioInputs = document.querySelectorAll('input[name="fst"]');
+const popupModal = document.querySelector('.pop-up-modal');
+const popupBackdrop = document.querySelector('.popup-backdrop');
+const ratingBtn = document.querySelector('.give-a-rating');
+const ratingCloseBtn = document.querySelector('.rate-close-btn');
+
+// відкриття модалки з рейтингом
+ratingBtn.addEventListener('click', handlerOpenRating);
+
+function handlerOpenRating() {
+  popupModal.classList.add('active');
+  popupBackdrop.classList.add('active');
+}
+
+// закриття модалки з рейтингом
+ratingCloseBtn.addEventListener('click', handlerCloseRating);
+
+function handlerCloseRating() {
+  popupModal.classList.remove('active');
+  popupBackdrop.classList.remove('active');
+}
+
+popupBackdrop.addEventListener('click', handlerCloseRatingBackdrop);
+
+function handlerCloseRatingBackdrop() {
+  popupModal.classList.remove('active');
+  popupBackdrop.classList.remove('active');
+}
 
 // Додаємо обробник подій для елементів input (radio)
 radioInputs.forEach(radioInput => {
