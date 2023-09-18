@@ -59,6 +59,7 @@ function handlerLike(evt) {
     // renderRecipe(cardId);  <----- запуск рендера модалки
     recipeModal.classList.add('active');
     overlay.classList.add('active');
+    document.body.style.overflow = "hidden";
   }
 }
 
@@ -67,4 +68,5 @@ closeBtn.addEventListener('click', handlerCLoseBtn);
 function handlerCLoseBtn(evt) {
   recipeModal.classList.remove('active');
   overlay.classList.remove('active');
+  document.body.style.overflow = "auto";
 }
