@@ -1,6 +1,17 @@
+.wrap-categories {
+  display: flex;
+  flex-direction: column;  
+}
+.btn-categories-position{
+  display: inline-block;
+  padding-top: 24px;
+}
+
 .btn-categories {
   display: block;
-  padding: 14px 28px;
+  width: 178px;
+  height: 52px;
+  padding: 14px 29px;
   border-radius: 15px;
   border: 1px solid rgba(5, 5, 5, 0.2);
   color: rgba(5, 5, 5, 0.5);
@@ -10,7 +21,7 @@
   font-weight: 500;
   line-height: normal;
   background-color: transparent;
-  margin-bottom: 56px;
+  margin-bottom: 24px;
 }
 
 .btn-categories:hover,
@@ -18,6 +29,7 @@
   background-color: #9bb537;
   color: #f8f8f8;
   border: 0;
+  transition: color, background-color 300ms;  
 }
 
 .btn-filter {
@@ -28,50 +40,65 @@
   background-color: transparent;
   color: rgba(5, 5, 5, 0.3);
   font-family: Inter;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 18px;
 }
 
 .btn-filter:active,
 .btn-filter:focus,
 .btn-filter:hover {
   color: #9bb537;
+  transition: color 300ms;
 }
 
 .filter-categories {
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 24px;
-  width: 235px;
-  height: 416px;
-  overflow-y: scroll;
+  gap: 18px;
+  width: 326px;
+  height: 198px;
+  overflow-y: scroll;  
 }
 
-.filter-categories {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 24px;
-  overflow-y: scroll;
-}
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   .filter-categories {
     width: 326px;
     height: 198px;
   }
-}
+} */
+
 @media screen and (min-width: 768px) {
   .filter-categories {
     width: 176px;
     height: 416px;
   }
+  .btn-categories{
+    width: 176px;
+    padding: 14px 28px;
+    margin-bottom: 30px;
+  }
+  .wrap-categories{
+    margin-right: 32px;
+  }
+  .btn-filter{
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .filter-categories{
+    gap: 24px;
+  }
 }
+
 @media screen and (min-width: 1280px) {
   .filter-categories {
-    width: 198px;
+    width: 235px;
     height: 416px;
+  }
+  .btn-categories{       
+    margin-bottom: 42px;
+    padding: 14px 27px;
   }
 }

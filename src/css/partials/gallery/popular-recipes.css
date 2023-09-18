@@ -1,3 +1,6 @@
+.popular-recipes{
+  margin-top: 40px;
+}
 .popular-headline {
   color: #050505;
   font-family: Inter;
@@ -19,8 +22,6 @@
   font-size: 12px;
   line-height: 16px;
   font-style: normal;
-  /* text-overflow: ellipsis;
-    whitespace: nowrap; */
 }
 .popular-name {
   color: #050505;
@@ -75,6 +76,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .popular-recipes{
+     margin-top: 64px;
+  }
   .picture {
     width: 48px;
     height: 48px;
