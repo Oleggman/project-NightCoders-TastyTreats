@@ -20,6 +20,7 @@ async function loadGallery() {
       );
     }
   }
+  console.log('render');
 }
 
 let favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
