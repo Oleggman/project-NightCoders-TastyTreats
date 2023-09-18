@@ -1,3 +1,4 @@
+import './js/partials/header-link';
 import './js/partials/hero.js';
 import './js/partials/gallery/all-recipes.js';
 import './js/partials/gallery/popular.js';
