@@ -12,6 +12,16 @@
   overflow: hidden;
 }
 
+
+.close-list-lick-order-now :hover,
+.close-list-lick-order-now :focus {
+  stroke: #9bb537;
+  transition: stroke 0.3s;
+}
+
+
+
+
 .order-now-modal {
   margin: 0 auto;
   background-color: #fff;
@@ -44,6 +54,12 @@
   padding-right: 0px;
   margin-bottom: 16px;
   width: 100%;
+}
+
+.order-now-input:hover {
+  outline: none;
+  border-color: #9bb537;
+  transition: stroke 0.3s;
 }
 
 .order-now-button {
@@ -92,7 +108,7 @@
 @media only screen and (max-width: 765px) {
   .order-now-modal {
     padding: 28px 20px;
-    max-width: 335px;
+    min-width: 335px;
   }
 
   .order-now-title {
@@ -169,6 +185,7 @@
 .order-now-button:hover,
 .order-now-button:focus {
   color: #050505;
+  transition: color 0.3s;
 }
 
 .review-backdrop {
