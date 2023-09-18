@@ -442,6 +442,11 @@
 
 /*  */
 
+.recipe-modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .modal-recipe-ingred {
   display: flex;
   justify-content: space-between;
@@ -450,5 +455,6 @@
 }
 
 .modal-recipe-ingred:not(:last-child) {
-  margin-bottom: 6px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
 }
