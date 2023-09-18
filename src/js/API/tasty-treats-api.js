@@ -13,6 +13,10 @@ export default class TastyTreatsAPI {
     return await axios.get(`${this.baseURL}/recipes?limit=9`);
   }
   
+  async fetchOneRecipe(id) {
+    return await axios.get(`${this.baseURL}/recipes/${id}`);
+  }
+  
   async fetchCategories() {
     return await axios.get(`${this.baseURL}/categories`);
   }
