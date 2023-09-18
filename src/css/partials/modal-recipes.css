@@ -62,9 +62,11 @@
 }
 .icon-close-btn {
   stroke: #050505;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.icon-close-btn:hover {
-  fill: currentColor;
+.modal-close-btn:hover .icon-close-btn {
+  stroke: #9bb537;
+  scale: 1.2;
 }
 
 /*  !!! КОНТЕЙНЕР З РЕЦЕПТОМ !!! */

@@ -12,6 +12,16 @@
   overflow: hidden;
 }
 
+
+.close-list-lick-order-now :hover,
+.close-list-lick-order-now :focus {
+  stroke: #9bb537;
+  transition: stroke 0.3s;
+}
+
+
+
+
 .order-now-modal {
   margin: 0 auto;
   background-color: #fff;
@@ -46,6 +56,12 @@
   width: 100%;
 }
 
+.order-now-input:hover {
+  outline: none;
+  border-color: #9bb537;
+  transition: stroke 0.3s;
+}
+
 .order-now-button {
   border-radius: 15px;
   background: #9bb537;
@@ -69,6 +85,11 @@
   padding: 0;
 }
 
+.close-list-lick-order-now:hover .order-now-close-list-icon {
+  stroke: #9bb537;
+  scale: 1.2;
+}
+
 .close-list-child-order-now {
   list-style: none;
   margin: 0;
@@ -77,6 +98,7 @@
 
 .order-now-close-list-icon {
   stroke: #050505;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-now-text {
@@ -92,7 +114,7 @@
 @media only screen and (max-width: 765px) {
   .order-now-modal {
     padding: 28px 20px;
-    max-width: 335px;
+    min-width: 335px;
   }
 
   .order-now-title {
@@ -169,6 +191,7 @@
 .order-now-button:hover,
 .order-now-button:focus {
   color: #050505;
+  transition: color 0.3s;
 }
 
 .review-backdrop {
