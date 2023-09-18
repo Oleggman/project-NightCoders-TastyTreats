@@ -69,6 +69,11 @@
   padding: 0;
 }
 
+.close-list-lick-order-now:hover .order-now-close-list-icon {
+  stroke: #9bb537;
+  scale: 1.2;
+}
+
 .close-list-child-order-now {
   list-style: none;
   margin: 0;
@@ -77,6 +82,7 @@
 
 .order-now-close-list-icon {
   stroke: #050505;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-now-text {
