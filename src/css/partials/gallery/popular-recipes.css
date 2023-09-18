@@ -61,13 +61,14 @@
   flex-shrink: 0;
 }
 
-@media screen and (max-width: 767px) {
-  .mob-hidden {
+@media screen and (max-width: 768px) {
+    .popular-container li:nth-child(3),
+    .popular-container li:nth-child(4) {
     display: none;
-  }
-  .card-container:active {
-    background-color: #9bb537;
-  }
+    }
+    .car-container:active{
+         background-color: #9BB537;
+    }
 }
 
 @media screen and (min-width: 768px) {
