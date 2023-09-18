@@ -62,9 +62,11 @@
 }
 
 @media screen and (max-width: 768px) {
-    .mob-hidden{
-        display: none;
+    .popular-container li:nth-child(3),
+    .popular-container li:nth-child(4) {
+    display: none;
     }
+    
     .card-container:active{
          background-color: #9BB537;
     }
