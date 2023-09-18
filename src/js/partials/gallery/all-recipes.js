@@ -64,7 +64,7 @@ function handlerLike(evt) {
 
 // закриття модалки по кліку на іконку
 closeBtn.addEventListener('click', handlerCLoseBtn);
-function handlerCLoseBtn(evt) {
+function handlerCLoseBtn() {
   recipeModal.classList.remove('active');
   overlay.classList.remove('active');
 }
