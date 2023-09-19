@@ -1,24 +1,24 @@
-const navigationLinks = document.querySelectorAll('.link-list-header');
-const currentPath = window.location.pathname;
+// const navigationLinks = document.querySelectorAll('.link-list-header');
+// const currentPath = window.location.pathname;
 
-const navigationLinksArray = Array.from(navigationLinks);
-const hasActiveLink = navigationLinksArray.some(link => link.getAttribute('href') === currentPath);
+// const navigationLinksArray = Array.from(navigationLinks);
+// const hasActiveLink = navigationLinksArray.some(link => link.getAttribute('href') === currentPath);
 
-if (!hasActiveLink) {
-    navigationLinksArray.forEach(link => {
-        if (link.textContent === "Home") {
-            link.classList.add('active-page');
-        }
-    });
-} else {
-    navigationLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active-page');
-        } else {
-            link.classList.remove('active-page');
-        }
-    });
-}
+// if (!hasActiveLink) {
+//     navigationLinksArray.forEach(link => {
+//         if (link.textContent === "Home") {
+//             link.classList.add('active-page');
+//         }
+//     });
+// } else {
+//     navigationLinks.forEach(link => {
+//         if (link.getAttribute('href') === currentPath) {
+//             link.classList.add('active-page');
+//         } else {
+//             link.classList.remove('active-page');
+//         }
+//     });
+// }
 
 // const links = {
 //     index: document.querySelector('.js-index'),
@@ -62,3 +62,11 @@ function onChangeOnFavs(e) {
     
 } **/
 
+const navLinks = document.querySelectorAll('.link-list-header');
+const currentPath = window.location.pathname;
+
+navLinks.forEach(link => {
+    if (link.href.includes(currentPath)) {
+        link.classList.add("active-page");
+    }
+})

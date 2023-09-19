@@ -306,8 +306,7 @@
     width: 467px;
   }
 }
-.ingredients-part {
-}
+
 .product-name {
   align-items: flex-end;
   color: #050505;
@@ -497,4 +496,13 @@
 .ingredients-container,
 .recipe-text {
   padding-right: 10px;
+}
+
+.modal-recipes-container {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.modal-recipes-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
