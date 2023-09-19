@@ -8,4 +8,6 @@ window.onscroll = () => {
   }
 };
 
-scrollUp.onclick = () => {};
+scrollUp.onclick = () => {
+  window.scrollTo(0, 0);
+};
