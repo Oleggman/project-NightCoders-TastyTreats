@@ -5,7 +5,6 @@ const ref = {
     favoriteCategoriesList: document.querySelector('.favorite-categories-btn'),
     favoriteRecipesList: document.querySelector('.favorites-list'),
     favoritesDefault: document.querySelector('.favorites-default'),
-    paginationBox: document.getElementById('pagination'),
     allBtn: document.querySelector('.all-btn'),
     gallery: document.querySelector('.favorites-card-list'),
 };
@@ -37,7 +36,7 @@ function generateStorageList() {
     ref.allBtn.style.display = 'none';
 
     if (data.length) {
-        ref.allBtn.style.display = 'block';
+      ref.allBtn.style.display = 'block';
         
         let filteredData;
         if (currentCategory === '') {
@@ -46,7 +45,7 @@ function generateStorageList() {
             filteredData = data.filter((recipe) => recipe.category === currentCategory);
         }
 
-        ref.favoriteRecipesList.innerHTML = renderGalleryFavorite(filteredData);
+      ref.favoriteRecipesList.innerHTML = renderGalleryFavorite(filteredData);
         
 const favoriteButtons = document.querySelectorAll('.like-button');
     favoriteButtons.forEach((button) => {
@@ -104,7 +103,6 @@ function filterByCategory(evt) {
 };
 
 function setActiveClass(targetButton) {
-    const allCatBtn = document.querySelector('.all-btn');
     const categoryButtons = document.querySelectorAll('.button-fav');
 
     categoryButtons.forEach((button) => {
@@ -114,8 +112,6 @@ function setActiveClass(targetButton) {
             button.classList.remove('onActive');
         }
     });
-
-    allCatBtn.classList.remove('onActive');
 };
 
 document.addEventListener('DOMContentLoaded', onFavoritesReloaded);
@@ -222,7 +218,7 @@ function renderGalleryFavorite(data) {
               </svg>
             </div>
           </div>
-          <button class="card-footer-btn js-open-modal" id="${id}" data-modal="2">See recipe</button>
+          <button class="card-footer-btn js-open-modal" data-id="${id}" data-modal="2">See recipe</button>
         </div>
       </div>
     </li>`
