@@ -50,12 +50,12 @@
   padding-right: 0px;
   margin-bottom: 16px;
   width: 100%;
+  transition: 200ms ease-in;
 }
 
 .order-now-input:hover {
   outline: none;
   border-color: #9bb537;
-  transition: stroke 0.3s;
 }
 
 .order-now-button {
@@ -181,13 +181,13 @@
 
   .order-now-button {
     padding: 14px 0px;
+    transition: color 0.3s;
   }
 }
 
 .order-now-button:hover,
 .order-now-button:focus {
   color: #050505;
-  transition: color 0.3s;
 }
 
 .review-backdrop {
