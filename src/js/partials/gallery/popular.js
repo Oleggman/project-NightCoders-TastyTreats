@@ -24,7 +24,7 @@ async function handlerPopularClick(evt) {
   const recipe = await ttAPI.fetchOneRecipe(cardId);
   loadModal(recipe.data);
     
-    // document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
   recipeModal.classList.add('active');
   overlay.classList.add('active');
 }

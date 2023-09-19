@@ -1,5 +1,5 @@
 const navigationLinks = document.querySelectorAll('.link-list-header');
-const currentPath = '.' + window.location.pathname;
+const currentPath = window.location.pathname;
 
 const navigationLinksArray = Array.from(navigationLinks);
 const hasActiveLink = navigationLinksArray.some(link => link.getAttribute('href') === currentPath);
@@ -40,4 +40,25 @@ if (!hasActiveLink) {
 //         links.index.classList.remove("active-page");
 //         links.favorites.classList.add("active-page");
 //     }
-// }
+// } 
+
+/**const links = {
+    index: document.querySelector('.js-index'),
+    favorites: document.querySelector('.js-favorites'),
+}
+
+links.index.addEventListener('click', onChangeOnIndex);
+links.favorites.addEventListener('click', onChangeOnFavs);
+
+function onChangeOnIndex(e) {
+        links.favorites.classList.remove("active-page");
+        links.index.classList.add("active-page");
+}
+
+function onChangeOnFavs(e) {
+
+        links.index.classList.remove("active-page");
+        links.favorites.classList.add("active-page");
+    
+} **/
+

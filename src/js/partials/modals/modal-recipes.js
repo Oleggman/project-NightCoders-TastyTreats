@@ -2,7 +2,7 @@ import svg from '../../../img/icons.svg';
 
 const modalRefs = {
   titles: document.querySelectorAll('.recipe-modal-title'),
-  video: document.querySelector('.video-source'),
+  video: document.querySelector('.video-container'),
   rating: document.querySelectorAll('.modal-rating'),
   stars: document.querySelectorAll('.modal-stars'),
   time: document.querySelectorAll('.time-preparing'),
