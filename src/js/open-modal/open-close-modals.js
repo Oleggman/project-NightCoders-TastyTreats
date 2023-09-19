@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       modalElem.classList.add('active');
       overlay.classList.add('active');
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     });
   });
 
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       parentModal.classList.remove('active');
       overlay.classList.remove('active');
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = 'auto';
     });
   });
 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (key == 27) {
         document.querySelector('.modal.active').classList.remove('active');
         document.querySelector('.overlay').classList.remove('active');
-        document.body.style.overflow = "auto";
+        document.body.style.overflow = 'auto';
       }
     },
     false
@@ -71,6 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
   overlay.addEventListener('click', function () {
     document.querySelector('.modal.active').classList.remove('active');
     this.classList.remove('active');
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = 'auto';
   });
 });

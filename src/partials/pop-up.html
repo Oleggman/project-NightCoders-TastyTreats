@@ -1,9 +1,10 @@
-<div class="pop-up-modal modal" data-modal="3">
+<div class="pop-up-modal">
   <div class="modal-off">
     <ul class="close-list">
       <li class="close-list-child">
-        <button class="close-list-lick" data-modal-close href=""><svg class="close-list-icon" width="24" height="24">
-            <use href="../img/icons.svg#close"></use>
+        <button type="button" class="rate-close-btn">
+          <svg class="icon-close-btn" width="20" height="20">
+            <use href="./img/icons.svg#close"></use>
           </svg>
         </button>
       </li>
@@ -61,9 +62,15 @@
   </div>
 
   <div class="form">
-    <input class="pop-up-input" type="text" placeholder="Email Address" minlength="3" required />
+    <input
+      class="pop-up-input"
+      type="text"
+      placeholder="Email Address"
+      minlength="3"
+      required
+    />
     <a class="pop-up-button" href="">Send</a>
   </div>
 </div>
 
-<div class="review-backdrop overlay js-overlay-modal"></div>
+<div class="popup-backdrop"></div>
