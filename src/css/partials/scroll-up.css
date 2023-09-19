@@ -1,0 +1,20 @@
+.scroll-icon {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: white; */
+  border-radius: 50%;
+  fill: #9bb537;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
