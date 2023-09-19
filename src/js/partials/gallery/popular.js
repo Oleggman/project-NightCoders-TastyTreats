@@ -1,10 +1,12 @@
 import { refs } from '../../refs';
 import TastyTreatsAPI from '../../API/tasty-treats-api';
 import { renderPopular } from '../../renders/render-gallery';
+import { loadModal } from '../modals/modal-recipes';
 
 const recipeModal = document.querySelector('.modal-recipes-container');
 const overlay = document.querySelector('.overlay');
 
+const ttAPI = new TastyTreatsAPI();
 loadPopular();
 
 async function loadPopular() {
@@ -14,12 +16,15 @@ async function loadPopular() {
 
 refs.popularGallery.addEventListener('click', handlerPopularClick);
 
-function handlerPopularClick(evt) {
+async function handlerPopularClick(evt) {
   if (evt.target === evt.currentTarget) {
     return;
   }
   const cardId = evt.target.closest('.car-container').dataset.id;
-  // renderRecipe(cardId);  <----- запуск рендера модалки
+  const recipe = await ttAPI.fetchOneRecipe(cardId);
+  loadModal(recipe.data);
+    
+    document.body.style.overflow = "hidden";
   recipeModal.classList.add('active');
   overlay.classList.add('active');
 }

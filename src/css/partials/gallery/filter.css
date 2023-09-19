@@ -131,18 +131,18 @@
   }
 
   .search-label {
-    width: 36%;
+    max-width: 274px;
   }
 
   .time-label {
-    width: 16%;
+    width: 125px;
   }
 
   .area-label {
-    width: 18%;
+    width: 141px;
   }
 
   .ingredients-label {
-    width: 24%;
+    width: 188px;
   }
 }
