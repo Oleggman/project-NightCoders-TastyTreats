@@ -6,16 +6,22 @@ const modalRefs = {
   rating: document.querySelectorAll('.modal-rating'),
   stars: document.querySelectorAll('.modal-stars'),
   time: document.querySelectorAll('.time-preparing'),
-  tags: document.querySelector('.recipe-modal-tags'),
+  tags: document.querySelectorAll('.recipe-modal-tags'),
   ingredients: document.querySelector('.recipe-modal-ingreds'),
   description: document.querySelector('.recipe-text'),
+  iframe: document.querySelector('.js-video iframe')
 }
 
 loadModal();
 async function loadModal(recipe) {
   console.log(recipe)
   modalRefs.titles.forEach(title => title.textContent = recipe.title);
-  modalRefs.video.setAttribute('src', recipe.youtube);
+  // modalRefs.video.setAttribute('src', recipe.youtube);
+  const src = !recipe.youtube
+    ? recipe.thumb
+    : recipe.youtube.replace('watch?v=', 'embed/');
+  
+  modalRefs.iframe.setAttribute('src', src);
   modalRefs.time.forEach(item => item.textContent = recipe.time + " mins");
 
   modalRefs.rating.forEach(item => item.innerHTML = recipe.rating.toFixed(1));
@@ -57,10 +63,10 @@ async function loadModal(recipe) {
     </li>
   `);
 
-  modalRefs.tags.innerHTML = recipe.tags.map(tag => `
+  modalRefs.tags.forEach(block => block.innerHTML = recipe.tags.map(tag => `
     <li>
       <p class="categiries">#${tag}</p>
-    </li>`).join('');
+    </li>`).join(''))
   
   modalRefs.ingredients.innerHTML = recipe.ingredients.map(ingred => `
     <li class="modal-recipe-ingred">
