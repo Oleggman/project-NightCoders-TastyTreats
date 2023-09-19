@@ -173,8 +173,8 @@ screen and (min-resolution: 2dppx) and (min-width: 1280px) {
     flex-shrink: 0;
 }
 
-.button-fav .onActive,
-.all-btn .onActive {
+.button-fav.onActive,
+.button-fav.all-btn.onActive {
     color: var(--text-white-color);
     border-color: var(--accent-color);
     background-color: var(--accent-color);
@@ -216,6 +216,13 @@ screen and (min-resolution: 2dppx) and (min-width: 1280px) {
     margin-left: auto;
     margin-right: auto;
 }
+
+@media only screen and (min-width: 786px) and (max-width: 1279px) {
+   .favorites-list .card-info{
+    padding: 123px 10px 16px 10px;
+   } 
+}
+
 
 @media only screen and (min-width: 786px) {
     .favorites-card-list {
