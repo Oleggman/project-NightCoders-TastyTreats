@@ -1,18 +1,16 @@
-<!-- <div class="pop-up-modal modal" data-modal="3"> -->
-<div class="pop-up-modal">
+<div class="pop-up-modal modal" data-modal="3">
   <div class="modal-off">
     <ul class="close-list">
       <li class="close-list-child">
-        <button type="button" class="rate-close-btn">
-          <svg class="icon-close-btn" width="20" height="20">
-            <use href="./img/icons.svg#close"></use>
+        <button class="close-list-lick" data-modal-close href=""><svg class="close-list-icon" width="24" height="24">
+            <use href="../img/icons.svg#close"></use>
           </svg>
         </button>
       </li>
     </ul>
   </div>
 
-  <a href="" class="po-up-title">Rating</a>
+  <p class="po-up-title">Rating</p>
 
   <div class="full-stars">
     <span class="star-span">0.0</span>
@@ -23,7 +21,7 @@
       <!-- рейтинг 1 -->
       <label for="fst-1" data-rating="1">
         <svg width="24" height="24">
-          <use href="./img/icons.svg#star"></use>
+          <use href="../img/icons.svg#star"></use>
         </svg>
       </label>
       <input name="fst" id="fst-1" value="1" type="radio" />
@@ -31,7 +29,7 @@
       <!-- рейтинг 2 -->
       <label for="fst-2" data-rating="2">
         <svg width="24" height="24">
-          <use href="./img/icons.svg#star"></use>
+          <use href="../img/icons.svg#star"></use>
         </svg>
       </label>
       <input name="fst" id="fst-2" value="2" type="radio" />
@@ -39,7 +37,7 @@
       <!-- рейтинг 3 -->
       <label for="fst-3" data-rating="3">
         <svg width="24" height="24">
-          <use href="./img/icons.svg#star"></use>
+          <use href="../img/icons.svg#star"></use>
         </svg>
       </label>
       <input name="fst" id="fst-3" value="3" type="radio" />
@@ -47,7 +45,7 @@
       <!-- рейтинг 4 -->
       <label for="fst-4" data-rating="4">
         <svg width="24" height="24">
-          <use href="./img/icons.svg#star"></use>
+          <use href="../img/icons.svg#star"></use>
         </svg>
       </label>
       <input name="fst" id="fst-4" value="4" type="radio" />
@@ -55,7 +53,7 @@
       <!-- рейтинг 5 -->
       <label for="fst-5" data-rating="5">
         <svg width="24" height="24">
-          <use href="./img/icons.svg#star"></use>
+          <use href="../img/icons.svg#star"></use>
         </svg>
       </label>
       <input name="fst" id="fst-5" value="5" type="radio" />
@@ -63,8 +61,9 @@
   </div>
 
   <div class="form">
-    <input class="pop-up-input" type="text" placeholder="Email Address" />
+    <input class="pop-up-input" type="text" placeholder="Email Address" minlength="3" required />
     <a class="pop-up-button" href="">Send</a>
   </div>
 </div>
-<div class="popup-backdrop"></div>
+
+<div class="review-backdrop overlay js-overlay-modal"></div>
