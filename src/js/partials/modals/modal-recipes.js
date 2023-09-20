@@ -12,7 +12,7 @@ const modalRefs = {
   iframe: document.querySelector('.js-video iframe'),
   addFavoriteBtn: document.querySelector('.add-to-favorite'),
 };
-
+let favorites = [];
 loadModal();
 async function loadModal(recipe) {
   modalRefs.titles.forEach(title => (title.textContent = recipe.title));
@@ -27,7 +27,7 @@ async function loadModal(recipe) {
   modalRefs.stars.forEach(
     block =>
       (block.innerHTML = `
-      <div class="recipe-info" data-id="${recipe._id} data-title="${
+      <div class="recipe-info" data-id="${recipe._id}" data-title="${
         recipe.title
       }" data-description="${recipe.description}" data-category="${
         recipe.category
@@ -104,7 +104,7 @@ async function loadModal(recipe) {
   modalRefs.description.textContent = recipe.instructions;
 
   // перевірка чи є рецепт в обраних, для відмалювання початкової кнопки
-  let favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
+  favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
   let idList = favorites.map(el => el.id);
 
   if (idList.includes(recipe._id)) {
@@ -117,32 +117,33 @@ async function loadModal(recipe) {
 
   // прослуховувач подій на кнопку
   modalRefs.addFavoriteBtn.addEventListener('click', handlerFavoriteBtn);
-
-  function handlerFavoriteBtn(evt) {
-    console.log(evt.target);
-    if (modalRefs.addFavoriteBtn.classList.contains('remove-from-fav')) {
-      for (let i = 0; i < favorites.length; i++) {
-        if (favorites[i].id === recipe._id) {
-          const _ = favorites.splice(i, 1);
-        }
-      }
-      evt.target.textContent = 'Add to favorite';
-      evt.target.classList.remove('remove-from-fav');
-    } else {
-      favorites.push({
-        title: recipe.title,
-        category: recipe.category,
-        description: recipe.description,
-        id: recipe._id,
-        preview: recipe.preview,
-        rating: recipe.rating,
-      });
-
-      evt.target.textContent = 'Remove from favorite';
-      evt.target.classList.add('remove-from-fav');
-    }
-
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-  }
 }
-export { loadModal };
+
+function handlerFavoriteBtn(evt) {
+  const recipeInfo = document.querySelector('.recipe-info');
+
+  if (modalRefs.addFavoriteBtn.classList.contains('remove-from-fav')) {
+    for (let i = 0; i < favorites.length; i++) {
+      if (favorites[i].id === recipeInfo.dataset.id) {
+        const _ = favorites.splice(i, 1);
+      }
+    }
+    evt.target.textContent = 'Add to favorite';
+    evt.target.classList.remove('remove-from-fav');
+  } else {
+    favorites.push({
+      title: recipeInfo.dataset.title,
+      category: recipeInfo.dataset.category,
+      description: recipeInfo.dataset.description,
+      id: recipeInfo.dataset.id,
+      preview: recipeInfo.dataset.preview,
+      rating: recipeInfo.dataset.rating,
+    });
+
+    evt.target.textContent = 'Remove from favorite';
+    evt.target.classList.add('remove-from-fav');
+  }
+
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+export { loadModal, handlerFavoriteBtn };

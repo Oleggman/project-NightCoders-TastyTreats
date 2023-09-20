@@ -1,4 +1,5 @@
 import { stopVideo } from '../partials/modals/stop-recipe-video';
+import { handlerFavoriteBtn } from '../partials/modals/modal-recipes';
 const addFavoriteBtn = document.querySelector('.add-to-favorite');
 
 !(function (e) {
