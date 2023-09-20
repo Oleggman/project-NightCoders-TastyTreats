@@ -1,4 +1,5 @@
 import svg from '../../../img/icons.svg';
+import { heartRender } from '../gallery/all-recipes';
 
 const modalRefs = {
   titles: document.querySelectorAll('.recipe-modal-title'),
@@ -143,7 +144,7 @@ function handlerFavoriteBtn(evt) {
     evt.target.textContent = 'Remove from favorite';
     evt.target.classList.add('remove-from-fav');
   }
-
   localStorage.setItem('favorites', JSON.stringify(favorites));
+  heartRender();
 }
 export { loadModal, handlerFavoriteBtn };
