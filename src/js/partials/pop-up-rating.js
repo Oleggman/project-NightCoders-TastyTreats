@@ -6,9 +6,17 @@ const popupModal = document.querySelector('.pop-up-modal');
 const popupBackdrop = document.querySelector('.popup-backdrop');
 const ratingBtn = document.querySelector('.give-a-rating');
 const ratingCloseBtn = document.querySelector('.rate-close-btn');
+const popUpForm = document.querySelector('.pop-up-form');
 
 // відкриття модалки з рейтингом та додавання слухачів
 ratingBtn.addEventListener('click', handlerOpenRating);
+popUpForm.addEventListener('submit', onSubmitPopUp);
+
+function onSubmitPopUp(e) {
+  e.preventDefault();
+  e.target.reset();
+  handlerCloseRating();
+}
 
 function handlerOpenRating() {
   popupModal.classList.add('active');

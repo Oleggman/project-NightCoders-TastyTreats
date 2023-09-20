@@ -1,4 +1,4 @@
-.popular-recipes{
+.popular-recipes {
   margin-top: 40px;
 }
 .popular-headline {
@@ -65,19 +65,19 @@
 }
 
 @media screen and (max-width: 768px) {
-    .popular-container li:nth-child(3),
-    .popular-container li:nth-child(4) {
+  .popular-container li:nth-child(3),
+  .popular-container li:nth-child(4) {
     display: none;
-    }
-    .car-container:active{
-         background-color: #9BB537;
-         transition: background-color 300ms;
-    }
+  }
+  .car-container:active {
+    background-color: #9bb537;
+    transition: background-color 300ms;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .popular-recipes{
-     margin-top: 64px;
+  .popular-recipes {
+    margin-top: 64px;
   }
   .picture {
     width: 48px;
@@ -104,7 +104,7 @@
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
-    font-style: normal;    
+    font-style: normal;
     overflow: hidden;
   }
   .popular-headline {
@@ -132,4 +132,8 @@
     line-height: 28px;
     margin-bottom: 32px;
   }
+}
+
+.popular-img {
+  border-radius: 15px;
 }
