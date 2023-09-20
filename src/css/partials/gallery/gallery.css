@@ -1,7 +1,17 @@
+@media screen and (max-width: 767px) {
+  .gallery {
+    margin-bottom: 40px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .gallery {
     display: flex;
   }
+}
+
+.gallery {
+  margin-bottom: 64px;
 }
 
 .cards-container {

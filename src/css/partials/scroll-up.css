@@ -12,7 +12,14 @@
   opacity: 1;
   visibility: visible;
 
-  transition: 400ms ease-in;
+  transition: 300ms ease-in;
+}
+
+.scroll-icon:hover,
+.scroll-icon:focus {
+  fill: white;
+  background: #9bb537;
+  stroke: #9bb537;
 }
 
 .scroll-hidden {

@@ -61,7 +61,7 @@ function renderPopular(data) {
     .map(
       item => `<li class="car-container" data-id=${item._id}>
         <div class="picture">
-            <img src="${item.preview}" alt="${item.title}">
+            <img class="popular-img" src="${item.preview}" alt="${item.title}">
         </div>        
         <div class="text-container">
             <div class="popular-name">${item.title}</div>

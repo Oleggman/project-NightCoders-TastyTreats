@@ -16,7 +16,7 @@ async function renderSlider() {
         // Optional parameters
         direction: 'horizontal',
         loop: true,
-        // mousewheel: true,
+        mousewheel: true,
         autoplay: true,
         // Default parameters
         slidesPerView: 0.69,

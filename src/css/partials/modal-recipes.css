@@ -506,3 +506,9 @@
 .modal-recipes-container::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+
+@media screen and (max-width: 767px) {
+  .recipe-text {
+    margin-top: 24px;
+  }
+}
