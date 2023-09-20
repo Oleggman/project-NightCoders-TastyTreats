@@ -1,4 +1,4 @@
-import { stopVideo } from "../partials/modals/stop-recipe-video";
+import { stopVideo } from '../partials/modals/stop-recipe-video';
 
 !(function (e) {
   'function' != typeof e.matches &&
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       modalElem.classList.add('active');
       overlay.classList.add('active');
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     });
   });
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
       stopVideo();
       parentModal.classList.remove('active');
       overlay.classList.remove('active');
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = 'auto';
     });
   });
 
@@ -63,10 +63,9 @@ document.addEventListener('DOMContentLoaded', function () {
       var key = e.keyCode;
 
       if (key == 27) {
-        stopVideo();
         document.querySelector('.modal.active').classList.remove('active');
         document.querySelector('.overlay').classList.remove('active');
-        document.body.style.overflow = "auto";
+        document.body.style.overflow = 'auto';
       }
     },
     false
@@ -76,6 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
     stopVideo();
     document.querySelector('.modal.active').classList.remove('active');
     this.classList.remove('active');
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = 'auto';
   });
 });
