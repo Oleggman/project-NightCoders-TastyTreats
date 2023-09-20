@@ -1,5 +1,7 @@
 import TastyTreatsAPI from '../../API/tasty-treats-api.js';
 import { renderGallery } from '../../renders/render-gallery.js';
+import { loadModal } from '../modals/modal-recipes.js';
+import { stopVideo } from '../modals/stop-recipe-video.js';
 
 const allRecipesRender = new TastyTreatsAPI();
 
@@ -29,7 +31,7 @@ let favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
 
 gallery.addEventListener('click', handlerLike);
 
-function handlerLike(evt) {
+async function handlerLike(evt) {
   const svg = evt.target.firstElementChild;
   const li = evt.target.parentNode;
   if (evt.target.classList.contains('like-button')) {
@@ -56,15 +58,20 @@ function handlerLike(evt) {
   // відкриття модалки з рецептом + рендрер
   if (evt.target.classList.contains('card-footer-btn')) {
     const cardId = evt.target.dataset.id;
-    // renderRecipe(cardId);  <----- запуск рендера модалки
+    const recipe = await allRecipesRender.fetchOneRecipe(cardId);
+    loadModal(recipe.data);
+    
     recipeModal.classList.add('active');
     overlay.classList.add('active');
+    document.body.style.overflow = "hidden";
   }
 }
 
 // закриття модалки по кліку на іконку
 closeBtn.addEventListener('click', handlerCLoseBtn);
 function handlerCLoseBtn() {
+  stopVideo();
   recipeModal.classList.remove('active');
   overlay.classList.remove('active');
+  document.body.style.overflow = "auto";
 }

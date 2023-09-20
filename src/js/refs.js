@@ -5,6 +5,8 @@ const refs = {
   ingredSelect: document.querySelector('.js-ingred-select'),
   gallery: document.querySelector('.js-gallery'),
   form: document.querySelector('.js-form'),
+  inputIcon: document.querySelector('.js-filter-input'),
+  resetIcon: document.querySelector('.reset-filter'),
 
   popularGallery: document.querySelector('.js-popular-gallery'),
   categoriesBox: document.querySelector('.js-categories-box'),

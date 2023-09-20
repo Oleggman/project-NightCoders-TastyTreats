@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   gap: 16px;
   position: relative;
+  margin-bottom: 44px;
 }
 
 .filters-label {
@@ -32,13 +33,14 @@
   font-family: inherit;
   font-size: 16px;
   color: rgba(5, 5, 5, 1);
+  transition: border-color 300ms;
 }
 
 .search-bar:hover {
   border-color: rgba(155, 181, 55, 1);
 }
 
-.search-bar:hover ~ .svg-filter {
+.search-bar:hover ~ .js-filter-input .svg-filter {
   fill: rgba(155, 181, 55, 1);
 }
 
@@ -49,11 +51,12 @@
 
 .svg-filter {
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 15px;
   fill: rgba(5, 5, 5, 0.5);
   width: 18px;
   height: 18px;
+  transition: fill 300ms;
 }
 
 .time-label,
@@ -72,6 +75,7 @@
   max-width: 100%;
   height: 48px;
   border: solid 1px rgba(5, 5, 5, 0.2);
+  transition: border-color 300ms;
 }
 
 .select-div:hover {
@@ -92,14 +96,18 @@
 .clear-filter {
   position: absolute;
   border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background-color: transparent;
   width: fit-content;
   height: fit-content;
   font-family: inherit;
   color: rgba(5, 5, 5, 0.5);
   font-size: 12px;
-  top: 100%;
+  top: calc(100% + 14px);
   right: 0;
+  transition: color 300ms;
 }
 
 .clear-filter:hover {
@@ -131,18 +139,35 @@
   }
 
   .search-label {
-    width: 36%;
+    max-width: 274px;
   }
 
   .time-label {
-    width: 16%;
+    width: 125px;
   }
 
   .area-label {
-    width: 18%;
+    width: 141px;
   }
 
   .ingredients-label {
-    width: 24%;
+    width: 188px;
   }
+}
+
+.js-filter-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-filter {
+  stroke: rgba(5, 5, 5, 0.5);
+  width: 12px;
+  height: 12px;
+  transition: stroke 300ms;
+}
+
+.clear-filter:hover .reset-filter {
+  stroke: rgba(155, 181, 55, 1);
 }
