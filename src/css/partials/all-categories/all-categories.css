@@ -1,8 +1,8 @@
 .wrap-categories {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
-.btn-categories-position{
+.btn-categories-position {
   display: inline-block;
   padding-top: 24px;
 }
@@ -29,7 +29,7 @@
   background-color: #9bb537;
   color: #f8f8f8;
   border: 0;
-  transition: color, background-color 300ms;  
+  transition: color, background-color 300ms;
 }
 
 .btn-filter {
@@ -60,7 +60,7 @@
   gap: 18px;
   width: 326px;
   height: 198px;
-  overflow-y: scroll;  
+  overflow-y: scroll;
 }
 
 /* @media screen and (max-width: 767px) {
@@ -75,19 +75,19 @@
     width: 176px;
     height: 416px;
   }
-  .btn-categories{
+  .btn-categories {
     width: 176px;
     padding: 14px 28px;
     margin-bottom: 30px;
   }
-  .wrap-categories{
+  .wrap-categories {
     margin-right: 32px;
   }
-  .btn-filter{
+  .btn-filter {
     font-size: 16px;
     line-height: 20px;
   }
-  .filter-categories{
+  .filter-categories {
     gap: 24px;
   }
 }
@@ -97,8 +97,11 @@
     width: 235px;
     height: 416px;
   }
-  .btn-categories{       
+  .btn-categories {
     margin-bottom: 42px;
     padding: 14px 27px;
+  }
+  .wrap-categories {
+    margin-right: 60px;
   }
 }
