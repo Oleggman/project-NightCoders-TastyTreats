@@ -115,7 +115,7 @@ async function loadModal(recipe) {
     modalRefs.addFavoriteBtn.classList.remove('remove-from-fav');
   }
 
-  // прослуховувач подій на кнопку
+  // вішаєм прослуховувач подій на кнопку, після рендеру модалки
   modalRefs.addFavoriteBtn.addEventListener('click', handlerFavoriteBtn);
 }
 
