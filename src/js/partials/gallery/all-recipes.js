@@ -1,6 +1,7 @@
 import TastyTreatsAPI from '../../API/tasty-treats-api.js';
 import { renderGallery } from '../../renders/render-gallery.js';
 import { loadModal } from '../modals/modal-recipes.js';
+import { stopVideo } from '../modals/stop-recipe-video.js';
 
 const allRecipesRender = new TastyTreatsAPI();
 
@@ -69,6 +70,7 @@ async function handlerLike(evt) {
 // закриття модалки по кліку на іконку
 closeBtn.addEventListener('click', handlerCLoseBtn);
 function handlerCLoseBtn() {
+  stopVideo();
   recipeModal.classList.remove('active');
   overlay.classList.remove('active');
   document.body.style.overflow = "auto";
