@@ -104,9 +104,10 @@ async function loadModal(recipe) {
   modalRefs.description.textContent = recipe.instructions;
 
   // перевірка чи є рецепт в обраних, для відмалювання початкової кнопки
-  const recipeFavorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
-  const recipeIdList = recipeFavorites.map(el => el.id);
-  if (recipeIdList.includes(recipe._id)) {
+  let favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
+  let idList = favorites.map(el => el.id);
+
+  if (idList.includes(recipe._id)) {
     modalRefs.addFavoriteBtn.textContent = 'Remove from favorite';
     modalRefs.addFavoriteBtn.classList.add('remove-from-fav');
   } else {
@@ -114,9 +115,34 @@ async function loadModal(recipe) {
     modalRefs.addFavoriteBtn.classList.remove('remove-from-fav');
   }
 
+  // прослуховувач подій на кнопку
   modalRefs.addFavoriteBtn.addEventListener('click', handlerFavoriteBtn);
 
-  function handlerFavoriteBtn(evt) {}
-}
+  function handlerFavoriteBtn(evt) {
+    console.log(evt.target);
+    if (modalRefs.addFavoriteBtn.classList.contains('remove-from-fav')) {
+      for (let i = 0; i < favorites.length; i++) {
+        if (favorites[i].id === recipe._id) {
+          const _ = favorites.splice(i, 1);
+        }
+      }
+      evt.target.textContent = 'Add to favorite';
+      evt.target.classList.remove('remove-from-fav');
+    } else {
+      favorites.push({
+        title: recipe.title,
+        category: recipe.category,
+        description: recipe.description,
+        id: recipe._id,
+        preview: recipe.preview,
+        rating: recipe.rating,
+      });
 
+      evt.target.textContent = 'Remove from favorite';
+      evt.target.classList.add('remove-from-fav');
+    }
+
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }
+}
 export { loadModal };

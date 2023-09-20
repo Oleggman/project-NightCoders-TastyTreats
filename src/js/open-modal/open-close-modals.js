@@ -1,4 +1,5 @@
 import { stopVideo } from '../partials/modals/stop-recipe-video';
+const addFavoriteBtn = document.querySelector('.add-to-favorite');
 
 !(function (e) {
   'function' != typeof e.matches &&
@@ -54,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
       parentModal.classList.remove('active');
       overlay.classList.remove('active');
       document.body.style.overflow = 'auto';
+      addFavoriteBtn.removeEventListener('click', handlerFavoriteBtn);
     });
   });
 
@@ -67,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.overlay').classList.remove('active');
         document.body.style.overflow = 'auto';
       }
+      addFavoriteBtn.removeEventListener('click', handlerFavoriteBtn);
     },
     false
   );
@@ -76,5 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.modal.active').classList.remove('active');
     this.classList.remove('active');
     document.body.style.overflow = 'auto';
+    addFavoriteBtn.removeEventListener('click', handlerFavoriteBtn);
   });
 });
