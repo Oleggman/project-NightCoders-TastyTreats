@@ -2,6 +2,7 @@ import { refs } from '../../refs';
 import { renderGallery } from '../../renders/render-gallery';
 import TastyTreatsAPI from '../../API/tasty-treats-api';
 import debounce from 'lodash.debounce';
+import svg from '../../../img/icons.svg';
 
 const tastyTreatsApi = new TastyTreatsAPI();
 
@@ -10,6 +11,8 @@ refs.timeSelect.addEventListener('change', onTimeSelect);
 refs.areaSelect.addEventListener('change', onAreaSelect);
 refs.ingredSelect.addEventListener('change', onIngredSelect);
 refs.form.addEventListener('reset', onResetForm);
+refs.inputIcon.innerHTML = `<svg class="svg-filter"><use href="${svg}#search"></use></svg>`
+refs.resetIcon.innerHTML = `<svg class="reset-filter"><use href="${svg}#close"></use></svg>`
 
 let filterArr = [];
 

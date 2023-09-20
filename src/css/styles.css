@@ -7,6 +7,7 @@
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./partials/header.css');
+@import url('./team-title.css');
 @import url('./partials/hero.css');
 @import url('./partials/gallery/filter.css');
 @import url('./partials/gallery/popular-recipes.css');
@@ -17,6 +18,7 @@
 @import url('./partials/order-now.css');
 @import url('./partials/pop-up.css');
 @import url('./partials/footer.css');
+@import url('./partials/scroll-up.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

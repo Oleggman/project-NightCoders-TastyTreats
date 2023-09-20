@@ -12,15 +12,11 @@
   overflow: hidden;
 }
 
-
 .close-list-lick-order-now :hover,
 .close-list-lick-order-now :focus {
   stroke: #9bb537;
   transition: stroke 0.3s;
 }
-
-
-
 
 .order-now-modal {
   margin: 0 auto;
@@ -54,18 +50,25 @@
   padding-right: 0px;
   margin-bottom: 16px;
   width: 100%;
+  transition: 200ms ease-in;
+  outline: none;
 }
 
 .order-now-input:hover {
   outline: none;
   border-color: #9bb537;
+}
+
+.order-now-input:focus {
+  outline: none;
+  border: 2px solid #91b500;
   transition: stroke 0.3s;
 }
 
 .order-now-button {
   border-radius: 15px;
   background: #9bb537;
-  text-decoration: none;
+  outline: none;
   color: #f8f8f8;
   font-family: Inter;
   font-size: 14px;
@@ -73,6 +76,7 @@
   font-weight: 500;
   line-height: normal;
   text-align: center;
+  border: none;
 }
 
 .order-now-modal-off {
@@ -185,13 +189,13 @@
 
   .order-now-button {
     padding: 14px 0px;
+    transition: color 0.3s;
   }
 }
 
 .order-now-button:hover,
 .order-now-button:focus {
   color: #050505;
-  transition: color 0.3s;
 }
 
 .review-backdrop {
