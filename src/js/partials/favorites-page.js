@@ -1,5 +1,6 @@
-import svg from '../../img/icons.svg'
-
+import TastyTreatsAPI from '../API/tasty-treats-api.js'
+import svg from '../../img/icons.svg';
+import { loadModal } from '../partials/modals/modal-recipes.js';
 
 const ref = {
     favoriteCategoriesList: document.querySelector('.favorite-categories-btn'),
@@ -7,7 +8,13 @@ const ref = {
     favoritesDefault: document.querySelector('.favorites-default'),
     allBtn: document.querySelector('.all-btn'),
     gallery: document.querySelector('.favorites-card-list'),
+  galleryCard: document.querySelector('.cards-container'),
+  recipeModal: document.querySelector('.modal-recipes-container'),
+  overlay: document.querySelector('.overlay'),
+  closeBtn: document.querySelector('.modal-close-btn'),
 };
+
+const allRecipesRender = new TastyTreatsAPI();
 
 let currentCategory = '';
 
@@ -51,7 +58,11 @@ const favoriteButtons = document.querySelectorAll('.like-button');
     favoriteButtons.forEach((button) => {
         button.onclick = () => handleFavoriteButtonClick(button);
     });
-
+      
+      const recipeButtons = document.querySelectorAll('.card-footer-btn');
+    recipeButtons.forEach((button) => {
+        button.onclick = () => handlerRecipeModal(button);
+    });
 
         ref.favoritesDefault.classList.add('is-hidden-favorites')
     } else {
@@ -67,6 +78,31 @@ const favoriteButtons = document.querySelectorAll('.like-button');
         ref.favoritesDefault.classList.add('is-hidden-favorites');
     }
 }
+
+
+async function handlerRecipeModal(button) {
+  
+  // відкриття модалки з рецептом + рендрер
+
+    const cardId = button.dataset.id;
+    const recipe = await allRecipesRender.fetchOneRecipe(cardId);
+    loadModal(recipe.data);
+    
+    ref.recipeModal.classList.add('active');
+    ref.overlay.classList.add('active');
+    document.body.style.overflow = "hidden";
+  }
+
+// закриття модалки по кліку на іконку
+ref.closeBtn.addEventListener('click', handlerCLoseBtn);
+function handlerCLoseBtn() {
+  ref.recipeModal.classList.remove('active');
+  ref.overlay.classList.remove('active');
+  document.body.style.overflow = "auto";
+}
+
+
+
 
 // Генерація кнопок категорій
 function generateCategoryList() {
@@ -166,6 +202,7 @@ function handleFavoriteButtonClick(button) {
     generateStorageList();
   }
 };
+
 
 
 // Функція рендеру карток-рецептів

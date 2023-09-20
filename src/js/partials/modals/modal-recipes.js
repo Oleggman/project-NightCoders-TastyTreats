@@ -14,9 +14,7 @@ const modalRefs = {
 
 loadModal();
 async function loadModal(recipe) {
-  console.log(recipe)
   modalRefs.titles.forEach(title => title.textContent = recipe.title);
-  // modalRefs.video.setAttribute('src', recipe.youtube);
   const src = !recipe.youtube
     ? recipe.thumb
     : recipe.youtube.replace('watch?v=', 'embed/');
