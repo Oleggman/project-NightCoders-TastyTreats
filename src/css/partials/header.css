@@ -236,6 +236,7 @@ header {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    transition: color 300ms;
   }
 
   .link-list-header:hover,

@@ -1,6 +1,6 @@
 .hero {
   padding-bottom: 80px;
-  padding-top: 210px;
+  padding-top: 260px;
 }
 @media only screen and (min-width: 1280px) {
   .hero {
@@ -78,6 +78,7 @@
   font-weight: 500;
   line-height: normal;
   background-color: inherit;
+  transition: background-color 300ms, color 300ms;
 }
 @media only screen and (min-width: 768px) {
   .hero-btn {

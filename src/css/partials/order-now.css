@@ -50,6 +50,7 @@
   padding-right: 0px;
   margin-bottom: 16px;
   width: 100%;
+  outline: none;
 }
 
 .order-now-input:hover {
@@ -58,10 +59,16 @@
   transition: stroke 0.3s;
 }
 
+.order-now-input:focus {
+  outline: none;
+  border: 2px solid #91b500;
+  transition: stroke 0.3s;
+}
+
 .order-now-button {
   border-radius: 15px;
   background: #9bb537;
-  text-decoration: none;
+  outline: none;
   color: #f8f8f8;
   font-family: Inter;
   font-size: 14px;
@@ -69,6 +76,7 @@
   font-weight: 500;
   line-height: normal;
   text-align: center;
+  border: none;
 }
 
 .order-now-modal-off {
