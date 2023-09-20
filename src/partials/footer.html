@@ -14,7 +14,7 @@
                 <li class="fond-item">
                     <button type="button" class="fond-btn">
                         <a href="https://prytulafoundation.org/">
-                            <img src="" alt="Prytula Fondation">
+                            <img class="fond-logo" src="../img/footer/prutyla-min.png" alt="Prytula Fondation">
                             <!-- <svg class="" width="" height="">
                                 <use href="">prutyla</use>
                             </svg> -->
@@ -24,7 +24,7 @@
                 <li class="fond-item">
                     <button type="button" class="fond-btn">
                         <a href="https://savelife.in.ua/">
-                            <img src="" alt="Save life Foundation">
+                            <img class="fond-logo-live" src="../img/footer/come-back-alive-min.png" alt="Save life Foundation">
                          <!-- <svg class="" width="" height="">
                              <use href="">savelife</use>
                          </svg> -->
@@ -37,27 +37,31 @@
         </div>
 
         <div class="logo-coders">
-          <button type="button" class="coders-btn">
+          <button type="button" id="open-team-modal" class="coders-btn">
             
-            <img src=" " alt="logo of nightCoders">
+            <img class="team-logo" src="../img/footer/logo-coders-min.png" alt="logo of nightCoders">
         
     </button>
         </div>
 
         <div class="contacts">
-            <h2>Our contacts:</h2>
-            <p><span class="bold">Kyiv,</span> Independence Square</p>
-            <p><span class="bold">tel:</span> +38 (068) 111-22-33</p>
-            <p><span class="bold">e-mail:</span> nightcoders@ukr.net</p>
+            <h2 class="contacts-tittle" >Our contacts:</h2>
+            <p class="contacts-text" ><b>Kyiv,</b> Independence Square</p>
+            <p class="contacts-text"><b>tel:</b> +38 (068) 111-22-33</p>
+            <p class="contacts-text"><b>e-mail:</b> nightcoders@ukr.net</p>
         </div>
     </div>
  
 </div>
 
 <!-- MODAL-TEAM -->
-<!-- 
-<div class="modal-team">
-    <h2>Our team</h2>
+
+<div class="modal-team" data-modal="4">
+<svg class="team-modal-close" width="20" height="20">
+  <use href="../img/icons.svg#close"></use>
+</svg>
+
+    <h2 class="modal-tittle">Our team</h2>
 <ul class="team-list">
     <li class="team-item">
 <img src="" alt="member of the team">
@@ -106,4 +110,7 @@
     </li>
 </ul>
 <img class="logo-coders-modal" src="" alt="logo of team">
-</div> -->
+</div>
+<div class="team-modal-overlay" id="modal-team-overlay">
+
+</div>
