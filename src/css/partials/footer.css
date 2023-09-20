@@ -26,7 +26,7 @@
 .line {
     position: absolute;
     top: 0;
-   right: 10%;
+    right: 10%;
     width: 80%;
     stroke-width: 1px;
     stroke: #B4B4B4;
@@ -42,7 +42,7 @@
     justify-content: space-between;
     align-items: center;
 
-    gap: 100px;
+    /* gap: 100px; */
     /* margin-top: 10px; */
     }
 }
@@ -59,32 +59,61 @@ margin-bottom: 40px;
 @media screen and (min-width: 768px) {
     .contacts{
         margin: 0;
+        margin-bottom: 0;
     }
 }
 
 @media screen and (min-width: 1280px) {
     .contacts{
         margin: 0;
+        margin-bottom: 0;
     }
 }
 
-.bold {
-    font-weight: 700;
+.contacts-tittle {
+    color: #9BB537;
+    margin-bottom: 8px;
 }
 
+.contacts-text {
+   margin-bottom: 2px;
+}
+
+
+
 .logo-coders {
-width: 90px;
-height: 90px;
-margin: 0 auto;
+width: auto;
+height: auto;
+/* margin: 0 auto; */
 margin-bottom: 40px;
-border-radius: 50px;
-border: 5px solid #B4B4B4;
+border-radius: 100px;
+/* border: 5px solid #B4B4B4; */
 }
 
 @media screen and (min-width: 768px) {
     .logo-coders{
         margin: 0;
+        margin-bottom: 0;
     }
+}
+
+.coders-btn {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 100px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.team-logo {
+    width: 120px;
+    height: auto;
+}
+.coders-btn:hover,
+.coders-btn:focus {
+    box-shadow: rgba(155, 181, 55, 0.8) 0px 30px 90px;
+
 }
 
 
@@ -93,7 +122,7 @@ border: 5px solid #B4B4B4;
     flex-direction: column;
 width: 335px;
 height: 150px;
-margin-bottom: 40px;
+/* margin-bottom: 40px; */
 
 border-radius: 15px;
 border: 1px solid #B4B4B4;
@@ -141,24 +170,31 @@ border: 1px solid #B4B4B4;
     font-style: italic;
     font-weight: 300;
     line-height: 1.4;
-    text-align: center;
+    /* text-align: center; */
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
+
+
+
 .fonds-btn-list{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    gap: 18px;
+    /* gap: 18px; */
 }
 
 .fond-btn{
-width: 130px;
-height: 50px;
-background-color: #fff;
-border-radius: 15px;
-border-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 80px;
+    border-color: transparent;
 
 /* transition-property: shadow; */
 transition-duration: 250ms;
@@ -171,12 +207,32 @@ transition:cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: rgba(155, 181, 55, 0.8) 0px 30px 90px;
 }
 
+.fond-logo{
+   display: block;
+    width: 50px;
+    height: auto;
+    object-position: center;
+}
+
+.fond-logo-live{
+    width: 120px;
+    height: auto;
+    object-fit: cover
+    
+}
+
+
+
 /* MODAL TEAM */
 .modal-team {
+
+/* opacity: 0;
+visibility: hidden; */
+display: none;
     position: relative;
     padding: 40px 20px;
-    max-width: 335px;
-    height: 1171px;
+    max-width: 355px;
+    height: auto;
     margin: 0 auto;
     background-color: #fff;
     /* background-color: #cbdc88; */
@@ -188,6 +244,14 @@ transition:cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform: translate(-50%, -50%);
     overflow: auto;
     max-height: 95%;
+    z-index: 100;
+}
+
+@media screen ahd (min-width: 768px) {
+    .modal-team {
+        width: 760px;
+
+    } 
 }
 
 .modal-team-backdrop {
@@ -213,3 +277,30 @@ transition:cubic-bezier(0.175, 0.885, 0.32, 1.275);
       padding: 32px;
     }
   }
+
+.team-modal-overlay {
+opacity: 0;
+visibility: hidden;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(46, 47, 66, 0.4);
+z-index: 20;
+transition: 0.3s all;
+}  
+
+.team-modal-close {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    stroke: #000;
+    cursor: pointer;
+}
+
+/* .is-hidden-modal {
+    display: none;
+} */
