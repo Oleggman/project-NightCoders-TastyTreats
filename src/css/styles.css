@@ -7,6 +7,7 @@
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./partials/header.css');
+@import url('./team-title.css');
 @import url('./partials/hero.css');
 @import url('./partials/gallery/filter.css');
 @import url('./partials/gallery/popular-recipes.css');
