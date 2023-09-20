@@ -1,3 +1,5 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 // Отримуємо необхідні елементи DOM
 const ratingGroup = document.querySelector('.rating-group');
 const starSpans = document.querySelectorAll('.star-span');
@@ -15,6 +17,7 @@ popUpForm.addEventListener('submit', onSubmitPopUp);
 function onSubmitPopUp(e) {
   e.preventDefault();
   e.target.reset();
+  Notify.success('Thank you for your feedback!!! Your rating will be accepted.');
   handlerCloseRating();
 }
 
