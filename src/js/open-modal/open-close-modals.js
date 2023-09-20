@@ -1,3 +1,5 @@
+import { stopVideo } from '../partials/modals/stop-recipe-video';
+
 !(function (e) {
   'function' != typeof e.matches &&
     (e.matches =
@@ -48,27 +50,29 @@ document.addEventListener('DOMContentLoaded', function () {
     item.addEventListener('click', function (e) {
       var parentModal = this.closest('.modal');
 
+      stopVideo();
       parentModal.classList.remove('active');
       overlay.classList.remove('active');
       document.body.style.overflow = 'auto';
     });
   });
 
-  // document.body.addEventListener(
-  //   'keyup',
-  //   function (e) {
-  //     var key = e.keyCode;
+  document.body.addEventListener(
+    'keyup',
+    function (e) {
+      var key = e.keyCode;
 
-  //     if (key == 27) {
-  //       document.querySelector('.modal.active').classList.remove('active');
-  //       document.querySelector('.overlay').classList.remove('active');
-  //       document.body.style.overflow = "auto";
-  //     }
-  //   },
-  //   false
-  // );
+      if (key == 27) {
+        document.querySelector('.modal.active').classList.remove('active');
+        document.querySelector('.overlay').classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    },
+    false
+  );
 
   overlay.addEventListener('click', function () {
+    stopVideo();
     document.querySelector('.modal.active').classList.remove('active');
     this.classList.remove('active');
     document.body.style.overflow = 'auto';
