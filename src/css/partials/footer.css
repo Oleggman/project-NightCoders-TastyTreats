@@ -8,8 +8,8 @@
 }
 @media screen and (min-width: 768px) {
     .footer-container {
-        display: flex;
-        width: 768px;
+        /* display: flex; */
+        min-width: 768px;
         height: auto;
         padding: 60px 32px;
     }
@@ -17,7 +17,7 @@
 
 @media screen and (min-width: 1280px) {
     .footer-container {
-        width: 1280px;
+        min-width: 1280px;
         height: auto;
         padding: 80px 100px;
     }
@@ -36,6 +36,7 @@
 
 @media screen and (min-width: 768px) {
     .main-footer-content {
+        min-width: auto;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -55,12 +56,23 @@ margin: 0 auto;
 margin-bottom: 40px;
 
 }
+@media screen and (min-width: 768px) {
+    .contacts{
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .contacts{
+        margin: 0;
+    }
+}
 
 .bold {
     font-weight: 700;
 }
 
-.logo-coders{
+.logo-coders {
 width: 90px;
 height: 90px;
 margin: 0 auto;
@@ -68,6 +80,13 @@ margin-bottom: 40px;
 border-radius: 50px;
 border: 5px solid #B4B4B4;
 }
+
+@media screen and (min-width: 768px) {
+    .logo-coders{
+        margin: 0;
+    }
+}
+
 
 .donate-container {
     display: flex;
@@ -151,3 +170,46 @@ transition:cubic-bezier(0.175, 0.885, 0.32, 1.275);
     /* box-shadow: rgba(155, 181, 55, 1) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
     box-shadow: rgba(155, 181, 55, 0.8) 0px 30px 90px;
 }
+
+/* MODAL TEAM */
+.modal-team {
+    position: relative;
+    padding: 40px 20px;
+    max-width: 335px;
+    height: 1171px;
+    margin: 0 auto;
+    background-color: #fff;
+    /* background-color: #cbdc88; */
+    border-radius: 15px;
+    border: 2px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    max-height: 95%;
+}
+
+.modal-team-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    backdrop-filter: blur(2px);
+  
+    transition-property: opacity, visibility;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+  }
+
+
+  @media screen and (min-width: 768px) {
+    .modal-team {
+      max-width: 531px;
+      height: 905px;
+      padding: 32px;
+    }
+  }
