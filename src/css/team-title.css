@@ -1,8 +1,8 @@
 .our-title {
   font-weight: 900;
   position: absolute;
-  font-size: 75px;
-  top: 10%;
+  font-size: 50px;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   text-shadow: -6px 5px 5px rgba(0, 0, 0, 0.6);
@@ -10,6 +10,12 @@
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   -webkit-animation: text-flicker-out-glow 3500ms linear both;
   animation: text-flicker-out-glow 3500ms linear both;
+}
+
+@media screen and (min-width: 768px) {
+  .our-title {
+    font-size: 75px;
+  }
 }
 
 .keyword {
