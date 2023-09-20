@@ -51,6 +51,7 @@
 .hero-title-span {
   color: #9bb537;
   font-style: italic;
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
 }
 .hero-descr {
