@@ -19,6 +19,7 @@
 @import url('./partials/pop-up.css');
 @import url('./partials/footer.css');
 @import url('./partials/scroll-up.css');
+@import url('./dark-theme.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
