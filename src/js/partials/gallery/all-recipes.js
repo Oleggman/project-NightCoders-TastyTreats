@@ -11,7 +11,7 @@ const overlay = document.querySelector('.overlay');
 const closeBtn = document.querySelector('.modal-close-btn');
 loadGalleryStart();
 
-async function loadGalleryStart(currentPage, perPage) {
+async function loadGalleryStart() {
   // рендер карток
   const res = await allRecipesRender.fetchRecipes();
     sessionStorage.setItem('totalPages', res.data.totalPages);
