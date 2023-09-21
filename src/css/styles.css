@@ -60,6 +60,7 @@
   --border-pag: #9bb537;
   --background-menu: #fff;
   --option-color: #fff;
+  --card-bg: linear-gradient(1deg, rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0));
 }
 
 :root[data-theme='dark'] {
@@ -80,4 +81,5 @@
   --border-pag: #9bb537;
   --background-menu: #050505;
   --option-color: #050505;
+  --card-bg: linear-gradient(1deg, #050505 4.82%, rgba(5, 5, 5, 0) 108.72%);
 }

@@ -14,7 +14,7 @@
   padding: 14px 29px;
   border-radius: 15px;
   border: 1px solid var(--primary-color-02);
-  color: var();
+  color: var(--primary-color-05);
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
