@@ -16,6 +16,8 @@ async function loadGalleryStart(currentPage, perPage) {
   const res = await allRecipesRender.fetchRecipes();
     sessionStorage.setItem('totalPages', res.data.totalPages);
   gallery.innerHTML = renderGallery(res.data.results);
+  heartRender();
+  gallery.addEventListener('click', handlerLike);
 }
 async function loadGallery(currentPage, perPage) {
   // рендер карток
