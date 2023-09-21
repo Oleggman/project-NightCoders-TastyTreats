@@ -13,7 +13,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   row-gap: 8px;
-  color: var(--primary-color-02);
+  color: var(--primary-color-05);
   line-height: 18px;
   font-size: 14px;
 }
@@ -32,7 +32,7 @@
   border: solid 1px var(--primary-color-02);
   font-family: inherit;
   font-size: 16px;
-  color: rgba(5, 5, 5, 1);
+  color: var(--primary-color);
   transition: border-color 300ms;
 }
 
