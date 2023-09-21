@@ -24,10 +24,10 @@ header {
 }
 
 .logo-green {
-  color: #9bb537;
+  color: var(--border-pag);
 }
 .logo-black {
-  color: #050505;
+  color: var(--primary-color);
 }
 
 .basket-icon {
@@ -35,13 +35,13 @@ header {
   width: 24px;
   height: 24px;
   fill: none;
-  stroke: #050505;
+  stroke: var(--primary-color);
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .basket-icon:focus,
 .basket-icon:hover {
-  stroke: #9bb537;
+  stroke: var(--border-pag);
 }
 
 .burger-btn {
@@ -57,13 +57,13 @@ header {
 .burger-icon {
   width: 32px;
   height: 32px;
-  stroke: #050505;
+  stroke: var(--primary-color);
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .burger-icon:focus,
 .burger-icon:hover {
-  stroke: #9bb537;
+  stroke: var(--border-pag)
 }
 
 /* ...............burger-menu....................... */
@@ -75,7 +75,7 @@ header {
   right: 0;
   min-width: 200px;
   height: 100%;
-  background-color: #9bb537;
+  background-color:var(--border-pag);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -101,7 +101,7 @@ header {
 .burger-close-btn {
   width: 32px;
   height: 32px;
-  background-color: #9bb537;
+  background-color:var(--border-pag);
   padding: 0;
   border: 0;
   cursor: pointer;
@@ -119,14 +119,14 @@ header {
   height: 32px;
   line-height: 0;
   text-align: center;
-  stroke: #f8f8f8;
+  stroke: var(--primary-rating);
   transition: srtoke 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .burger-close-btn:hover > .burger-close-icon,
 .burger-close-btn:focus > .burger-close-icon {
-  stroke: #f8f8f8;
+  stroke: var(--primary-rating);
   transform: scale(1.5);
 }
 
@@ -139,7 +139,7 @@ header {
 }
 
 .link-modal-menu {
-  color: #f8f8f8;
+  color: var(--primary-rating);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -231,7 +231,7 @@ header {
     gap: 16px;
   }
   .link-list-header {
-    color: #050505;
+    color: var(--primary-color);
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -242,12 +242,12 @@ header {
   .link-list-header:hover,
   .link-list-header:focus,
   .link-list-header:active {
-    color: #9bb537;
+    color: var(--border-pag);
     font-weight: 500;
   }
 
   .active-page {
-    color: #9bb537;
+    color: var(--border-pag);
   }
   .logo {
     align-items: center;
@@ -266,7 +266,7 @@ header {
     border-radius: 0.5rem;
     width: 46px;
     height: 20px;
-    stroke: #050505;
+    stroke: var(--primary-color);
   }
   .theme-toggle-checkbox {
     display: none;
@@ -295,9 +295,9 @@ header {
   }
   .theme-toggle-checkbox:checked + .theme-toggle-label::before {
     transform: translateX(25px);
-    background-color: #333;
+    background-color: #fff;
   }
   .theme-toggle-checkbox:checked + .theme-toggle-label {
-    background-color: #9bb537;
+    background-color: var(--border-pag);
   }
 }

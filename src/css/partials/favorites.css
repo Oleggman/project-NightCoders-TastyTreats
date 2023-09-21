@@ -164,10 +164,10 @@ screen and (min-resolution: 2dppx) and (min-width: 1280px) {
     height: 46px;
     border-radius: 15px;
     font-size: 14px;
-    color: rgba(5, 5, 5, 0.3);
+    color: var(--primary-color-03);
     padding: 14px 18px;
-    background-color: #f8f8f8;
-    border: 1px solid rgba(5, 5, 5, 0.2);
+    background-color: var(--background);
+    border: 1px solid var(--primary-color-02);
     outline: none;
     cursor: pointer;
     flex-shrink: 0;
