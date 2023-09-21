@@ -94,6 +94,11 @@
   color: var(--primary-color-05);
 }
 
+.filters-option option {
+  background-color: var(--background);
+  color: var(--primary-color-05);
+}
+
 .clear-filter {
   position: absolute;
   border: none;
