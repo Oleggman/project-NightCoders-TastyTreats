@@ -4,6 +4,8 @@ import TastyTreatsAPI from '../../API/tasty-treats-api';
 import debounce from 'lodash.debounce';
 import svg from '../../../img/icons.svg';
 
+import { renewPagination } from '../pagination-home';
+
 const tastyTreatsApi = new TastyTreatsAPI();
 
 refs.recipeInput.addEventListener('input', debounce(onInputRecipe, 300));
@@ -16,12 +18,16 @@ refs.resetIcon.innerHTML = `<svg class="reset-filter"><use href="${svg}#close"><
 
 let filterArr = [];
 
-const filters = {
+
+export const filters = {
   time: '',
   area: '',
   ingredients: '',
+  title: '',
+  category: '',
 };
 
+console.log(filters);
 async function getDataArr() {
   let dataArr = [];
   if (filterArr[0]) {
@@ -37,9 +43,21 @@ async function getDataArr() {
 
 async function onResetForm(e) {
   e.preventDefault();
-  const recipes = await getDataArr();
-  refs.gallery.innerHTML = renderGallery(recipes);
+  // const recipes = await getDataArr();
+  // refs.gallery.innerHTML = renderGallery(recipes);
+  // console.log(recipes.length);
+  // console.log(recipes);
   filterArr = [];
+  filters.area = '';
+  filters.ingredients = '';
+  filters.time = '';
+  filters.title ='';
+
+  const res = await tastyTreatsApi.fetchAllRecipes(1);
+  console.log(res.data.totalPages);
+  sessionStorage.setItem('totalPages', res.data.totalPages);
+  refs.gallery.innerHTML = renderGallery(res.data.results);
+  renewPagination();
 
   refs.recipeInput.value = '';
   refs.timeSelect.selectedIndex = 0;
@@ -52,17 +70,28 @@ async function onInputRecipe(e) {
   e.preventDefault();
   let dataArr = await getDataArr();
   
+  
   const filteredByInput = dataArr.filter(item =>
     item.title.toLowerCase().includes(e.target.value.trim(' '))
   );
-
-  refs.gallery.innerHTML = renderGallery(filteredByInput);
+  filters.title = e.target.value;
+  console.log(filters);
+  // refs.gallery.innerHTML = renderGallery(filteredByInput);
+  const res = await tastyTreatsApi.fetchAllRecipes(1);
+  console.log(res.data.totalPages);
+  sessionStorage.setItem('totalPages', res.data.totalPages);
+  refs.gallery.innerHTML = renderGallery(res.data.results);
+  renewPagination();
+  console.log(filteredByInput.length);
+  sessionStorage.setItem('totalPages', filteredByInput.length)
 }
 // Time filter
 async function onTimeSelect(e) {
   const selectedTime = Number(e.currentTarget.value);
   let dataArr = await getDataArr();
-  filters.time = selectedTime;
+  filters.time = e.target.value;
+  console.log(filters);
+
 
   const filteredByTime = dataArr.filter(recipe => {
     if (!recipe.time) {
@@ -89,13 +118,20 @@ async function onTimeSelect(e) {
     }
   });
 
-  refs.gallery.innerHTML = renderGallery(filteredByTime);
+  // refs.gallery.innerHTML = renderGallery(filteredByTime);
+  const res = await tastyTreatsApi.fetchAllRecipes(1);
+  console.log(res.data.totalPages);
+  sessionStorage.setItem('totalPages', res.data.totalPages);
+  refs.gallery.innerHTML = renderGallery(res.data.results);
+  renewPagination();
+  console.log(filteredByTime.length);
 }
 // Area filter
 async function onAreaSelect(e) {
   const value = e.currentTarget.value;
   let dataArr = await getDataArr();
   filters.area = value;
+  console.log(filters);
 
   const recipesByArea = dataArr.filter(recipe => {
     if (filters.time && filters.ingredients) {
@@ -116,7 +152,12 @@ async function onAreaSelect(e) {
     }
   });
 
-  refs.gallery.innerHTML = renderGallery(recipesByArea);
+  // refs.gallery.innerHTML = renderGallery(recipesByArea);
+  const res = await tastyTreatsApi.fetchAllRecipes(1);
+  console.log(res.data.totalPages);
+  sessionStorage.setItem('totalPages', res.data.totalPages);
+  refs.gallery.innerHTML = renderGallery(res.data.results);
+  renewPagination();
 }
 // Ingredients filter
 async function onIngredSelect(e) {
@@ -125,6 +166,7 @@ async function onIngredSelect(e) {
 
   let dataArr = await getDataArr();
   filters.ingredients = ingredId;
+  console.log(filters);
 
   const recipesByIngreds = dataArr.filter(recipe => {
     if (filters.time && filters.area) {
@@ -148,5 +190,11 @@ async function onIngredSelect(e) {
     }
   });
 
-  refs.gallery.innerHTML = renderGallery(recipesByIngreds);
+  // refs.gallery.innerHTML = renderGallery(recipesByIngreds);
+  const res = await tastyTreatsApi.fetchAllRecipes(1);
+  console.log(res.data.totalPages);
+  sessionStorage.setItem('totalPages', res.data.totalPages);
+  refs.gallery.innerHTML = renderGallery(res.data.results);
+  renewPagination();
 }
+// export { filters }
