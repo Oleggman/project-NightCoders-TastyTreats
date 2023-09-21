@@ -9,20 +9,22 @@ const gallery = document.querySelector('.cards-container');
 const recipeModal = document.querySelector('.modal-recipes-container');
 const overlay = document.querySelector('.overlay');
 const closeBtn = document.querySelector('.modal-close-btn');
-loadGalleryStart();
+// loadGalleryStart();
+loadGallery();
 
-async function loadGalleryStart() {
-  // рендер карток
-  const res = await allRecipesRender.fetchRecipes();
-  sessionStorage.setItem('totalPages', res.data.totalPages);
-  gallery.innerHTML = renderGallery(res.data.results);
-  heartRender();
-  gallery.addEventListener('click', handlerLike);
-}
+// async function loadGalleryStart() {
+//   // рендер карток
+//   const res = await allRecipesRender.fetchRecipes();
+//   sessionStorage.setItem('totalPages', res.data.totalPages);
+//   gallery.innerHTML = renderGallery(res.data.results);
+//   heartRender();
+//   gallery.addEventListener('click', handlerLike);
+// }
 async function loadGallery(currentPage, perPage) {
   // рендер карток
-  const res = await allRecipesRender.fetchAllRecipes(currentPage, perPage);
-  sessionStorage.setItem('totalPages', res.data.totalPages);
+  // const res = await allRecipesRender.fetchAllRecipes(currentPage, perPage);
+  const res = await allRecipesRender.fetchAllRecipes();
+  // sessionStorage.setItem('totalPages', res.data.totalPages);
   gallery.innerHTML = renderGallery(res.data.results);
   heartRender();
   gallery.addEventListener('click', handlerLike);
@@ -91,4 +93,6 @@ function handlerCLoseBtn() {
   overlay.classList.remove('active');
   document.body.style.overflow = 'auto';
 }
-export { loadGallery, heartRender };
+// export { loadGallery, heartRender };
+
+export { heartRender };
