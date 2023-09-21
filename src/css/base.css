@@ -26,6 +26,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  background-color: var(--background);
 }
 
 ul {
@@ -60,7 +61,7 @@ img {
   max-width: 375px;
   padding: 0 20px;
   margin: 0 auto;
-} 
+}
 
 @media screen and (min-width: 768px) {
   .container {
