@@ -5,7 +5,7 @@
   height: 1171px;
   margin: 0 auto;
   background-color: var(--background-menu);
- 
+
   border-radius: 15px;
   border: 2px;
   position: fixed;
@@ -50,7 +50,6 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  
 }
 
 @media screen and (min-width: 768px) {
@@ -74,12 +73,12 @@
 .modal-recipes {
   display: flex;
   padding-top: 40px;
-  }
+}
 
 .name-of-recipe {
   margin-bottom: 14px;
   color: var(--primary-color);
-   font-family: Inter;
+  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -140,7 +139,6 @@
 .play-video {
   position: absolute;
   z-index: 100;
-
 }
 
 .play-icon {
@@ -198,7 +196,7 @@
 }
 
 .modal-star-icon-gray {
-  fill: #0505051a;
+  fill: var(--primary-color-01);
   width: 18px;
   height: 18px;
 }
@@ -276,6 +274,15 @@
   justify-content: space-between;
   margin-bottom: 40px;
   gap: 10px;
+}
+
+.ingredients-container {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.ingredients-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 @media only screen and (min-width: 768px) {
@@ -361,7 +368,7 @@
   font-weight: 500;
   line-height: 14px; /* 116.667% */
   border-radius: 35px;
-  border: 1px solid var( --primary-color-02);
+  border: 1px solid var(--primary-color-02);
 }
 
 /*  !!! ТЕКСТ РЕЦЕПТУ !!! */
@@ -372,6 +379,15 @@
   margin-bottom: 40px;
   flex-shrink: 0;
   height: 288px;
+}
+
+.recipe-text-box {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.recipe-text-box::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 @media only screen and (min-width: 768px) {
@@ -411,7 +427,7 @@
 }
 .add-to-favorite:hover,
 .add-to-favorite:focus {
-  color:var(--primary-color);
+  color: var(--primary-color);
 }
 @media screen and (min-width: 768px) {
   .add-to-favorite {
@@ -445,7 +461,7 @@
 
   border-radius: 15px;
   border: 1px solid #9bb537;
-  transition: color 0.2s;
+  transition: color 300ms, background-color 300ms;
 }
 
 @media screen and (min-width: 768px) {
@@ -481,6 +497,7 @@
   justify-content: space-between;
   /* padding-right: 10px; */
   border-bottom: 1px solid var(--primary-color-01);
+  color: var(--primary-color-08);
 }
 
 .modal-recipe-ingred:not(:last-child) {
