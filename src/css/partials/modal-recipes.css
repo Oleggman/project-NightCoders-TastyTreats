@@ -4,8 +4,8 @@
   max-width: 335px;
   height: 1171px;
   margin: 0 auto;
-  background-color: #fff;
-  /* background-color: #cbdc88; */
+  background-color: var(--background-menu);
+
   border-radius: 15px;
   border: 2px;
   position: fixed;
@@ -50,7 +50,6 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  /* justify-content: flex-end; */
 }
 
 @media screen and (min-width: 768px) {
@@ -61,11 +60,11 @@
   }
 }
 .icon-close-btn {
-  stroke: #050505;
+  stroke: var(--primary-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn:hover .icon-close-btn {
-  stroke: #9bb537;
+  stroke: var(--border-pag);
   scale: 1.2;
 }
 
@@ -74,13 +73,11 @@
 .modal-recipes {
   display: flex;
   padding-top: 40px;
-  /* margin-top: 40px; */
 }
 
 .name-of-recipe {
   margin-bottom: 14px;
-  color: #050505;
-  /* text-align: center; */
+  color: var(--primary-color);
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
@@ -142,9 +139,6 @@
 .play-video {
   position: absolute;
   z-index: 100;
-
-  /* display: flex;
-    align-items: center; */
 }
 
 .play-icon {
@@ -202,7 +196,7 @@
 }
 
 .modal-star-icon-gray {
-  fill: #0505051a;
+  fill: var(--primary-color-01);
   width: 18px;
   height: 18px;
 }
@@ -245,7 +239,7 @@
 }
 
 .rating {
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--primary-color-05);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -263,7 +257,7 @@
 }
 
 .time-preparing {
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--primary-color-05);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -280,6 +274,15 @@
   justify-content: space-between;
   margin-bottom: 40px;
   gap: 10px;
+}
+
+.ingredients-container {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.ingredients-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 @media only screen and (min-width: 768px) {
@@ -309,7 +312,7 @@
 
 .product-name {
   align-items: flex-end;
-  color: #050505;
+  color: var(--primary-color);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -318,7 +321,7 @@
 }
 
 .number {
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--primary-color-05);
   text-align: right;
   font-family: Inter;
   font-size: 14px;
@@ -358,14 +361,14 @@
 }
 .categiries {
   padding: 8px 16px;
-  color: #050505;
+  color: var(--primary-color);
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: 14px; /* 116.667% */
   border-radius: 35px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid var(--primary-color-02);
 }
 
 /*  !!! ТЕКСТ РЕЦЕПТУ !!! */
@@ -378,22 +381,30 @@
   height: 288px;
 }
 
+.recipe-text-box {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.recipe-text-box::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 @media only screen and (min-width: 768px) {
   .recipe-text-box {
     width: 467px;
     height: 162px;
-    /* flex-shrink: 0; */
     margin-bottom: 32px;
   }
 }
 
 .recipe-text {
-  color: rgba(5, 5, 5, 0.8);
+  color: var(--primary-color-08);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; /* 128.571% */
+  line-height: 1.28; /* 128.571% */
 }
 
 /*  !!! КНОПКИ !!! */
@@ -406,17 +417,21 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background: #9bb537;
-  color: #f8f8f8;
+  background: var(--border-pag);
+  color: var(--background);
   font-size: 14px;
   font-weight: 500;
   border-color: transparent;
   border-radius: 15px;
-  transition: color 0.2s;
+  transition: 0.2s;
 }
+.remove-from-fav {
+  background-color: var(--red-button);
+}
+
 .add-to-favorite:hover,
 .add-to-favorite:focus {
-  color: #050505;
+  color: var(--primary-color);
 }
 @media screen and (min-width: 768px) {
   .add-to-favorite {
@@ -450,7 +465,7 @@
 
   border-radius: 15px;
   border: 1px solid #9bb537;
-  transition: color 0.2s;
+  transition: color 300ms, background-color 300ms;
 }
 
 @media screen and (min-width: 768px) {
@@ -463,8 +478,8 @@
 
 .give-a-rating:hover,
 .give-a-rating:focus {
-  background: #9bb537;
-  color: #f8f8f8;
+  background: var(--border-pag);
+  color: var(--background);
 }
 @media screen and (min-width: 1128px) {
   .give-a-rating:hover,
@@ -485,7 +500,8 @@
   display: flex;
   justify-content: space-between;
   /* padding-right: 10px; */
-  border-bottom: 1px solid rgba(5, 5, 5, 0.1);
+  border-bottom: 1px solid var(--primary-color-01);
+  color: var(--primary-color-08);
 }
 
 .modal-recipe-ingred:not(:last-child) {
