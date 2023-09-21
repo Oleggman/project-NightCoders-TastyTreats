@@ -12,24 +12,31 @@ const closeBtn = document.querySelector('.modal-close-btn');
 loadGallery();
 
 async function loadGallery() {
-  // рендер карток
+  // рендер карток та прослуховувач подій на картку
   const res = await allRecipesRender.fetchAllRecipes();
   gallery.innerHTML = renderGallery(res.data.results);
+  heartRender();
+  gallery.addEventListener('click', handlerLike);
+}
 
+function heartRender() {
   // відмальовка сердечок з локалстореджа
+  favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
   const idList = favorites.map(el => el.id);
   for (let i = 0; i < gallery.children.length; i++) {
     if (idList.includes(gallery.children[i].id)) {
       gallery.children[i].firstElementChild.firstElementChild.classList.add(
         'like-favorite'
       );
+    } else {
+      gallery.children[i].firstElementChild.firstElementChild.classList.remove(
+        'like-favorite'
+      );
     }
   }
 }
 
-let favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
-
-gallery.addEventListener('click', handlerLike);
+let favorites = [];
 
 async function handlerLike(evt) {
   const svg = evt.target.firstElementChild;
@@ -75,3 +82,5 @@ function handlerCLoseBtn() {
   overlay.classList.remove('active');
   document.body.style.overflow = 'auto';
 }
+
+export { heartRender };
