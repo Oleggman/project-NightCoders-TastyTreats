@@ -26,7 +26,7 @@
 
 .btn-categories:hover,
 .btn-categories:focus {
-  background-color: var( --background-mob-menu);
+  background-color: var(--background-mob-menu);
   color: var(--background);
   border: 0;
   transition: color, background-color 300ms;
@@ -62,6 +62,17 @@
   height: 198px;
   overflow-y: scroll;
 }
+
+.filter-categories {
+  scrollbar-color: dark;
+}
+
+/* @media screen and (max-width: 767px) {
+  .filter-categories {
+    width: 326px;
+    height: 198px;
+  }
+} */
 
 @media screen and (min-width: 768px) {
   .filter-categories {
