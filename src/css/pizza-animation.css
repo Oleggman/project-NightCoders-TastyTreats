@@ -1,12 +1,19 @@
 .pizza-img {
+  display: none;
   width: 150px;
   height: 150px;
   position: absolute;
   top: 60px;
   z-index: 1;
   margin-left: -10%;
-  animation: ballbounce 20s 1s infinite;
-  animation-fill-mode: both;
+}
+
+@media screen and (min-width: 1280px) {
+  .pizza-img {
+    display: block;
+    animation: ballbounce 20s 1s infinite;
+    animation-fill-mode: both;
+  }
 }
 
 @keyframes ballbounce {

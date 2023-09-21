@@ -5,7 +5,11 @@ toggles.forEach(toggle => toggle.addEventListener('change', onChangeTheme));
 const storadgeTheme = localStorage.getItem("ui-theme");
 if (storadgeTheme) {
   document.documentElement.setAttribute('data-theme', JSON.parse(storadgeTheme));
-  toggles.forEach(toggle => toggle.checked = true);
+  if (JSON.parse(storadgeTheme) === 'dark') {
+    toggles.forEach(toggle => toggle.checked = true);
+  } else {
+    toggles.forEach(toggle => toggle.checked = false);
+  }
 } else {
   document.documentElement.setAttribute('data-theme', 'light');
 }
