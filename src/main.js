@@ -13,3 +13,4 @@ import './js/partials/footer.js';
 import './js/partials/scroll-up.js';
 import './js/partials/modals/order-now.js';
 import './js/partials/pagination-home.js'
+import './js/dark-theme.js';

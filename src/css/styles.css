@@ -21,6 +21,7 @@
 @import url('./partials/footer.css');
 @import url('./partials/scroll-up.css');
 @import url('./partials/pagination-home.css');
+@import url('./team-title.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -33,7 +34,10 @@
   --primaty-black-color: #050505;
   --text-white-color: #f8f8f8;
   --accent-color: #9bb537;
+  --star-orange: #eea10c;
   --primary-dark-color: #1e1e1e;
+  --red-button: #f35a4a;
+
   background-color: rgba(255, 255, 255, 0.87);
 
   font-synthesis: none;
@@ -61,6 +65,7 @@
   --border-pag: #9bb537;
   --background-menu: #fff;
   --option-color: #fff;
+  --card-bg: linear-gradient(1deg, rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0));
 }
 
 :root[data-theme='dark'] {
@@ -72,13 +77,14 @@
   --primary-color-01: rgba(255, 255, 255, 0.1);
   --primary-rating: rgba(255, 255, 255, 0.5);
   --primary-modal-rating: rgba(255, 255, 255, 0.5);
-  --primary--stars: rgba(255, 255, 255, 0.1);
+  --primary-stars: rgba(255, 255, 255, 0.1);
   --primary-CardTitle-Description: rgba(255, 255, 255, 0.8);
   --primary-menu-mob: #f8f8f8;
   --primary-raiting: #1e1e1e;
   --background: #1e1e1e;
-  --background-mob-menu: #050505;
+  --background-mob-menu: #9bb537;
   --border-pag: #9bb537;
   --background-menu: #050505;
   --option-color: #050505;
+  --card-bg: linear-gradient(1deg, #050505 4.82%, rgba(5, 5, 5, 0) 108.72%);
 }

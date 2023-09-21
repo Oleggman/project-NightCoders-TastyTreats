@@ -14,31 +14,36 @@ loadGalleryStart();
 async function loadGalleryStart(currentPage, perPage) {
   // рендер карток
   const res = await allRecipesRender.fetchRecipes();
-  console.log(res.data.totalPages);
-  sessionStorage.setItem('totalPages', res.data.totalPages);
+    sessionStorage.setItem('totalPages', res.data.totalPages);
   gallery.innerHTML = renderGallery(res.data.results);
 }
 async function loadGallery(currentPage, perPage) {
   // рендер карток
   const res = await allRecipesRender.fetchAllRecipes(currentPage, perPage);
-  console.log(res.data.totalPages);
-  sessionStorage.setItem('totalPages', res.data.totalPages);
+    sessionStorage.setItem('totalPages', res.data.totalPages);
   gallery.innerHTML = renderGallery(res.data.results);
+  heartRender();
+  gallery.addEventListener('click', handlerLike);
+}
 
+function heartRender() {
   // відмальовка сердечок з локалстореджа
+  favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
   const idList = favorites.map(el => el.id);
   for (let i = 0; i < gallery.children.length; i++) {
     if (idList.includes(gallery.children[i].id)) {
       gallery.children[i].firstElementChild.firstElementChild.classList.add(
         'like-favorite'
       );
+    } else {
+      gallery.children[i].firstElementChild.firstElementChild.classList.remove(
+        'like-favorite'
+      );
     }
   }
 }
 
-let favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
-
-gallery.addEventListener('click', handlerLike);
+let favorites = [];
 
 async function handlerLike(evt) {
   const svg = evt.target.firstElementChild;
@@ -85,3 +90,5 @@ function handlerCLoseBtn() {
   document.body.style.overflow = 'auto';
 }
 export { loadGallery };
+
+export { heartRender };

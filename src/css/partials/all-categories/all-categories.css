@@ -14,7 +14,7 @@
   padding: 14px 29px;
   border-radius: 15px;
   border: 1px solid var(--primary-color-02);
-  color: var();
+  color: var(--primary-color-05);
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
@@ -26,7 +26,7 @@
 
 .btn-categories:hover,
 .btn-categories:focus {
-  background-color: var( --background-mob-menu);
+  background-color: var(--background-mob-menu);
   color: var(--background);
   border: 0;
   transition: color, background-color 300ms;
@@ -62,6 +62,36 @@
   height: 198px;
   overflow-y: scroll;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color-05);
+}
+
+.filter-categories {
+  scrollbar-color: dark;
+}
+
+/* @media screen and (max-width: 767px) {
+  .filter-categories {
+    width: 326px;
+    height: 198px;
+  }
+} */
 
 @media screen and (min-width: 768px) {
   .filter-categories {
