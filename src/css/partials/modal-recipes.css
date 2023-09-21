@@ -423,8 +423,12 @@
   font-weight: 500;
   border-color: transparent;
   border-radius: 15px;
-  transition: color 0.2s;
+  transition: 0.2s;
 }
+.remove-from-fav {
+  background-color: var(--red-button);
+}
+
 .add-to-favorite:hover,
 .add-to-favorite:focus {
   color: var(--primary-color);
