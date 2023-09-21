@@ -9,11 +9,20 @@ const gallery = document.querySelector('.cards-container');
 const recipeModal = document.querySelector('.modal-recipes-container');
 const overlay = document.querySelector('.overlay');
 const closeBtn = document.querySelector('.modal-close-btn');
-loadGallery();
+loadGalleryStart();
 
-async function loadGallery() {
-  // рендер карток та прослуховувач подій на картку
-  const res = await allRecipesRender.fetchAllRecipes();
+async function loadGalleryStart() {
+  // рендер карток
+  const res = await allRecipesRender.fetchRecipes();
+    sessionStorage.setItem('totalPages', res.data.totalPages);
+  gallery.innerHTML = renderGallery(res.data.results);
+  heartRender();
+  gallery.addEventListener('click', handlerLike);
+}
+async function loadGallery(currentPage, perPage) {
+  // рендер карток
+  const res = await allRecipesRender.fetchAllRecipes(currentPage, perPage);
+    sessionStorage.setItem('totalPages', res.data.totalPages);
   gallery.innerHTML = renderGallery(res.data.results);
   heartRender();
   gallery.addEventListener('click', handlerLike);
@@ -82,5 +91,6 @@ function handlerCLoseBtn() {
   overlay.classList.remove('active');
   document.body.style.overflow = 'auto';
 }
+export { loadGallery };
 
 export { heartRender };
