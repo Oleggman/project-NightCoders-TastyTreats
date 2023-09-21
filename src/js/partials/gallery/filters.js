@@ -27,7 +27,6 @@ export const filters = {
   category: '',
 };
 
-console.log(filters);
 async function getDataArr() {
   let dataArr = [];
   if (filterArr[0]) {
@@ -45,8 +44,6 @@ async function onResetForm(e) {
   e.preventDefault();
   // const recipes = await getDataArr();
   // refs.gallery.innerHTML = renderGallery(recipes);
-  // console.log(recipes.length);
-  // console.log(recipes);
   filterArr = [];
   filters.area = '';
   filters.ingredients = '';
@@ -54,8 +51,7 @@ async function onResetForm(e) {
   filters.title ='';
 
   const res = await tastyTreatsApi.fetchAllRecipes(1);
-  console.log(res.data.totalPages);
-  sessionStorage.setItem('totalPages', res.data.totalPages);
+   sessionStorage.setItem('totalPages', res.data.totalPages);
   refs.gallery.innerHTML = renderGallery(res.data.results);
   renewPagination();
 
@@ -75,22 +71,19 @@ async function onInputRecipe(e) {
     item.title.toLowerCase().includes(e.target.value.trim(' '))
   );
   filters.title = e.target.value;
-  console.log(filters);
-  // refs.gallery.innerHTML = renderGallery(filteredByInput);
+   // refs.gallery.innerHTML = renderGallery(filteredByInput);
   const res = await tastyTreatsApi.fetchAllRecipes(1);
-  console.log(res.data.totalPages);
   sessionStorage.setItem('totalPages', res.data.totalPages);
   refs.gallery.innerHTML = renderGallery(res.data.results);
   renewPagination();
-  console.log(filteredByInput.length);
-  sessionStorage.setItem('totalPages', filteredByInput.length)
+   sessionStorage.setItem('totalPages', filteredByInput.length)
 }
 // Time filter
 async function onTimeSelect(e) {
   const selectedTime = Number(e.currentTarget.value);
   let dataArr = await getDataArr();
   filters.time = e.target.value;
-  console.log(filters);
+ 
 
 
   const filteredByTime = dataArr.filter(recipe => {
@@ -120,19 +113,16 @@ async function onTimeSelect(e) {
 
   // refs.gallery.innerHTML = renderGallery(filteredByTime);
   const res = await tastyTreatsApi.fetchAllRecipes(1);
-  console.log(res.data.totalPages);
-  sessionStorage.setItem('totalPages', res.data.totalPages);
+   sessionStorage.setItem('totalPages', res.data.totalPages);
   refs.gallery.innerHTML = renderGallery(res.data.results);
   renewPagination();
-  console.log(filteredByTime.length);
-}
+ }
 // Area filter
 async function onAreaSelect(e) {
   const value = e.currentTarget.value;
   let dataArr = await getDataArr();
   filters.area = value;
-  console.log(filters);
-
+ 
   const recipesByArea = dataArr.filter(recipe => {
     if (filters.time && filters.ingredients) {
       return (
@@ -154,7 +144,6 @@ async function onAreaSelect(e) {
 
   // refs.gallery.innerHTML = renderGallery(recipesByArea);
   const res = await tastyTreatsApi.fetchAllRecipes(1);
-  console.log(res.data.totalPages);
   sessionStorage.setItem('totalPages', res.data.totalPages);
   refs.gallery.innerHTML = renderGallery(res.data.results);
   renewPagination();
@@ -166,7 +155,6 @@ async function onIngredSelect(e) {
 
   let dataArr = await getDataArr();
   filters.ingredients = ingredId;
-  console.log(filters);
 
   const recipesByIngreds = dataArr.filter(recipe => {
     if (filters.time && filters.area) {
@@ -192,7 +180,6 @@ async function onIngredSelect(e) {
 
   // refs.gallery.innerHTML = renderGallery(recipesByIngreds);
   const res = await tastyTreatsApi.fetchAllRecipes(1);
-  console.log(res.data.totalPages);
   sessionStorage.setItem('totalPages', res.data.totalPages);
   refs.gallery.innerHTML = renderGallery(res.data.results);
   renewPagination();

@@ -5,10 +5,8 @@ import { loadGallery } from '../partials/gallery/all-recipes.js';
 
 function renewPagination() {
   const container = document.getElementById('pagination');
-  console.log(container);
-  let totalRecipies = sessionStorage.getItem('totalPages') * 9;
-  console.log(totalRecipies);
-  const options = {
+    let totalRecipies = sessionStorage.getItem('totalPages') * 9;
+   const options = {
     totalItems: totalRecipies,
     itemsPerPage: 9,
     visiblePages: 3,
@@ -36,25 +34,10 @@ function renewPagination() {
   };
 
   const pagination = new Pagination(container, options);
-  console.log(pagination);
-  // pagination.movePageTo(3)
-  // pagination.reset();
-  // setItemsPerPage(itemCount) //Set count of items per page
-  // setTotalItems(itemCount)  //Set total count of items
   pagination.on('beforeMove', event => {
     const currentPage = event.page;
-    console.log(currentPage);
-    loadGallery(currentPage);
+      loadGallery(currentPage);
   });
-  console.log(pagination.getCurrentPage());
-
-  // function fetchPagRecipes(currentPage = 1, perPage = '9' ) {
-  //     const params = new URLSearchParams({
-  //         page: currentPage,
-  //         limit: perPage,
-  //       });
-  //     return axios.get(`https://tasty-treats-backend.p.goit.global/api/recipes?${params}`);
-  //   }
-}
+ }
 renewPagination();
 export { renewPagination };

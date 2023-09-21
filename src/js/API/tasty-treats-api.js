@@ -17,8 +17,7 @@ export default class TastyTreatsAPI {
   async fetchAllRecipes(currentPage = 1, perPage = 9) {
     // const filters = JSON.parse(sessionStorage.getItem('filters'))
     const { title, category, area, ingredients, time } = filters;
-    console.log(filters);
-    const params = new URLSearchParams({
+        const params = new URLSearchParams({
       page: currentPage,
       limit: perPage,
       title,
