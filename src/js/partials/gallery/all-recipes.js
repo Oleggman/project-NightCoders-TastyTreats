@@ -91,6 +91,5 @@ function handlerCLoseBtn() {
   overlay.classList.remove('active');
   document.body.style.overflow = 'auto';
 }
-export { loadGallery };
+export { loadGallery, heartRender  };
 
-export { heartRender };
