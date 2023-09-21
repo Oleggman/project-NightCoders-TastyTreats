@@ -34,7 +34,7 @@
 }
 
 .hero-title {
-  color: #050505;
+  color: var(--primary-color);
   font-style: normal;
   text-transform: uppercase;
   font-size: 26px;
@@ -55,7 +55,7 @@
   font-weight: 400;
 }
 .hero-descr {
-  color: #050505;
+  color: var(--primary-color);
   font-size: 14px;
   line-height: 1.29;
   margin-bottom: 28px;
@@ -74,7 +74,7 @@
   border-radius: 12px;
   border: 1px solid #9bb537;
 
-  color: #050505;
+  color: var(--primary-color);
   font-size: 14px;
   font-weight: 500;
   line-height: normal;
@@ -102,8 +102,13 @@
 @media only screen and (min-width: 768px) {
   .slider-events {
     gap: 16px;
-    min-width: 702px;
+    min-width: 736px;
     height: 468px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .slider-events {
+    min-width: 702px;
   }
 }
 .slide-wrapper {
@@ -124,7 +129,7 @@
 }
 @media only screen and (min-width: 768px) {
   .block-cook {
-    min-width: 137px;
+    max-width: 137px;
     height: 442px;
   }
 }
@@ -168,7 +173,6 @@
   width: 118px;
   height: 118px;
   transform: rotate(-45deg);
-  /* flex-shrink: 0; */
   background-color: #9bb537;
   opacity: 0.6;
   filter: blur(81px);
@@ -186,7 +190,7 @@
   }
 }
 .block-dish-descr {
-  color: rgba(248, 248, 248, 0.6);
+  color: var(--primary-dish-name);
   text-align: center;
   font-size: 10px;
   font-style: normal;
@@ -209,7 +213,7 @@
   }
 }
 .block-dish-area {
-  color: rgba(248, 248, 248, 0.2);
+  color: var(--primary-dish-area);
   text-align: center;
   font-size: 8px;
   line-height: 1.5;
@@ -229,7 +233,7 @@
 }
 @media only screen and (min-width: 768px) {
   .block-dish-image {
-    min-width: 351px;
+    max-width: 351px;
     height: 442px;
   }
 }
@@ -242,12 +246,14 @@
   object-fit: cover;
 }
 .slider-events .swiper-pagination {
-  bottom: -6px;
+  --swiper-pagination-bullet-horizontal-gap: 2px;
+  --swiper-pagination-bottom: -6px;
+  --swiper-pagination-left: auto;
 }
 .slider-events .swiper-pagination-bullet {
   width: 4px;
   height: 4px;
-  background-color: #050505;
+  background-color: var(--primary-color);
   opacity: 1;
 }
 .slider-events .swiper-pagination-bullet-active {

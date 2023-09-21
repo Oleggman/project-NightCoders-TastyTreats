@@ -51,6 +51,8 @@
   --primary-rating: #f8f8f8;
   --primary-modal-rating: rgba(5, 5, 5, 0.5);
   --primary-stars: rgba(248, 248, 248, 0.1);
+  --primary-dish-area: rgba(248, 248, 248, 0.2);
+  --primary-dish-name: rgba(248, 248, 248, 0.60);
   --primary-CardTitle-Description: #f8f8f8;
   --primary-raiting: #fff;
   --background-mob-menu: #9bb537;
@@ -60,7 +62,6 @@
   --background-menu: #fff;
   --option-color: #fff;
 }
-
 :root[data-theme='dark'] {
   --primary-color: #fff;
   --primary-color-08: rgba(255, 255, 255, 0.8);
@@ -71,6 +72,8 @@
   --primary-rating: rgba(255, 255, 255, 0.5);
   --primary-modal-rating: rgba(255, 255, 255, 0.5);
   --primary--stars: rgba(255, 255, 255, 0.1);
+  --primary-dish-area: rgba(255, 255, 255, 0.20);
+  --primary-dish-name: rgba(248, 248, 248, 0.60); 
   --primary-CardTitle-Description: rgba(255, 255, 255, 0.8);
   --primary-menu-mob: #f8f8f8;
   --primary-raiting: #1e1e1e;
