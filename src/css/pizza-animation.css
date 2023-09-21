@@ -1,0 +1,56 @@
+.pizza-img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 1;
+    margin-left: -20%;
+    animation: ballbounce 20s 1s infinite;
+    animation-fill-mode: both;
+}
+
+.animation {
+    width: 100vw;
+    top:60px;
+    position: relative;
+    z-index: 1;
+}
+
+
+@keyframes ballbounce {
+
+    /* left */
+    0% {
+        left: -30%;
+        animation-timing-function: cubic-bezier(1, 1, 1, 1);
+        transform: rotate(-360deg);
+    }
+
+    /* right */
+    100% {
+        left: 130%;
+        animation-timing-function: cubic-bezier(1, 1, 1, 1);
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    @keyframes ballbounce {
+    
+            /* left */
+            0% {
+                left: -10%;
+                animation-timing-function: cubic-bezier(1, 1, 1, 1);
+                transform: rotate(-360deg);
+            }
+    
+            /* right */
+            100% {
+                left: 115%;
+                animation-timing-function: cubic-bezier(1, 1, 1, 1);
+                transform: rotate(360deg);
+            }
+        }
+}
+
+
+

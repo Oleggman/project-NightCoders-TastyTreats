@@ -1,8 +1,72 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #242424;
+  --primary-white-color: #ffffff;
+  --primaty-black-color: #050505;
+  --text-white-color: #f8f8f8;
+  --accent-color: #9bb537;
+  --primary-dark-color: #1e1e1e;
+  background-color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+:root[data-theme='light'] {
+  --primary-color: #050505;
+  --primary-color-08: rgba(5, 5, 5, 0.8);
+  --primary-color-05: rgba(5, 5, 5, 0.5);
+  --primary-color-03: rgba(5, 5, 5, 0.3);
+  --primary-color-02: rgba(5, 5, 5, 0.2);
+  --primary-color-01: rgba(5, 5, 5, 0.1);
+  --primary-rating: #f8f8f8;
+  --primary-modal-rating: rgba(5, 5, 5, 0.5);
+  --primary-stars: rgba(248, 248, 248, 0.1);
+  --primary-CardTitle-Description: #f8f8f8;
+  --primary-raiting: #fff;
+  --background-mob-menu: #9bb537;
+  --background-menu: #fff;
+  --background: #f8f8f8;
+  --border-pag: #9bb537;
+  --background-menu: #fff;
+  --option-color: #fff;
+}
+
+:root[data-theme='dark'] {
+  --primary-color: #fff;
+  --primary-color-08: rgba(255, 255, 255, 0.8);
+  --primary-color-05: rgba(255, 255, 255, 0.5);
+  --primary-color-03: rgba(255, 255, 255, 0.3);
+  --primary-color-02: rgba(255, 255, 255, 0.2);
+  --primary-color-01: rgba(255, 255, 255, 0.1);
+  --primary-rating: rgba(255, 255, 255, 0.5);
+  --primary-modal-rating: rgba(255, 255, 255, 0.5);
+  --primary--stars: rgba(255, 255, 255, 0.1);
+  --primary-CardTitle-Description: rgba(255, 255, 255, 0.8);
+  --primary-menu-mob: #f8f8f8;
+  --primary-raiting: #1e1e1e;
+  --background: #1e1e1e;
+  --background-mob-menu: #050505;
+  --border-pag: #9bb537;
+  --background-menu: #050505;
+  --option-color: #050505;
+}
+
+
+
+
 .popular-recipes {
   margin-top: 40px;
 }
 .popular-headline {
-  color: #050505;
+  color: var(--primary-color);
   font-family: Inter;
   font-weight: 600;
   font-size: 18px;
@@ -16,7 +80,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  color: rgba(5, 5, 5, 0.8);
+  color: var(--primary-color-08);
   font-family: Inter;
   font-weight: 400;
   font-size: 12px;
@@ -24,7 +88,7 @@
   font-style: normal;
 }
 .popular-name {
-  color: #050505;
+  color: var(--primary-color);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -42,7 +106,7 @@
 }
 .car-container:hover,
 .car-container:focus {
-  background-color: #9bb537;
+  background-color: var(--background-mob-menu);
   transition: background-color 300ms;
 }
 .text-container {
@@ -70,7 +134,7 @@
     display: none;
   }
   .car-container:active {
-    background-color: #9bb537;
+    background-color: var(--background-mob-menu);
     transition: background-color 300ms;
   }
 }
