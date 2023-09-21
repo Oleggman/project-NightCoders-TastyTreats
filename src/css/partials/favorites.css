@@ -1,244 +1,235 @@
 .favorites-hero {
-    padding-top: 97px;
-    padding-bottom: 40px;
+  padding-top: 97px;
+  padding-bottom: 40px;
 }
 
 @media only screen and (min-width: 768px) {
-.favorites-hero {
-        padding-bottom: 64px;
-    }
+  .favorites-hero {
+    padding-bottom: 64px;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
-    .favorites-hero {
-        padding-top: 100px;
-    }
+  .favorites-hero {
+    padding-top: 100px;
+  }
 }
 
 .favorites-section {
-    padding-bottom: 80px;
+  padding-bottom: 80px;
 }
 
 @media only screen and (min-width: 768px) {
-    .favorites-section {
-            padding-bottom: 182px;
-        }
+  .favorites-section {
+    padding-bottom: 182px;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
-    .favorites-section {
-            padding-bottom: 100px;
-        }
+  .favorites-section {
+    padding-bottom: 100px;
+  }
 }
 
 .favorites-container {
-    min-width: 320px;
-    max-width: 375px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+  min-width: 320px;
+  max-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media only screen and (min-width: 768px) {
-    .favorites-container {
-        min-width: 768px;
-        padding-left: 32px;
-        padding-right: 32px;
-        }
+  .favorites-container {
+    min-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 @media only screen and (min-width: 1280px) {
-    .favorites-container {
-        max-width: 1104px;
-        padding-left: 12px;
-        padding-right: 12px;
-    }
+  .favorites-container {
+    max-width: 1104px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
 
-
 @media screen and (max-width: 767px) {
+  .fav-hero-img {
+    min-width: 320px;
+    height: 516px;
 
-    .fav-hero-img {
-        min-width: 320px;
-        height: 516px;
-
-        margin: 0 auto;
-        background: url(../../img/favorites/favorites-hero-mobile@1x.jpg);
-        background-size: cover;
-    }        
+    margin: 0 auto;
+    background: url(../../img/favorites/favorites-hero-mobile@1x.jpg);
+    background-size: cover;
+  }
 }
 
 @media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
-screen and (min-resolution: 192dpi) and (max-width: 767px),
-screen and (min-resolution: 2dppx) and (max-width: 767px) {
-    .fav-hero-img {
-        background-image:
-        url(../../img/favorites/favorites-hero-mobile@2x.jpg),
-        url(../../img/favorites/favorites-hero-mobile@2x.webp);
-    }
+  screen and (min-resolution: 192dpi) and (max-width: 767px),
+  screen and (min-resolution: 2dppx) and (max-width: 767px) {
+  .fav-hero-img {
+    background-image: url(../../img/favorites/favorites-hero-mobile@2x.jpg),
+      url(../../img/favorites/favorites-hero-mobile@2x.webp);
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .fav-hero-img {
+    width: 704px;
+    height: 356px;
 
-    .fav-hero-img {
-        width: 704px;
-            height: 356px;
-
-        margin: 0 auto;
-        background: url(../../img/favorites/favorites-hero-tablet@1x.jpg);
-        background-size: cover;
-    }
+    margin: 0 auto;
+    background: url(../../img/favorites/favorites-hero-tablet@1x.jpg);
+    background-size: cover;
+  }
 }
 
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
-screen and (min-resolution: 192dpi) and (min-width: 768px),
-screen and (min-resolution: 2dppx) and (min-width: 768px) {
-    .fav-hero-img {
-        background-image:
-            url(../../img/favorites/favorites-hero-tablet@2x.jpg),
-            url(../../img/favorites/favorites-hero-tablet@2x.webp);
-    }
+  screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolution: 2dppx) and (min-width: 768px) {
+  .fav-hero-img {
+    background-image: url(../../img/favorites/favorites-hero-tablet@2x.jpg),
+      url(../../img/favorites/favorites-hero-tablet@2x.webp);
+  }
 }
 
 @media screen and (min-width: 1280px) {
+  .fav-hero-img {
+    width: 1080px;
+    height: 356px;
 
-    .fav-hero-img {
-        width: 1080px;
-        height: 356px;
-
-        margin: 0 auto;
-        background: url(../../img/favorites/favorites-hero-desktop@1x.jpg);
-        background-size: cover;
-    }
+    margin: 0 auto;
+    background: url(../../img/favorites/favorites-hero-desktop@1x.jpg);
+    background-size: cover;
+  }
 }
 
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 1280px),
-screen and (min-resolution: 192dpi) and (min-width: 1280px),
-screen and (min-resolution: 2dppx) and (min-width: 1280px) {
-    .fav-hero-img {
-        background-image:
-            url(../../img/favorites/favorites-hero-desktop@2x.jpg),
-            url(../../img/favorites/favorites-hero-desktop@2x.webp);
-    }
+  screen and (min-resolution: 192dpi) and (min-width: 1280px),
+  screen and (min-resolution: 2dppx) and (min-width: 1280px) {
+  .fav-hero-img {
+    background-image: url(../../img/favorites/favorites-hero-desktop@2x.jpg),
+      url(../../img/favorites/favorites-hero-desktop@2x.webp);
+  }
 }
 
 .favorites-default {
-    text-align: center;
+  text-align: center;
 }
 
 .favorites-icon {
-    width: 68px;
-    height: 58px;
-    margin-bottom: 24px;
+  width: 68px;
+  height: 58px;
+  margin-bottom: 24px;
 }
 
 @media only screen and (min-width: 768px) {
-    .favorites-icon {
-            width: 97px;
-            height: 83px;
-            margin-bottom: 32px;
-        }
+  .favorites-icon {
+    width: 97px;
+    height: 83px;
+    margin-bottom: 32px;
+  }
 }
 
 .favorites-text {
-    color: var(--primaty-black-color);
-    text-align: center;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.29;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.29;
 }
 
 @media only screen and (min-width: 768px) {
-    .favorites-text {
-        width: 481px;
-        font-size: 16px;
-        margin-left: auto;
-        margin-right: auto;   
-        }
+  .favorites-text {
+    width: 481px;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-
 .button-fav {
-    max-width: 100%;
-    height: 46px;
-    border-radius: 15px;
-    font-size: 14px;
-    color: var(--primary-color-03);
-    padding: 14px 18px;
-    background-color: var(--background);
-    border: 1px solid var(--primary-color-02);
-    outline: none;
-    cursor: pointer;
-    flex-shrink: 0;
+  max-width: 100%;
+  height: 46px;
+  border-radius: 15px;
+  font-size: 14px;
+  color: var(--primary-color-03);
+  padding: 14px 18px;
+  background-color: var(--background);
+  border: 1px solid var(--primary-color-02);
+  outline: none;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .button-fav.onActive,
 .button-fav.all-btn.onActive {
-    color: var(--text-white-color);
-    border-color: var(--accent-color);
-    background-color: var(--accent-color);
-    flex-shrink: 0;
+  color: var(--text-white-color);
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  flex-shrink: 0;
 }
 
 .button-fav:hover {
-    background-color: var(--accent-color);
-    color: var(--text-white-color);
-    border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--text-white-color);
+  border-color: var(--accent-color);
 }
 
 .favorite-categories-btn {
-    margin-bottom: 24px;
-    display: flex;
-    gap: 12px;
-    overflow-y: hidden;
-    overflow-x: auto;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 12px;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 @media only screen and (min-width: 786px) {
-.favorite-categories-btn {
-        margin-bottom: 32px;
-    }
+  .favorite-categories-btn {
+    margin-bottom: 32px;
+  }
 }
 
 .favorite-categories-btn::-webkit-scrollbar {
-    width: 0;
+  width: 0;
 }
 
 .is-hidden-favorites {
-    display: none;
+  display: none;
 }
 
 .favorites-card-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 24px;
-    margin-left: auto;
-    margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media only screen and (min-width: 786px) and (max-width: 1279px) {
-   .favorites-list .card-info{
+  .favorites-list .card-info {
     padding: 123px 10px 16px 10px;
-   } 
+  }
 }
 
-
 @media only screen and (min-width: 786px) {
-    .favorites-card-list {
-            gap: 16px;
-        }
+  .favorites-card-list {
+    gap: 16px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    .favorites-list .card-container {
-        width: 224px;
-        height: 244px;
-    }
+  .favorites-list .card-container {
+    width: 224px;
+    height: 244px;
+  }
 }
 @media only screen and (min-width: 1280px) {
-    .favorites-list .card-container {
-        width: 258px;
-        height: 287px;
-    }
+  .favorites-list .card-container {
+    width: 258px;
+    height: 287px;
+  }
 }

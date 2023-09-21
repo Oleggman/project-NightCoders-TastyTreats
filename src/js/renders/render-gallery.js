@@ -5,8 +5,7 @@ function renderGallery(data) {
     .map(
       ({ title, description, preview, rating, _id, category, area }) => `<li
       class="card-container" id="${_id}" data-category="${category}" data-area="${area}" data-title="${title}" data-description="${description}" data-preview="${preview}" data-rating="${rating}"
-      style="background-image: linear-gradient(1deg,rgba(5, 5, 5, 0.6),rgba(5, 5, 5, 0)),
-      url(${preview});">
+      style="background-image: var(--card-bg), url(${preview});">
       <button class="like-button">
         <svg class="like-icon" width="22" height="22">
           <use href="${svg}#heart"></use>

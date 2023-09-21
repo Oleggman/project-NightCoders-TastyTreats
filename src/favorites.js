@@ -7,3 +7,4 @@ import './js/partials/modals/order-now';
 import './js/partials/pop-up-rating.js';
 import './js/partials/footer.js';
 import './js/partials/scroll-up.js';
+import './js/dark-theme.js';

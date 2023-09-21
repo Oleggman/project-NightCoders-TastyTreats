@@ -14,13 +14,13 @@
 
 .close-list-lick-order-now :hover,
 .close-list-lick-order-now :focus {
-  stroke: #9bb537;
+  stroke: var(--accent-color);
   transition: stroke 0.3s;
 }
 
 .order-now-modal {
   margin: 0 auto;
-  background-color: #fff;
+  background-color: var(--background-menu);
   border-radius: 15px;
   position: fixed;
   left: 50%;
@@ -34,7 +34,7 @@
 }
 
 .order-now-title {
-  color: #050505;
+  color: var(--primary-color);
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
@@ -45,13 +45,23 @@
 
 .order-now-input {
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid var(--primary-color-02);
   padding: 14px 18px;
   padding-right: 0px;
   margin-bottom: 16px;
   width: 100%;
   transition: 200ms ease-in;
   outline: none;
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.order-now-input.textarea {
+  resize: none;
+}
+
+.order-now-input::placeholder {
+  color: var(--primary-color-05);
 }
 
 .order-now-input:hover {
@@ -101,12 +111,12 @@
 }
 
 .order-now-close-list-icon {
-  stroke: #050505;
+  stroke: var(--primary-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-now-text {
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--primary-color-05);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
