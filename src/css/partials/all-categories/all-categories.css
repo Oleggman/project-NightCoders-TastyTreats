@@ -13,8 +13,8 @@
   height: 52px;
   padding: 14px 29px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-  color: rgba(5, 5, 5, 0.5);
+  border: 1px solid var(--primary-color-02);
+  color: var();
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
@@ -26,8 +26,8 @@
 
 .btn-categories:hover,
 .btn-categories:focus {
-  background-color: #9bb537;
-  color: #f8f8f8;
+  background-color: var( --background-mob-menu);
+  color: var(--background);
   border: 0;
   transition: color, background-color 300ms;
 }
@@ -38,7 +38,7 @@
   cursor: pointer;
   border-color: transparent;
   background-color: transparent;
-  color: rgba(5, 5, 5, 0.3);
+  color: var(--primary-color-03);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -49,7 +49,7 @@
 .btn-filter:active,
 .btn-filter:focus,
 .btn-filter:hover {
-  color: #9bb537;
+  color: var(--background-mob-menu);
   transition: color 300ms;
 }
 
@@ -62,13 +62,6 @@
   height: 198px;
   overflow-y: scroll;
 }
-
-/* @media screen and (max-width: 767px) {
-  .filter-categories {
-    width: 326px;
-    height: 198px;
-  }
-} */
 
 @media screen and (min-width: 768px) {
   .filter-categories {
