@@ -55,6 +55,10 @@
   }
 }
 
+.fav-hero-img {
+  border-radius: 20px;
+}
+
 @media screen and (max-width: 767px) {
   .fav-hero-img {
     min-width: 320px;

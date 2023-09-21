@@ -72,6 +72,7 @@
 
 .contacts-text {
   margin-bottom: 2px;
+  color: var(--primary-color);
 }
 
 .logo-coders {
@@ -97,6 +98,7 @@
   border-radius: 100px;
   background-color: transparent;
   border-color: transparent;
+  transition: box-shadow 300ms;
 }
 
 .team-logo {
@@ -117,6 +119,7 @@
 
   border-radius: 15px;
   border: 1px solid #b4b4b4;
+  transition: box-shadow 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .donate-container:hover,
@@ -191,8 +194,7 @@
   border-color: transparent;
 
   /* transition-property: shadow; */
-  transition-duration: 250ms;
-  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: box-shadow 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .fond-btn:hover,
@@ -234,8 +236,7 @@
   max-width: 355px;
   height: auto;
   margin: 0 auto;
-  /* background-color: var(--background-menu); */
-  background-color: #f8f8f8;
+  background-color: var(--background-menu);
   border-radius: 15px;
   border: 2px;
   position: fixed;
@@ -245,6 +246,15 @@
   overflow: auto;
   max-height: 95%;
   z-index: 1000;
+}
+
+.modal-team {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.modal-team::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 @media screen and (min-width: 768px) {
@@ -339,7 +349,7 @@
   /* min-width: 296px; */
   height: 100px;
   border-radius: 50px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  box-shadow: var(--team-member-shadow);
   margin-bottom: 12px;
 }
 
@@ -391,7 +401,7 @@
   width: 150px;
   margin: 10px;
   border-radius: 15px;
-  /* border-color: var(--border-pag:); */
+  color: var(--primary-color);
 }
 
 @media only screen and (min-width: 768px) {
@@ -401,7 +411,6 @@
   }
 }
 .name-team-member {
-  color: #050505;
   text-align: center;
   font-family: Inter;
   font-size: 16px;
@@ -413,7 +422,6 @@
 }
 
 .rolle {
-  color: #000;
   text-align: center;
   font-family: Inter;
   font-size: 14px;
