@@ -5,7 +5,7 @@
   height: 1171px;
   margin: 0 auto;
   background-color: var(--background-menu);
- 
+
   border-radius: 15px;
   border: 2px;
   position: fixed;
@@ -50,7 +50,6 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  
 }
 
 @media screen and (min-width: 768px) {
@@ -74,12 +73,12 @@
 .modal-recipes {
   display: flex;
   padding-top: 40px;
-  }
+}
 
 .name-of-recipe {
   margin-bottom: 14px;
   color: var(--primary-color);
-   font-family: Inter;
+  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -140,7 +139,6 @@
 .play-video {
   position: absolute;
   z-index: 100;
-
 }
 
 .play-icon {
@@ -361,7 +359,7 @@
   font-weight: 500;
   line-height: 14px; /* 116.667% */
   border-radius: 35px;
-  border: 1px solid var( --primary-color-02);
+  border: 1px solid var(--primary-color-02);
 }
 
 /*  !!! ТЕКСТ РЕЦЕПТУ !!! */
@@ -410,12 +408,12 @@
   transition: 0.2s;
 }
 .remove-from-fav {
-  background: #f35a4a;
+  background-color: var(--red-button);
 }
 
 .add-to-favorite:hover,
 .add-to-favorite:focus {
-  color:var(--primary-color);
+  color: var(--primary-color);
 }
 @media screen and (min-width: 768px) {
   .add-to-favorite {
