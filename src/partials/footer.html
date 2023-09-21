@@ -53,7 +53,12 @@ Please support our armed forces.
     </div>
 
     <div class="logo-coders">
-      <button type="button" id="open-team-modal" class="coders-btn">
+      <button
+        type="button"
+        id="open-team-modal"
+        class="coders-btn js-open-modal"
+        data-modal="4"
+      >
         <img
           class="team-logo"
           src="/img/footer/logo-coders-min.png"
@@ -73,8 +78,8 @@ Please support our armed forces.
 
 <!-- MODAL-TEAM -->
 
-<div class="modal-team" data-modal="4">
-  <svg class="team-modal-close" width="20" height="20">
+<div class="modal-team modal" data-modal="4">
+  <svg class="team-modal-close js-modal-close" width="20" height="20">
     <use href="/img/icons.svg#close"></use>
   </svg>
 
@@ -208,4 +213,4 @@ Please support our armed forces.
     alt="logo of team"
   />
 </div>
-<div class="modal-team-backdrop"></div>
+<!-- <div class="modal-team-backdrop"></div> -->
