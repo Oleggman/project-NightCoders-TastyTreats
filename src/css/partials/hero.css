@@ -124,7 +124,7 @@
 }
 .block-cook {
   background: #050505;
-  min-width: 80px;
+  max-width: 80px;
   height: 280px;
   border-radius: 15px;
   overflow: hidden;
