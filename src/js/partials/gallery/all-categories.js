@@ -1,6 +1,7 @@
-import { refs } from "../../refs";
-import TastyTreatsAPI from "../../API/tasty-treats-api";
-import { renderCategories, renderGallery } from "../../renders/render-gallery";
+import { refs } from '../../refs';
+import TastyTreatsAPI from '../../API/tasty-treats-api';
+import { renderCategories, renderGallery } from '../../renders/render-gallery';
+import { renewPagination } from '../pagination-home';
 
 refs.allBtn.addEventListener('click', onAllRecipesClick);
 refs.categoriesBox.addEventListener('click', onSearchCategory);
@@ -9,9 +10,26 @@ loadCategories();
 
 let recipes = [];
 
+const filters = {
+  time: '',
+  area: '',
+  ingredients: '',
+  title: '',
+  category: '',
+};
 async function onAllRecipesClick(e) {
-  let data = await getDataArr();
-  refs.gallery.innerHTML = renderGallery(data);
+  // let data = await getDataArr();
+  filters.area = '';
+  filters.ingredients = '';
+  filters.time = '';
+  filters.title ='';
+  filters.category = '';
+  sessionStorage.setItem('filters', JSON.stringify(filters));
+  sessionStorage.setItem('totalPages', 32);
+  const res = await tastyTreatsApi.fetchAllRecipes(1);
+
+  refs.gallery.innerHTML = renderGallery(res.data.results);
+  renewPagination();
 }
 
 async function loadCategories() {
@@ -25,12 +43,18 @@ async function onSearchCategory(e) {
   }
 
   const value = e.target.textContent;
-  let data = await getDataArr();
+  filters.category = value;
+  console.log(value);
+  sessionStorage.setItem('filters', JSON.stringify(filters));
+  const res = await tastyTreatsApi.fetchAllRecipes();
+  // let data = await getDataArr();
 
-  const recipesByCategory = data.filter(
-    item => item.category === value
-  );
-  refs.gallery.innerHTML = renderGallery(recipesByCategory);
+  // const recipesByCategory = data.filter(
+  //   item => item.category === value
+  // );
+  sessionStorage.setItem('totalPages', res.data.totalPages);
+  refs.gallery.innerHTML = renderGallery(res.data.results);
+  renewPagination();
 }
 
 async function getDataArr() {
