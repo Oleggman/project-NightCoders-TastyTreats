@@ -26,14 +26,18 @@
     </label>
     <label class="list-child">
       <span class="order-now-text">Phone number</span>
-      <input
-        type="tel"
-        name="phone"
-        class="order-now-input"
-        required
-        minlength="3"
-        placeholder="+380500242333"
-      />
+      <div class="phone-container">
+        <input
+          type="tel"
+          name="phone"
+          class="order-now-input"
+          required
+          minlength="9"
+          maxlength="9"
+          placeholder="123456789"
+        />
+        <span class="phone-code">+380</span>
+      </div>
     </label>
     <label class="list-child">
       <span class="order-now-text">Email</span>

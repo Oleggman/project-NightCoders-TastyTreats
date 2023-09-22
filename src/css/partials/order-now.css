@@ -62,6 +62,7 @@
 
 .order-now-input::placeholder {
   color: var(--primary-color-05);
+  font-size: 16px;
 }
 
 .order-now-input:hover {
@@ -238,4 +239,29 @@
 .overlay.active {
   opacity: 1;
   visibility: visible;
+}
+
+.phone-container {
+  position: relative;
+}
+
+.phone-code {
+  position: absolute;
+  left: 20px;
+  top: 13px;
+  padding-right: 5px;
+}
+.phone-code::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: 1px;
+  background-color: rgba(64, 64, 64, 0.3);
+}
+
+.phone-container input {
+  padding-left: 70px;
 }

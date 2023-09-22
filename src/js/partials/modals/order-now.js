@@ -9,28 +9,25 @@ orderForm.addEventListener('submit', onSubmitOrder);
 function onSubmitOrder(e) {
   e.preventDefault();
 
-  var parentModal = this.closest('.modal');
-  parentModal.classList.remove('active');
-  overlay.classList.remove('active');
-  document.body.style.overflow = 'auto';
-
   const dataPost = {
     name: orderForm.elements.name.value,
-    phone: orderForm.elements.phone.value,
+    phone: '+380' + orderForm.elements.phone.value,
     email: orderForm.elements.email.value,
     comment: orderForm.elements.comment.value,
   };
-  console.log(orderForm.elements.email.value);
-
   axios
     .post('https://tasty-treats-backend.p.goit.global/api/orders/add', dataPost)
     .then(() => {
       Notify.success(
         'The form has been sent successfully! A manager will contact you shortly.'
       );
+      var parentModal = this.closest('.modal');
+      parentModal.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      e.currentTarget.reset();
     })
     .catch(function (error) {
-      console.log(error.message);
+      Notify.warning(`${error.response.data.message}`);
     });
-  e.currentTarget.reset();
 }
