@@ -13,9 +13,16 @@ const modalRefs = {
   iframe: document.querySelector('.js-video iframe'),
   addFavoriteBtn: document.querySelector('.add-to-favorite'),
 };
+
 let favorites = [];
+
 loadModal();
+
 async function loadModal(recipe) {
+  if (!recipe) {
+    return;
+  }
+
   modalRefs.titles.forEach(title => (title.textContent = recipe.title));
   const src = !recipe.youtube
     ? recipe.thumb
@@ -147,4 +154,5 @@ function handlerFavoriteBtn(evt) {
   localStorage.setItem('favorites', JSON.stringify(favorites));
   heartRender();
 }
+
 export { loadModal, handlerFavoriteBtn };
