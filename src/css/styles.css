@@ -80,6 +80,8 @@
   --primary-rating: rgba(255, 255, 255, 0.5);
   --primary-modal-rating: rgba(255, 255, 255, 0.5);
   --primary-stars: rgba(255, 255, 255, 0.1);
+  --primary-dish-area: rgba(255, 255, 255, 0.20);
+  --primary-dish-name: rgba(255, 255, 255, 0.60);
   --primary-CardTitle-Description: rgba(255, 255, 255, 0.8);
   --primary-menu-mob: #f8f8f8;
   --primary-raiting: #1e1e1e;
