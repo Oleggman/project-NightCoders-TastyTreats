@@ -18,6 +18,12 @@
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .our-title {
+    display: none;
+  }
+}
+
 .keyword {
   color: rgb(155, 181, 55);
   text-shadow: -6px 5px 5px rgba(155, 181, 55, 0.6);

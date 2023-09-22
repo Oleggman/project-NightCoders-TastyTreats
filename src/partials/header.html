@@ -12,10 +12,10 @@
         </li>
       </ul>
     </nav>
-    <h1 class="logo" href="./index.html">
+    <a class="logo" href="./index.html">
       <span class="logo-green">tasty</span>
       <span class="logo-black">treats.</span>
-    </h1>
+    </a>
     <a class="basket js-open-modal" href="tel:+380730000000" data-modal="1">
       <svg class="basket-icon">
         <use href="/img/icons.svg#basket"></use>
@@ -23,7 +23,11 @@
     </a>
 
     <div class="theme-switch">
-      <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" />
+      <input
+        type="checkbox"
+        id="theme-toggle"
+        class="theme-toggle-checkbox theme-toggle"
+      />
       <label for="theme-toggle" class="theme-toggle-label"></label>
     </div>
     <button class="burger-btn js-open-burger-menu" type="button">
@@ -49,7 +53,7 @@
         <input
           type="checkbox"
           id="theme-toggle-mob"
-          class="theme-toggle-checkbox-mob"
+          class="theme-toggle-checkbox-mob theme-toggle"
         />
         <label for="theme-toggle-mob" class="theme-toggle-label-mob"></label>
       </div>

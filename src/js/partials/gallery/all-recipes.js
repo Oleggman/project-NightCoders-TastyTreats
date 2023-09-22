@@ -3,6 +3,15 @@ import { renderGallery } from '../../renders/render-gallery.js';
 import { loadModal } from '../modals/modal-recipes.js';
 import { stopVideo } from '../modals/stop-recipe-video.js';
 
+const filters = {
+  time: '',
+  area: '',
+  ingredients: '',
+  title: '',
+  category: '',
+};
+sessionStorage.setItem('filters', JSON.stringify(filters));
+sessionStorage.setItem('totalPages', 32);
 const allRecipesRender = new TastyTreatsAPI();
 
 const gallery = document.querySelector('.cards-container');
@@ -11,25 +20,33 @@ const overlay = document.querySelector('.overlay');
 const closeBtn = document.querySelector('.modal-close-btn');
 loadGallery();
 
-async function loadGallery() {
+async function loadGallery(currentPage, perPage) {
   // рендер карток
-  const res = await allRecipesRender.fetchAllRecipes();
+  const res = await allRecipesRender.fetchAllRecipes(currentPage, perPage);
+  sessionStorage.setItem('totalPages', res.data.totalPages);
   gallery.innerHTML = renderGallery(res.data.results);
+  heartRender();
+  gallery.addEventListener('click', handlerLike);
+}
 
+function heartRender() {
   // відмальовка сердечок з локалстореджа
+  favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
   const idList = favorites.map(el => el.id);
   for (let i = 0; i < gallery.children.length; i++) {
     if (idList.includes(gallery.children[i].id)) {
       gallery.children[i].firstElementChild.firstElementChild.classList.add(
         'like-favorite'
       );
+    } else {
+      gallery.children[i].firstElementChild.firstElementChild.classList.remove(
+        'like-favorite'
+      );
     }
   }
 }
 
-let favorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
-
-gallery.addEventListener('click', handlerLike);
+let favorites = [];
 
 async function handlerLike(evt) {
   const svg = evt.target.firstElementChild;
@@ -60,10 +77,10 @@ async function handlerLike(evt) {
     const cardId = evt.target.dataset.id;
     const recipe = await allRecipesRender.fetchOneRecipe(cardId);
     loadModal(recipe.data);
-    
+
     recipeModal.classList.add('active');
     overlay.classList.add('active');
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = 'hidden';
   }
 }
 
@@ -73,5 +90,8 @@ function handlerCLoseBtn() {
   stopVideo();
   recipeModal.classList.remove('active');
   overlay.classList.remove('active');
-  document.body.style.overflow = "auto";
+  document.body.style.overflow = 'auto';
 }
+export { loadGallery };
+
+export { heartRender };

@@ -2,7 +2,7 @@
   margin-top: 40px;
 }
 .popular-headline {
-  color: #050505;
+  color: var(--primary-color);
   font-family: Inter;
   font-weight: 600;
   font-size: 18px;
@@ -16,7 +16,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  color: rgba(5, 5, 5, 0.8);
+  color: var(--primary-color-08);
   font-family: Inter;
   font-weight: 400;
   font-size: 12px;
@@ -24,7 +24,7 @@
   font-style: normal;
 }
 .popular-name {
-  color: #050505;
+  color: var(--primary-color);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -42,13 +42,14 @@
 }
 .car-container:hover,
 .car-container:focus {
-  background-color: #9bb537;
+  background-color: var(--background-mob-menu);
   transition: background-color 300ms;
 }
 .text-container {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding: 3px;
 }
 .popular-container {
   display: flex;
@@ -70,7 +71,7 @@
     display: none;
   }
   .car-container:active {
-    background-color: #9bb537;
+    background-color: var(--background-mob-menu);
     transition: background-color 300ms;
   }
 }

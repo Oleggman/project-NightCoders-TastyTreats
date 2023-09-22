@@ -41,6 +41,7 @@
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 14px;
+  transition: color 300ms;
 }
 @media only screen and (min-width: 768px) {
   .hero-title {
@@ -59,6 +60,7 @@
   font-size: 14px;
   line-height: 1.29;
   margin-bottom: 28px;
+  transition: color 300ms;
 }
 @media only screen and (min-width: 768px) {
   .hero-descr {
