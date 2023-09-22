@@ -1,13 +1,13 @@
-import TastyTreatsAPI from '../API/tasty-treats-api.js'
+import TastyTreatsAPI from '../API/tasty-treats-api.js';
 import svg from '../../img/icons.svg';
 import { loadModal } from '../partials/modals/modal-recipes.js';
 
 const ref = {
-    favoriteCategoriesList: document.querySelector('.favorite-categories-btn'),
-    favoriteRecipesList: document.querySelector('.favorites-list'),
-    favoritesDefault: document.querySelector('.favorites-default'),
-    allBtn: document.querySelector('.all-btn'),
-    gallery: document.querySelector('.favorites-card-list'),
+  favoriteCategoriesList: document.querySelector('.favorite-categories-btn'),
+  favoriteRecipesList: document.querySelector('.favorites-list'),
+  favoritesDefault: document.querySelector('.favorites-default'),
+  allBtn: document.querySelector('.all-btn'),
+  gallery: document.querySelector('.favorites-card-list'),
   galleryCard: document.querySelector('.cards-container'),
   recipeModal: document.querySelector('.modal-recipes-container'),
   overlay: document.querySelector('.overlay'),
@@ -18,146 +18,142 @@ const allRecipesRender = new TastyTreatsAPI();
 
 let currentCategory = '';
 
-
 function onFavoritesReloaded() {
-    const categoryMarkup = generateCategoryList();
-    const allCatBtn = `<button class="button-fav all-btn" name="all">All categories</button>`;
+  const categoryMarkup = generateCategoryList();
+  const allCatBtn = `<button class="button-fav all-btn" name="all">All categories</button>`;
 
-    const data = JSON.parse(localStorage.getItem('favorites')) || [];
+  const data = JSON.parse(localStorage.getItem('favorites')) || [];
 
-    ref.favoriteCategoriesList.innerHTML = '';
-    ref.favoriteRecipesList.innerHTML = '';
+  ref.favoriteCategoriesList.innerHTML = '';
+  ref.favoriteRecipesList.innerHTML = '';
 
-    if (data.length) {
-        ref.favoriteCategoriesList.innerHTML = `${allCatBtn}${categoryMarkup}`;
-    } else {
-        ref.allBtn.style.display = 'none';
-    }
-    generateStorageList();
+  if (data.length) {
+    ref.favoriteCategoriesList.innerHTML = `${allCatBtn}${categoryMarkup}`;
+  } else {
+    ref.allBtn.style.display = 'none';
+  }
+  generateStorageList();
 }
 
 function generateStorageList() {
-    const storage = localStorage.getItem('favorites');
-    const data = JSON.parse(storage) || [];
+  const storage = localStorage.getItem('favorites');
+  const data = JSON.parse(storage) || [];
 
+  ref.allBtn.style.display = 'none';
+
+  if (data.length) {
+    ref.allBtn.style.display = 'block';
+
+    let filteredData;
+    if (currentCategory === '') {
+      filteredData = data;
+    } else {
+      filteredData = data.filter(recipe => recipe.category === currentCategory);
+    }
+
+    ref.favoriteRecipesList.innerHTML = renderGalleryFavorite(filteredData);
+
+    const favoriteButtons = document.querySelectorAll('.like-button');
+    favoriteButtons.forEach(button => {
+      button.onclick = () => handleFavoriteButtonClick(button);
+    });
+
+    const recipeButtons = document.querySelectorAll('.card-footer-btn');
+    recipeButtons.forEach(button => {
+      button.onclick = () => handlerRecipeModal(button);
+    });
+
+    ref.favoritesDefault.classList.add('is-hidden-favorites');
+  } else {
+    ref.favoritesDefault.classList.remove('is-hidden-favorites');
+    ref.allBtn.classList.add('is-hidden-favorites');
+  }
+
+  if (data.length === 0) {
+    ref.favoritesDefault.classList.remove('is-hidden-favorites');
+    ref.favoriteCategoriesList.innerHTML = '';
     ref.allBtn.style.display = 'none';
-
-    if (data.length) {
-      ref.allBtn.style.display = 'block';
-        
-        let filteredData;
-        if (currentCategory === '') {
-            filteredData = data;
-        } else {
-            filteredData = data.filter((recipe) => recipe.category === currentCategory);
-        }
-
-      ref.favoriteRecipesList.innerHTML = renderGalleryFavorite(filteredData);
-        
-const favoriteButtons = document.querySelectorAll('.like-button');
-    favoriteButtons.forEach((button) => {
-        button.onclick = () => handleFavoriteButtonClick(button);
-    });
-      
-      const recipeButtons = document.querySelectorAll('.card-footer-btn');
-    recipeButtons.forEach((button) => {
-        button.onclick = () => handlerRecipeModal(button);
-    });
-
-        ref.favoritesDefault.classList.add('is-hidden-favorites')
-    } else {
-        ref.favoritesDefault.classList.remove('is-hidden-favorites');
-        ref.allBtn.classList.add('is-hidden-favorites');
-    }
-
-    if (data.length === 0) {
-        ref.favoritesDefault.classList.remove('is-hidden-favorites');
-        ref.favoriteCategoriesList.innerHTML = '';
-        ref.allBtn.style.display = 'none'
-    } else {
-        ref.favoritesDefault.classList.add('is-hidden-favorites');
-    }
+  } else {
+    ref.favoritesDefault.classList.add('is-hidden-favorites');
+  }
 }
 
-
 async function handlerRecipeModal(button) {
-  
   // відкриття модалки з рецептом + рендрер
 
-    const cardId = button.dataset.id;
-    const recipe = await allRecipesRender.fetchOneRecipe(cardId);
-    loadModal(recipe.data);
-    
-    ref.recipeModal.classList.add('active');
-    ref.overlay.classList.add('active');
-    document.body.style.overflow = "hidden";
-  }
+  const cardId = button.dataset.id;
+  const recipe = await allRecipesRender.fetchOneRecipe(cardId);
+  loadModal(recipe.data);
+
+  ref.recipeModal.classList.add('active');
+  ref.overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
 
 // закриття модалки по кліку на іконку
 ref.closeBtn.addEventListener('click', handlerCLoseBtn);
 function handlerCLoseBtn() {
   ref.recipeModal.classList.remove('active');
   ref.overlay.classList.remove('active');
-  document.body.style.overflow = "auto";
+  document.body.style.overflow = 'auto';
 }
-
-
-
 
 // Генерація кнопок категорій
 function generateCategoryList() {
-    const storage = localStorage.getItem('favorites');
-    const data = JSON.parse(storage) || [];
+  const storage = localStorage.getItem('favorites');
+  const data = JSON.parse(storage) || [];
 
-    if (data.length) {
-        return data
-            .flatMap((recipe) => recipe.category)
-            .filter((category, index, array) => array.indexOf(category) === index)
-            .reduce((categoryMarkup, category) => categoryMarkup + renderCategory(category), '');
-    }
-    return '';
-};
+  if (data.length) {
+    return data
+      .flatMap(recipe => recipe.category)
+      .filter((category, index, array) => array.indexOf(category) === index)
+      .reduce(
+        (categoryMarkup, category) => categoryMarkup + renderCategory(category),
+        ''
+      );
+  }
+  return '';
+}
 
-const renderCategory = (category) => `<button class="button-fav">${category}</button>`;
+const renderCategory = category =>
+  `<button class="button-fav">${category}</button>`;
 
 function filterByCategory(evt) {
+  if (evt.target.nodeName === 'BUTTON') {
+    if (evt.target.name === 'all') {
+      currentCategory = '';
 
-    if (evt.target.nodeName === 'BUTTON') {
-        
-        if (evt.target.name === 'all') {
-            currentCategory = '';
+      setActiveClass(evt.target);
+    } else {
+      currentCategory = evt.target.textContent;
 
-            setActiveClass(evt.target);
-        } else {
-            currentCategory = evt.target.textContent;
-
-            setActiveClass(evt.target);
-        }
-
-        generateStorageList();
+      setActiveClass(evt.target);
     }
-};
+
+    generateStorageList();
+  }
+}
 
 function setActiveClass(targetButton) {
-    const categoryButtons = document.querySelectorAll('.button-fav');
+  const categoryButtons = document.querySelectorAll('.button-fav');
 
-    categoryButtons.forEach((button) => {
-        if (button === targetButton) {
-            button.classList.add('onActive');
-        } else {
-            button.classList.remove('onActive');
-        }
-    });
-};
+  categoryButtons.forEach(button => {
+    if (button === targetButton) {
+      button.classList.add('onActive');
+    } else {
+      button.classList.remove('onActive');
+    }
+  });
+}
 
 document.addEventListener('DOMContentLoaded', onFavoritesReloaded);
 ref.favoriteCategoriesList.addEventListener('click', filterByCategory);
 
 function handleFavoriteButtonClick(button) {
-    console.log(button);
-    console.log(button.id);
-    const infoRecipe = button.id;
-    console.log(button);
+  console.log(button);
+  console.log(button.id);
+  const infoRecipe = button.id;
+  console.log(button);
   const storage = localStorage.getItem('favorites');
   let data = JSON.parse(storage) || [];
 
@@ -168,14 +164,12 @@ function handleFavoriteButtonClick(button) {
     data.splice(recipeIndex, 1);
     localStorage.setItem('favorites', JSON.stringify(data));
 
-      
     const remainingData = JSON.parse(localStorage.getItem('favorites')) || [];
     const otherRecipesInCategory = remainingData.some(
       recipe => recipe.category === removedRecipeCategory
     );
 
     if (!otherRecipesInCategory) {
-
       const recipeCards = document.querySelectorAll('.item');
       recipeCards.forEach(card => {
         if (card.dataset.category === removedRecipeCategory) {
@@ -183,7 +177,8 @@ function handleFavoriteButtonClick(button) {
         }
       });
 
-      const categoryButtons = ref.favoriteCategoriesList.querySelectorAll('.button-fav');
+      const categoryButtons =
+        ref.favoriteCategoriesList.querySelectorAll('.button-fav');
       categoryButtons.forEach(categoryButton => {
         if (categoryButton.textContent === removedRecipeCategory) {
           categoryButton.remove();
@@ -192,7 +187,7 @@ function handleFavoriteButtonClick(button) {
     }
   }
 
-    const remainingData = JSON.parse(localStorage.getItem('favorites')) || [];
+  const remainingData = JSON.parse(localStorage.getItem('favorites')) || [];
   if (remainingData.length === 0) {
     ref.favoriteRecipesList.innerHTML = '';
     ref.allBtn.style.display = 'none';
@@ -201,9 +196,7 @@ function handleFavoriteButtonClick(button) {
   } else {
     generateStorageList();
   }
-};
-
-
+}
 
 // Функція рендеру карток-рецептів
 
@@ -229,27 +222,37 @@ function renderGalleryFavorite(data) {
             <span class="card-rate-value">${Number(rating).toFixed(1)}</span>
             <div class="card-rate-stars">
               <svg class=${
-                Number(rating).toFixed(1) >= 1 ? 'star-icon-orange' : 'star-icon-grey'
+                Number(rating).toFixed(1) >= 1
+                  ? 'star-icon-orange'
+                  : 'star-icon-grey'
               }>
                 <use href="${svg}#star"></use>
               </svg>
               <svg class=${
-                Number(rating).toFixed(1) >= 2 ? 'star-icon-orange' : 'star-icon-grey'
+                Number(rating).toFixed(1) >= 2
+                  ? 'star-icon-orange'
+                  : 'star-icon-grey'
               }>
                 <use href="${svg}#star"></use>
               </svg>
               <svg class=${
-                Number(rating).toFixed(1) >= 3 ? 'star-icon-orange' : 'star-icon-grey'
+                Number(rating).toFixed(1) >= 3
+                  ? 'star-icon-orange'
+                  : 'star-icon-grey'
               }>
                 <use href="${svg}#star"></use>
               </svg>
               <svg class=${
-                Number(rating).toFixed(1) >= 4 ? 'star-icon-orange' : 'star-icon-grey'
+                Number(rating).toFixed(1) >= 4
+                  ? 'star-icon-orange'
+                  : 'star-icon-grey'
               }>
                 <use href="${svg}#star"></use>
               </svg>
               <svg class=${
-                Number(rating).toFixed(1) >= 5 ? 'star-icon-orange' : 'star-icon-grey'
+                Number(rating).toFixed(1) >= 5
+                  ? 'star-icon-orange'
+                  : 'star-icon-grey'
               }>
                 <use href="${svg}#star"></use>
               </svg>
@@ -262,6 +265,3 @@ function renderGalleryFavorite(data) {
     )
     .join('');
 }
-
-
-
