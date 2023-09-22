@@ -243,12 +243,14 @@
 
 .phone-container {
   position: relative;
+  margin-bottom: 18px;
 }
 
 .phone-code {
   position: absolute;
   left: 20px;
-  top: 13px;
+  top: 50%;
+  transform: translateY(-50%);
   padding-right: 5px;
 }
 .phone-code::after {
@@ -264,4 +266,5 @@
 
 .phone-container input {
   padding-left: 70px;
+  margin-bottom: 0;
 }
