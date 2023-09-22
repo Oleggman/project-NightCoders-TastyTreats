@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/project-NightCoders-TastyTreats/assets/favicon-d11fef11.svg" />
+    <title>Favorites</title>
+    
+    <script type="module" crossorigin src="/project-NightCoders-TastyTreats/assets/favorites-094623c7.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-NightCoders-TastyTreats/assets/dark-theme-e716946f.js">
+    <link rel="stylesheet" href="/project-NightCoders-TastyTreats/assets/dark-theme-df13daa2.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+  <div class="container header-wrap">
+    <nav class="navigation">
+      <ul class="list-header">
+        <li class="item-list-header">
+          <a class="link-list-header js-index" href="./index.html">Home</a>
+        </li>
+        <li class="item-list-header">
+          <a class="link-list-header js-favorites" href="./favorites.html"
+            >Favorites</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <a class="logo" href="./index.html">
+      <span class="logo-green">tasty</span>
+      <span class="logo-black">treats.</span>
+    </a>
+    <a class="basket js-open-modal" href="tel:+380730000000" data-modal="1">
+      <svg class="basket-icon">
+        <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#basket"></use>
+      </svg>
+    </a>
+
+    <div class="theme-switch">
+      <input
+        type="checkbox"
+        id="theme-toggle"
+        class="theme-toggle-checkbox theme-toggle"
+      />
+      <label for="theme-toggle" class="theme-toggle-label"></label>
+    </div>
+    <button class="burger-btn js-open-burger-menu" type="button">
+      <svg class="burger-icon">
+        <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#burger-menu"></use>
+      </svg>
+    </button>
+    <div class="burger-menu js-burger-menu">
+      <button class="burger-close-btn js-close-burger-menu" type="button">
+        <svg class="burger-close-icon">
+          <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#close"></use>
+        </svg>
+      </button>
+      <ul class="list-modal-menu">
+        <li class="item-modal-menu">
+          <a class="link-modal-menu" href="./index.html">Home</a>
+        </li>
+        <li class="item-modal-menu">
+          <a class="link-modal-menu" href="./favorites.html">Favorites</a>
+        </li>
+      </ul>
+      <div class="modal-switch">
+        <input
+          type="checkbox"
+          id="theme-toggle-mob"
+          class="theme-toggle-checkbox-mob theme-toggle"
+        />
+        <label for="theme-toggle-mob" class="theme-toggle-label-mob"></label>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    <!-- Favorites hero -->
+    <main>
+      <section class="favorites-hero">
+        <div class="favorites-container">
+          <div class="fav-hero-img"></div>
+        </div>
+      </section>
+
+      <section class="favorites-section section">
+        <!-- Categories -->
+        <div class="favorites-categories favorites-container">
+          <div class="favorite-categories-btn">
+            <button class="button-fav all-btn is-hidden-favorites" name="all">
+              All categories
+            </button>
+          </div>
+          <ul class="favorites-card-list favorites-list"></ul>
+        </div>
+        <!-- Default -->
+        <div class="favorites-default favorites-container">
+          <svg class="favorites-icon" width="68" height="58">
+            <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#hat"></use>
+          </svg>
+          <p class="favorites-text">
+            It appears that you haven't added any recipes to your favorites yet.
+            To get started, you can add recipes that you like to your favorites
+            for easier access in the future.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer-container">
+  <!-- <img src="" alt=""> -->
+  <!-- <div class="line"> -->
+  <hr class="line" />
+  <!-- </div> -->
+  <div class="main-footer-content">
+    <div class="donate-container">
+      <h2 class="name-donate">glory to ukraine</h2>
+      <pre class="text-donate">
+Please support our armed forces.
+            Make a donate</pre
+      >
+      <!-- <div class="fonds"> -->
+      <ul class="fonds-btn-list">
+        <li class="fond-item">
+          <div class="fond-btn">
+            <a
+              href="https://prytulafoundation.org/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img
+                class="fond-logo"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkBAMAAACCzIhnAAAAMFBMVEVHcEwAHmH/mQD/mQAAHmH/mQD/mQCSZCpmTzqAXDH/mQDrkAf/mQAAHmGAXDG/ehgEzJv8AAAADHRSTlMAv4C/QECf3+9Az89xBqcqAAAAd0lEQVRYw2NgwAIY7+IDDKNaRrWMAC0CSIK+o1pGtYxqGdUybLScwQLOwWTfYJMd1TKqZVQLGVpOGSOABUxLM5Lg/v9QANdylPSMPKplVAt1tcwlXUvsqJZRLUhajikhgPo7KChCEszF2yDBCs6OahnVMqqFdC0AkBJv3KPC48sAAAAASUVORK5CYII="
+                alt="Prytula Fondation"
+              />webp
+              <!-- <svg class="" width="" height="">
+                                <use href="">prutyla</use>
+                            </svg> -->
+            </a>
+          </div>
+        </li>
+        <li class="fond-item">
+          <div class="fond-btn">
+            <a
+              href="https://savelife.in.ua/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img
+                class="fond-logo-live"
+                src="/project-NightCoders-TastyTreats/assets/come-back-alive-min-ece899c1.png"
+                alt="Save life Foundation"
+              />
+              <!-- <svg class="" width="" height="">
+                             <use href="">savelife</use>
+                         </svg> -->
+            </a>
+          </div>
+        </li>
+      </ul>
+      <!-- </div> -->
+    </div>
+
+    <div class="logo-coders">
+      <button
+        type="button"
+        id="open-team-modal"
+        class="coders-btn js-open-modal"
+        data-modal="4"
+      >
+        <img
+          class="team-logo"
+          src="/project-NightCoders-TastyTreats/assets/logo-coders-min-f8d5976e.png"
+          alt="logo of nightCoders"
+        />
+      </button>
+    </div>
+
+    <div class="contacts">
+      <h2 class="contacts-tittle">Our contacts:</h2>
+      <p class="contacts-text"><b>Kyiv,</b> Independence Square</p>
+      <p class="contacts-text"><b>tel:</b> +38 (068) 111-22-33</p>
+      <p class="contacts-text"><b>e-mail:</b> nightcoders@ukr.net</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL-TEAM -->
+
+<div class="modal-team modal" data-modal="4">
+  <svg class="team-modal-close js-modal-close" width="20" height="20">
+    <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#close"></use>
+  </svg>
+
+  <h2 class="modal-tittle">Our team</h2>
+  <div class="team-list-container">
+    <ul class="team-list">
+      <li class="team-item">
+        <div class="member-photo-box">
+          <img
+            class="member-photo"
+            src="/project-NightCoders-TastyTreats/assets/Oleg-Kovalets-min-min-7581ec4e.webp"
+            alt="member of the team"
+          />
+        </div>
+        <div class="team-member">
+          <h3 class="name-team-member">Oleh Kovalets</h3>
+          <p class="rolle"><b>Team Lead</b></p>
+          <p class="rolle">Front-End Developer</p>
+        </div>
+      </li>
+      <li class="team-item reverse">
+        <div class="member-photo-box">
+          <img
+            class="member-photo"
+            src="/project-NightCoders-TastyTreats/assets/Yuliia-Shevchuk-min-min-a962b3e1.webp"
+            alt="member of the team"
+          />
+        </div>
+        <div class="team-member">
+          <h3 class="name-team-member">Yuliia Shevchuk</h3>
+          <p class="rolle"><b>Scrum master</b></p>
+          <p class="rolle">Front-End Developer</p>
+        </div>
+      </li>
+      <li class="team-item">
+        <div class="member-photo-box">
+          <img
+            class="member-photo"
+            src="/project-NightCoders-TastyTreats/assets/Vitaliy-Monastyrskyi-min-min-b2b79d77.webp"
+            alt="member of the team"
+          />
+        </div>
+        <div class="team-member">
+          <h3 class="name-team-member">Vitalii <br />Monastyrskyi</h3>
+          <p class="rolle">Front-End Developer</p>
+        </div>
+      </li>
+      <li class="team-item reverse">
+        <div class="member-photo-box">
+          <img
+            class="member-photo"
+            src="/project-NightCoders-TastyTreats/assets/Natalia-Kostiuk-min-min-b38919d3.webp"
+            alt="member of the team"
+          />
+        </div>
+        <div class="team-member">
+          <h3 class="name-team-member">Nataliia <br />Kostiuk</h3>
+          <p class="rolle">Front-End Developer</p>
+        </div>
+      </li>
+      <li class="team-item">
+        <div class="member-photo-box">
+          <img
+            class="member-photo"
+            src="/project-NightCoders-TastyTreats/assets/Vitaliy-Somov-min-min-58e06808.webp"
+            alt="member of the team"
+          />
+        </div>
+        <div class="team-member">
+          <h3 class="name-team-member">Vitaliy <br />Somov</h3>
+          <p class="rolle">Front-End Developer</p>
+        </div>
+      </li>
+      <li class="team-item reverse">
+        <div class="member-photo-box">
+          <img
+            class="member-photo"
+            src="/project-NightCoders-TastyTreats/assets/Anton-Rybalko-min-min-3cfaa9f3.webp"
+            alt="member of the team"
+          />
+        </div>
+        <div class="team-member">
+          <h3 class="name-team-member">Anton <br />Rybalko</h3>
+          <p class="rolle">Front-End Developer</p>
+        </div>
+      </li>
+      <li class="team-item">
+        <div class="member-photo-box">
+          <img
+            class="member-photo"
+            src="/project-NightCoders-TastyTreats/assets/Sofia-min-min-fd4951a5.webp"
+            alt="member of the team"
+          />
+        </div>
+        <div class="team-member">
+          <h3 class="name-team-member">Sofiia <br />Volvach</h3>
+          <p class="rolle">Front-End Developer</p>
+        </div>
+      </li>
+      <li class="team-item reverse">
+        <div class="member-photo-box">
+          <img
+            class="member-photo"
+            src="/project-NightCoders-TastyTreats/assets/Volodymyr-Pipash-min-min-19375dda.webp"
+            alt="member of the team"
+          />
+        </div>
+        <div class="team-member">
+          <h3 class="name-team-member">Volodymyr<br />Pipash</h3>
+          <p class="rolle">Front-End Developer</p>
+        </div>
+      </li>
+      <li class="team-item">
+        <div class="member-photo-box">
+          <img
+            class="member-photo"
+            src="/project-NightCoders-TastyTreats/assets/Maksym-min-min-bba8d755.webp"
+            alt="member of the team"
+          />
+        </div>
+        <div class="team-member">
+          <h3 class="name-team-member">Maksym<br />Grabovskyi</h3>
+          <p class="rolle">Front-End Developer</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <img
+    class="logo-coders-modal"
+    src="/project-NightCoders-TastyTreats/assets/logo-coders-min-f8d5976e.png"
+    alt="logo of team"
+  />
+</div>
+
+
+    <div class="modal-recipes-container modal" data-modal="2">
+  <!-- class="backdrop is-hidden" data-modal -->
+  <h1 class="modal-recipes-name recipe-modal-title"></h1>
+  <!-- іконка закриття -->
+  <button type="button" class="modal-close-btn js-modal-close">
+    <svg class="icon-close-btn" width="20" height="20">
+      <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#close"></use>
+    </svg>
+  </button>
+
+  <div class=".modal-recipes">
+    <!-- <div > -->
+    <h2 class="name-of-recipe only-tablet recipe-modal-title"></h2>
+    <!-- </div> -->
+
+    <!-- відео -->
+    <!-- <div class="js-iframe-recipes video-container">
+      
+    </div> -->
+    <!-- <video id="recipeVideo" class="video-container" controls>
+      <sourse
+        class="video-source"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY"
+        type="video/webm"
+      />
+    </video> -->
+
+    <div class="js-video video-container">
+      <iframe src="#" allowfullscreen></iframe>
+    </div>
+
+    <h2 class="name-of-recipe only-mobile recipe-modal-title"></h2>
+
+    <!-- рейтинг і зірочки (лише tablet) -->
+    <div class="rating-on-tablet">
+      <ul class="rating-on-tablet-list">
+        <li>
+          <ul class="recipe-modal-tags"></ul>
+        </li>
+        <li>
+          <ul class="stars-tablet">
+            <li class="recipe-modal-rating">
+              <p class="modal-rating rating"></p>
+              <ul class="modal-stars stars"></ul>
+            </li>
+            <li>
+              <p class="time-preparing"></p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Зірочки -->
+    <div class="stars-container">
+      <span class="rating modal-rating"></span>
+      <ul class="stars modal-stars"></ul>
+      <p class="time-preparing"></p>
+    </div>
+
+    <!-- інгредієнти -->
+    <div class="ingredients-container">
+      <ul class="modal-recipe-ingredients recipe-modal-ingreds"></ul>
+    </div>
+
+    <!-- ОБРАНІ КАТЕГОРІЇ (хештеги) -->
+    <div class="selected-categories">
+      <ul class="selected recipe-modal-tags"></ul>
+    </div>
+
+    <!-- текст рецепту -->
+    <div class="recipe-text-box">
+      <p class="recipe-text"></p>
+    </div>
+
+    <!-- кнопки -->
+    <button type="button" class="add-to-favorite">Add to favorite</button>
+
+    <button type="button" class="give-a-rating">Give a rating</button>
+  </div>
+</div>
+<!-- <div class="recipe-backdrop overlay js-overlay-modal"></div> -->
+
+    <div class="order-now-modal modal" data-modal="1">
+  <div class="order-now-modal-off">
+    <ul class="order-now-close-list">
+      <li class="close-list-child-order-now">
+        <button class="close-list-lick-order-now js-modal-close">
+          <svg class="order-now-close-list-icon" width="24" height="24">
+            <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#close"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <p class="order-now-title">Order now</p>
+
+  <form class="form order-now-form" action="submit">
+    <label class="list-child">
+      <span class="order-now-text">Name</span>
+      <input
+        type="text"
+        class="order-now-input"
+        name="name"
+        required
+        minlength="3"
+        placeholder="Піпаш Володимир"
+      />
+    </label>
+    <label class="list-child">
+      <span class="order-now-text">Phone number</span>
+      <div class="phone-container">
+        <input
+          type="tel"
+          name="phone"
+          class="order-now-input"
+          required
+          minlength="9"
+          maxlength="9"
+          placeholder="123456789"
+        />
+        <span class="phone-code">+380</span>
+      </div>
+    </label>
+    <label class="list-child">
+      <span class="order-now-text">Email</span>
+      <input
+        type="email"
+        name="email"
+        class="order-now-input"
+        required
+        minlength="3"
+        placeholder="nightgoders@gmail.com"
+      />
+    </label>
+    <label class="list-child">
+      <span class="order-now-text">Comment</span>
+
+      <textarea
+        name="comment"
+        class="order-now-input textarea"
+        style="margin-bottom: 40px; height: 100px"
+      ></textarea>
+    </label>
+
+    <button class="order-now-button" type="submit">Send</button>
+  </form>
+</div>
+<div class="review-backdrop overlay js-overlay-modal"></div>
+
+    <div class="pop-up-modal">
+  <div class="modal-off">
+    <ul class="close-list">
+      <li class="close-list-child">
+        <button type="button" class="rate-close-btn">
+          <svg class="icon-close-btn" width="20" height="20">
+            <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#close"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <p class="po-up-title">Rating</p>
+
+  <div class="full-stars">
+    <span class="star-span">0.0</span>
+    <div class="rating-group">
+      <!-- по умолчанию 0 -->
+      <input name="fst" value="0" type="radio" disabled checked />
+
+      <!-- рейтинг 1 -->
+      <label for="fst-1" data-rating="1">
+        <svg width="24" height="24">
+          <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#star"></use>
+        </svg>
+      </label>
+      <input name="fst" id="fst-1" value="1" type="radio" />
+
+      <!-- рейтинг 2 -->
+      <label for="fst-2" data-rating="2">
+        <svg width="24" height="24">
+          <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#star"></use>
+        </svg>
+      </label>
+      <input name="fst" id="fst-2" value="2" type="radio" />
+
+      <!-- рейтинг 3 -->
+      <label for="fst-3" data-rating="3">
+        <svg width="24" height="24">
+          <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#star"></use>
+        </svg>
+      </label>
+      <input name="fst" id="fst-3" value="3" type="radio" />
+
+      <!-- рейтинг 4 -->
+      <label for="fst-4" data-rating="4">
+        <svg width="24" height="24">
+          <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#star"></use>
+        </svg>
+      </label>
+      <input name="fst" id="fst-4" value="4" type="radio" />
+
+      <!-- рейтинг 5 -->
+      <label for="fst-5" data-rating="5">
+        <svg width="24" height="24">
+          <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#star"></use>
+        </svg>
+      </label>
+      <input name="fst" id="fst-5" value="5" type="radio" />
+    </div>
+  </div>
+
+  <form class="form pop-up-form">
+    <input
+      class="pop-up-input"
+      type="text"
+      placeholder="Email Address"
+      minlength="3"
+      required
+    />
+    <button class="pop-up-button" type="submit">Send</button>
+  </form>
+</div>
+
+<div class="popup-backdrop"></div>
+
+    <!-- <div class="scroll-container">
+  <svg class="scroll-icon" width="24" height="24">
+    <use href="./img/icons.svg#circle-up"></use>
+  </svg>
+</div> -->
+<svg class="scroll-icon scroll-hidden" width="40" height="40">
+  <use href="/project-NightCoders-TastyTreats/assets/icons-955b4849.svg#circle-up"></use>
+</svg>
+
+
+    
+  </body>
+</html>
