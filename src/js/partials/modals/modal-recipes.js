@@ -154,5 +154,4 @@ function handlerFavoriteBtn(evt) {
   localStorage.setItem('favorites', JSON.stringify(favorites));
   heartRender();
 }
-
 export { loadModal, handlerFavoriteBtn };
