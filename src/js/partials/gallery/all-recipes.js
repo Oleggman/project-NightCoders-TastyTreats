@@ -2,6 +2,7 @@ import TastyTreatsAPI from '../../API/tasty-treats-api.js';
 import { renderGallery } from '../../renders/render-gallery.js';
 import { loadModal } from '../modals/modal-recipes.js';
 import { stopVideo } from '../modals/stop-recipe-video.js';
+
 const filters = {
   time: '',
   area: '',
@@ -9,15 +10,19 @@ const filters = {
   title: '',
   category: '',
 };
+
 sessionStorage.setItem('filters', JSON.stringify(filters));
 sessionStorage.setItem('totalPages', 32);
+
 const allRecipesRender = new TastyTreatsAPI();
 const gallery = document.querySelector('.cards-container');
 const recipeModal = document.querySelector('.modal-recipes-container');
 const overlay = document.querySelector('.overlay');
 const closeBtn = document.querySelector('.modal-close-btn');
 const loader = document.querySelector('.loader');
+
 loadGallery();
+
 async function loadGallery(currentPage, perPage) {
   // рендер карток
   loader.classList.remove('is-hidden');

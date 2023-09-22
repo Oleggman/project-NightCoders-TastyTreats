@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { filters } from '../partials/gallery/filters';
 
 export default class TastyTreatsAPI {
   constructor() {
@@ -10,14 +9,14 @@ export default class TastyTreatsAPI {
     return await axios.get(`${this.baseURL}/events`);
   }
 
-  async fetchRecipes () {
+  async fetchRecipes() {
     return await axios.get(`${this.baseURL}/recipes?limit=9`);
   }
 
   async fetchAllRecipes(currentPage = 1, perPage = 9) {
-    const filters = JSON.parse(sessionStorage.getItem('filters'))
+    const filters = JSON.parse(sessionStorage.getItem('filters'));
     const { title, category, area, ingredients, time } = filters;
-        const params = new URLSearchParams({
+    const params = new URLSearchParams({
       page: currentPage,
       limit: perPage,
       title,
@@ -28,11 +27,11 @@ export default class TastyTreatsAPI {
     });
     return await axios.get(`${this.baseURL}/recipes?${params}`);
   }
-  
+
   async fetchOneRecipe(id) {
     return await axios.get(`${this.baseURL}/recipes/${id}`);
   }
-  
+
   async fetchCategories() {
     return await axios.get(`${this.baseURL}/categories`);
   }

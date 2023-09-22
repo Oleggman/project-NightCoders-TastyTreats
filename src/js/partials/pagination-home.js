@@ -1,12 +1,11 @@
 import Pagination from 'tui-pagination';
-// const Pagination = require('tui-pagination');
 import 'tui-pagination/dist/tui-pagination.css';
 import { loadGallery } from '../partials/gallery/all-recipes.js';
 
 function renewPagination() {
   const container = document.getElementById('pagination');
-    let totalRecipies = sessionStorage.getItem('totalPages') * 9;
-   const options = {
+  let totalRecipies = sessionStorage.getItem('totalPages') * 9;
+  const options = {
     totalItems: totalRecipies,
     itemsPerPage: 9,
     visiblePages: 3,
@@ -36,8 +35,8 @@ function renewPagination() {
   const pagination = new Pagination(container, options);
   pagination.on('beforeMove', event => {
     const currentPage = event.page;
-      loadGallery(currentPage);
+    loadGallery(currentPage);
   });
- }
+}
 renewPagination();
 export { renewPagination };

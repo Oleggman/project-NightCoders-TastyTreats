@@ -18,11 +18,10 @@ const filters = {
   category: '',
 };
 async function onAllRecipesClick(e) {
-  // let data = await getDataArr();
   filters.area = '';
   filters.ingredients = '';
   filters.time = '';
-  filters.title ='';
+  filters.title = '';
   filters.category = '';
   sessionStorage.setItem('filters', JSON.stringify(filters));
   sessionStorage.setItem('totalPages', 32);
@@ -47,11 +46,7 @@ async function onSearchCategory(e) {
   console.log(value);
   sessionStorage.setItem('filters', JSON.stringify(filters));
   const res = await tastyTreatsApi.fetchAllRecipes();
-  // let data = await getDataArr();
 
-  // const recipesByCategory = data.filter(
-  //   item => item.category === value
-  // );
   sessionStorage.setItem('totalPages', res.data.totalPages);
   refs.gallery.innerHTML = renderGallery(res.data.results);
   renewPagination();
