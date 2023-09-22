@@ -13,10 +13,10 @@
   visibility: visible;
 
   transition: 300ms ease-in;
-  animation-duration: 2s;
+  animation-duration: 1250ms;
   animation-iteration-count: infinite;
 
-  animation-name: bounce-4;
+  animation-name: bounce;
   animation-timing-function: ease;
 }
 
@@ -44,7 +44,7 @@ html {
     transform: scale(1.1, 0.9) translateY(0);
   }
   30% {
-    transform: scale(0.9, 1.1) translateY(-100px);
+    transform: scale(0.9, 1.1) translateY(-30px);
   }
   50% {
     transform: scale(1, 1) translateY(0);

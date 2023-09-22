@@ -17,7 +17,9 @@ popUpForm.addEventListener('submit', onSubmitPopUp);
 function onSubmitPopUp(e) {
   e.preventDefault();
   e.target.reset();
-  Notify.success('Thank you for your feedback!!! Your rating will be accepted.');
+  Notify.success(
+    'Thank you for your feedback!!! Your rating will be accepted.'
+  );
   handlerCloseRating();
 }
 
@@ -30,7 +32,6 @@ function handlerOpenRating() {
 }
 
 // закриття модалки з рейтингом та видалення слухачів
-
 function handlerCloseRating() {
   popupModal.classList.remove('active');
   popupBackdrop.classList.remove('active');
@@ -110,4 +111,5 @@ function updateRating(selectedRating) {
 const initialRating = parseFloat(
   document.querySelector('input[name="fst"]:checked').value
 );
+
 updateRating(initialRating);
