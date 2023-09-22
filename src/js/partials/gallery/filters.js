@@ -194,6 +194,8 @@ import TastyTreatsAPI from '../../API/tasty-treats-api';
 import debounce from 'lodash.debounce';
 import svg from '../../../img/icons.svg';
 
+import { renewPagination } from '../pagination-home';
+
 const tastyTreatsApi = new TastyTreatsAPI();
 
 refs.recipeInput.addEventListener('input', debounce(onInputRecipe, 300));
@@ -201,15 +203,18 @@ refs.timeSelect.addEventListener('change', onTimeSelect);
 refs.areaSelect.addEventListener('change', onAreaSelect);
 refs.ingredSelect.addEventListener('change', onIngredSelect);
 refs.form.addEventListener('reset', onResetForm);
-refs.inputIcon.innerHTML = `<svg class="svg-filter"><use href="${svg}#search"></use></svg>`;
-refs.resetIcon.innerHTML = `<svg class="reset-filter"><use href="${svg}#close"></use></svg>`;
+refs.inputIcon.innerHTML = `<svg class="svg-filter"><use href="${svg}#search"></use></svg>`
+refs.resetIcon.innerHTML = `<svg class="reset-filter"><use href="${svg}#close"></use></svg>`
 
 let filterArr = [];
+
 
 const filters = {
   time: '',
   area: '',
   ingredients: '',
+  title: '',
+  category: '',
 };
 
 async function getDataArr() {
@@ -221,37 +226,64 @@ async function getDataArr() {
     dataArr = res.data.results;
     filterArr = dataArr;
   }
+
   return dataArr;
 }
 
 async function onResetForm(e) {
   e.preventDefault();
-  const recipes = await getDataArr();
-  refs.gallery.innerHTML = renderGallery(recipes);
+  // const recipes = await getDataArr();
+  // refs.gallery.innerHTML = renderGallery(recipes);
   filterArr = [];
+  filters.area = '';
+  filters.ingredients = '';
+  filters.time = '';
+  filters.title ='';
+  // console.log(filters);
+
+  sessionStorage.setItem('filters', JSON.stringify(filters));
+  const res = await tastyTreatsApi.fetchAllRecipes(1);
+  sessionStorage.setItem('totalPages', res.data.totalPages);
+  refs.gallery.innerHTML = renderGallery(res.data.results);
+  renewPagination();
+
   refs.recipeInput.value = '';
   refs.timeSelect.selectedIndex = 0;
   refs.areaSelect.selectedIndex = 0;
   refs.ingredSelect.selectedIndex = 0;
 }
+
 // Input filter
 async function onInputRecipe(e) {
   e.preventDefault();
   let dataArr = await getDataArr();
+  
+  
   const filteredByInput = dataArr.filter(item =>
     item.title.toLowerCase().includes(e.target.value.trim(' '))
   );
-  refs.gallery.innerHTML = renderGallery(filteredByInput);
+  filters.title = e.target.value;
+   // refs.gallery.innerHTML = renderGallery(filteredByInput);
+   sessionStorage.setItem('filters', JSON.stringify(filters));
+   const res = await tastyTreatsApi.fetchAllRecipes(1);
+   sessionStorage.setItem('totalPages', res.data.totalPages);
+  refs.gallery.innerHTML = renderGallery(res.data.results);
+  // console.log(filters);
+  renewPagination();
 }
 // Time filter
 async function onTimeSelect(e) {
   const selectedTime = Number(e.currentTarget.value);
   let dataArr = await getDataArr();
-  filters.time = selectedTime;
+  filters.time = e.target.value;
+ 
+
+
   const filteredByTime = dataArr.filter(recipe => {
     if (!recipe.time) {
       return;
     }
+
     if (filters.area && filters.ingredients) {
       return (
         Number(recipe.time) <= selectedTime &&
@@ -271,13 +303,21 @@ async function onTimeSelect(e) {
       return Number(recipe.time) <= selectedTime;
     }
   });
-  refs.gallery.innerHTML = renderGallery(filteredByTime);
-}
+
+  // refs.gallery.innerHTML = renderGallery(filteredByTime);
+  sessionStorage.setItem('filters', JSON.stringify(filters));
+  const res = await tastyTreatsApi.fetchAllRecipes(1);
+  sessionStorage.setItem('totalPages', res.data.totalPages);
+  refs.gallery.innerHTML = renderGallery(res.data.results);
+  // console.log(filters);
+  renewPagination();
+ }
 // Area filter
 async function onAreaSelect(e) {
   const value = e.currentTarget.value;
   let dataArr = await getDataArr();
   filters.area = value;
+ 
   const recipesByArea = dataArr.filter(recipe => {
     if (filters.time && filters.ingredients) {
       return (
@@ -296,14 +336,23 @@ async function onAreaSelect(e) {
       return recipe.area === value;
     }
   });
-  refs.gallery.innerHTML = renderGallery(recipesByArea);
+
+  // refs.gallery.innerHTML = renderGallery(recipesByArea);
+  sessionStorage.setItem('filters', JSON.stringify(filters));
+  const res = await tastyTreatsApi.fetchAllRecipes(1);
+  sessionStorage.setItem('totalPages', res.data.totalPages);
+  refs.gallery.innerHTML = renderGallery(res.data.results);
+  // console.log(filters);
+  renewPagination();
 }
 // Ingredients filter
 async function onIngredSelect(e) {
   const ingreds = await tastyTreatsApi.fetchIngrediens();
   const ingredId = ingreds.data.find(item => item.name === e.target.value)._id;
+
   let dataArr = await getDataArr();
   filters.ingredients = ingredId;
+
   const recipesByIngreds = dataArr.filter(recipe => {
     if (filters.time && filters.area) {
       return (
@@ -325,5 +374,13 @@ async function onIngredSelect(e) {
       return recipe.ingredients.some(ingr => ingr.id === ingredId);
     }
   });
-  refs.gallery.innerHTML = renderGallery(recipesByIngreds);
+
+  // refs.gallery.innerHTML = renderGallery(recipesByIngreds);
+  sessionStorage.setItem('filters', JSON.stringify(filters));
+  const res = await tastyTreatsApi.fetchAllRecipes(1);
+  sessionStorage.setItem('totalPages', res.data.totalPages);
+  refs.gallery.innerHTML = renderGallery(res.data.results);
+  // console.log(filters);
+  renewPagination();
 }
+// export { filters }
