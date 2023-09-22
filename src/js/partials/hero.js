@@ -17,7 +17,10 @@ async function renderSlider() {
         direction: 'horizontal',
         loop: true,
         mousewheel: true,
-        autoplay: true,
+        // autoplay: true,
+        // autoplay: {
+        //   delay: 2500,
+        // },
         // Default parameters
         slidesPerView: 0.69,
         spaceBetween: 8,
@@ -25,12 +28,12 @@ async function renderSlider() {
         breakpoints: {
           // when window width is >= 768px
           768: {
-            slidesPerView: 0.8,
+            slidesPerView: 0.848,
             spaceBetween: 16,
           },
           // when window width is >= 1280px
           1280: {
-            slidesPerView: 0.8,
+            slidesPerView: 0.806,
             spaceBetween: 16,
           },
         },
