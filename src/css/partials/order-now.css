@@ -247,6 +247,7 @@
 }
 
 .phone-code {
+  color: var(--primary-color);
   position: absolute;
   left: 20px;
   top: 50%;

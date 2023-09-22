@@ -25,7 +25,7 @@ function onSubmitOrder(e) {
       parentModal.classList.remove('active');
       overlay.classList.remove('active');
       document.body.style.overflow = 'auto';
-      e.currentTarget.reset();
+      orderForm.reset();
     })
     .catch(function (error) {
       Notify.warning(`${error.response.data.message}`);
