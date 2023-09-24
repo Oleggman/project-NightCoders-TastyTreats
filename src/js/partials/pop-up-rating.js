@@ -11,6 +11,7 @@ const ratingBtn = document.querySelector('.give-a-rating');
 const ratingCloseBtn = document.querySelector('.rate-close-btn');
 const popUpForm = document.querySelector('.pop-up-form');
 const selectedRate = document.querySelector('.star-span');
+const modalStars = document.querySelector('.modal-stars');
 
 // відкриття модалки з рейтингом та додавання слухачів
 ratingBtn.addEventListener('click', handlerOpenRating);
@@ -19,19 +20,25 @@ function onSubmitPopUp(e) {
   e.preventDefault();
   let rateData = {
     rate: Number(selectedRate.textContent),
-    email: 'test@gmail.com',
+    email: popUpForm.elements.email.value,
   };
 
-  axios.patch(
-    'https://tasty-treats-backend.p.goit.global/api/recipes/6462a8f74c3d0ddd28897feb/rating',
-    rateData
-  );
+  axios
+    .patch(
+      `https://tasty-treats-backend.p.goit.global/api/recipes/${modalStars.firstElementChild.dataset.id}/rating`,
+      rateData
+    )
+    .then(() => {
+      Notify.success(
+        'Thank you for your feedback!!! Your rating will be accepted.'
+      );
+      handlerCloseRating();
+    })
+    .catch(error => {
+      Notify.warning(`${error.response.data.message}`);
+    });
 
   e.target.reset();
-  Notify.success(
-    'Thank you for your feedback!!! Your rating will be accepted.'
-  );
-  handlerCloseRating();
 }
 
 function handlerOpenRating() {
