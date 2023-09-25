@@ -74,10 +74,6 @@
   background-color: transparent;
   color: var(--primary-color);
 }
-/*
-  .pop-up-input:focus {
-      border: 1px solid #9BB537;
-  } */
 .pop-up-input:hover,
 .pop-up-input:focus {
   outline: none;
@@ -147,12 +143,6 @@
     padding: 15px 0px;
     border: none;
   }
-  /*
-      .pop-input:focus {
-          outline: none !important;
-          border: 1px solid red;
-          box-shadow: 0 0 10px #719ECE;
-      } */
 }
 @media only screen and (min-width: 768px) {
   .pop-up-modal {

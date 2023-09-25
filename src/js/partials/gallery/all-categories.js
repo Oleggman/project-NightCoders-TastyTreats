@@ -43,7 +43,6 @@ async function onSearchCategory(e) {
 
   const value = e.target.textContent;
   filters.category = value;
-  console.log(value);
   sessionStorage.setItem('filters', JSON.stringify(filters));
   const res = await tastyTreatsApi.fetchAllRecipes();
 

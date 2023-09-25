@@ -468,7 +468,6 @@
 
   color: #050505;
   font-size: 14px;
-
   font-weight: 500;
 
   border-radius: 15px;
@@ -496,8 +495,6 @@
   }
 }
 
-/*  */
-
 .recipe-modal-tags {
   display: flex;
   flex-wrap: wrap;
@@ -507,7 +504,6 @@
 .modal-recipe-ingred {
   display: flex;
   justify-content: space-between;
-  /* padding-right: 10px; */
   border-bottom: 1px solid var(--primary-color-01);
   color: var(--primary-color-08);
 }

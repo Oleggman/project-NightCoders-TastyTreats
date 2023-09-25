@@ -3,7 +3,6 @@ import { renderGallery } from '../../renders/render-gallery';
 import TastyTreatsAPI from '../../API/tasty-treats-api';
 import debounce from 'lodash.debounce';
 import svg from '../../../img/icons.svg';
-
 import { renewPagination } from '../pagination-home';
 
 const tastyTreatsApi = new TastyTreatsAPI();
