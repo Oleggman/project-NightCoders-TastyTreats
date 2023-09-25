@@ -1,4 +1,5 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import axios from 'axios';
 
 // Отримуємо необхідні елементи DOM
 const ratingGroup = document.querySelector('.rating-group');
@@ -9,18 +10,35 @@ const popupBackdrop = document.querySelector('.popup-backdrop');
 const ratingBtn = document.querySelector('.give-a-rating');
 const ratingCloseBtn = document.querySelector('.rate-close-btn');
 const popUpForm = document.querySelector('.pop-up-form');
+const selectedRate = document.querySelector('.star-span');
+const modalStars = document.querySelector('.modal-stars');
 
 // відкриття модалки з рейтингом та додавання слухачів
 ratingBtn.addEventListener('click', handlerOpenRating);
 popUpForm.addEventListener('submit', onSubmitPopUp);
-
 function onSubmitPopUp(e) {
   e.preventDefault();
+  let rateData = {
+    rate: Number(selectedRate.textContent),
+    email: popUpForm.elements.email.value,
+  };
+
+  axios
+    .patch(
+      `https://tasty-treats-backend.p.goit.global/api/recipes/${modalStars.firstElementChild.dataset.id}/rating`,
+      rateData
+    )
+    .then(() => {
+      Notify.success(
+        'Thank you for your feedback!!! Your rating will be accepted.'
+      );
+      handlerCloseRating();
+    })
+    .catch(error => {
+      Notify.warning(`${error.response.data.message}`);
+    });
+
   e.target.reset();
-  Notify.success(
-    'Thank you for your feedback!!! Your rating will be accepted.'
-  );
-  handlerCloseRating();
 }
 
 function handlerOpenRating() {
