@@ -5,6 +5,21 @@
   padding: 40px 20px;
   margin: 0 auto;
 }
+@media screen and (min-width: 768px) {
+  .footer-container {
+    min-width: 768px;
+    height: auto;
+    padding: 60px 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .footer-container {
+    min-width: 1280px;
+    height: auto;
+    padding: 80px 100px;
+  }
+}
 
 .line {
   position: absolute;
@@ -16,20 +31,30 @@
   margin-bottom: 40px;
 }
 
+@media screen and (min-width: 768px) {
+  .main-footer-content {
+    min-width: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 .contacts {
   width: 215px;
   height: 100px;
   margin: 0 auto;
   margin-bottom: 40px;
 }
+@media screen and (min-width: 768px) {
+  .contacts {
+    margin: 0;
+    margin-bottom: 0;
+  }
+}
 
 @media screen and (min-width: 1280px) {
-  .footer-container {
-    min-width: 1280px;
-    height: auto;
-    padding: 80px 100px;
-  }
-
   .contacts {
     margin: 0;
     margin-bottom: 0;
@@ -52,6 +77,14 @@
   margin: 0 auto;
   margin-bottom: 40px;
   border-radius: 100px;
+}
+
+@media screen and (min-width: 768px) {
+  .logo-coders {
+    width: auto;
+    margin: 0;
+    margin-bottom: 0;
+  }
 }
 
 .coders-btn {
@@ -95,31 +128,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .footer-container {
-    min-width: 768px;
-    height: auto;
-    padding: 60px 32px;
-  }
-
-  .main-footer-content {
-    min-width: auto;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .contacts {
-    margin: 0;
-    margin-bottom: 0;
-  }
-
-  .logo-coders {
-    width: auto;
-    margin: 0;
-    margin-bottom: 0;
-  }
-
   .donate-container {
     margin-bottom: 0;
   }
@@ -131,6 +139,7 @@
   background-color: var(--primary-raiting);
   border-radius: 15px;
   transform: translateX(50%) translateY(-35%);
+
   color: var(--primary-color);
   text-align: center;
   font-family: Inter;
@@ -167,6 +176,7 @@
   background-color: var(--background);
   border-radius: 80px;
   border-color: transparent;
+
   transition: box-shadow 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -221,6 +231,12 @@
   display: none; /* Safari and Chrome */
 }
 
+@media screen and (min-width: 768px) {
+  .modal-team {
+    width: 760px;
+  }
+}
+
 .modal-team-backdrop {
   display: none;
   position: fixed;
@@ -235,6 +251,14 @@
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 100;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-team {
+    max-width: 532px;
+    height: 905px;
+    padding: 30px;
+  }
 }
 
 .team-modal-close {
@@ -271,10 +295,25 @@
   margin-bottom: 30px;
 }
 
+@media screen and (min-width: 768px) {
+  .team-list-container {
+    width: 447px;
+  }
+}
 .team-list {
   display: flex;
   flex-direction: column;
   width: 296px;
+}
+
+@media screen and (min-width: 768px) {
+  .team-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 472px;
+    gap: 22px;
+  }
 }
 
 .team-item {
@@ -289,7 +328,20 @@
   .team-item {
     min-width: 296px;
   }
+}
 
+@media only screen and (min-width: 768px) {
+  .team-item {
+    position: relative;
+
+    width: 142px;
+    height: auto;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 767px) {
   .reverse {
     display: flex;
     flex-direction: row-reverse;
@@ -305,6 +357,16 @@
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
 
+@media only screen and (min-width: 768px) {
+  .member-photo {
+    position: sticky;
+    transform: translateY(-10%);
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
 .team-member {
   width: 150px;
   margin: 10px;
@@ -312,6 +374,12 @@
   color: var(--primary-color);
 }
 
+@media only screen and (min-width: 768px) {
+  .team-member {
+    width: 120px;
+    margin: 0 auto;
+  }
+}
 .name-team-member {
   text-align: center;
   font-family: Inter;
@@ -335,48 +403,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .modal-team {
-    width: 760px;
-    max-width: 532px;
-    height: 905px;
-    padding: 30px;
-  }
-
-  .team-list-container {
-    width: 447px;
-  }
-
-  .team-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 472px;
-    gap: 22px;
-  }
-
-  .team-item {
-    position: relative;
-
-    width: 142px;
-    height: auto;
-    padding-bottom: 8px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .member-photo {
-    position: sticky;
-    transform: translateY(-10%);
-    width: 150px;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .team-member {
-    width: 120px;
-    margin: 0 auto;
-  }
-
   .rolle {
     margin-bottom: 8px;
   }
